@@ -9,7 +9,7 @@ class Client
     private $browser;
     private $host;
 
-    public function __construct(Browser $browser, $host = 'http://http://api.discogs.com')
+    public function __construct(Browser $browser, $host = 'http://api.discogs.com')
     {
         $this->browser  = $browser;
         $this->host     = $host;
