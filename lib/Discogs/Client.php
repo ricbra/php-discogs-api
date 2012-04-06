@@ -22,6 +22,11 @@ class Client
         }
     }
 
+    public function getArtist($artistId)
+    {
+
+    }
+
     protected function call($path, array $parameters = array())
     {
 
