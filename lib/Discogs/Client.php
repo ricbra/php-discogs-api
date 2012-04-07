@@ -19,7 +19,7 @@ class Client
 
     public function call($path, array $parameters = array())
     {
-        $url = sprintf('http://%s/%s', $this->host, $path);
+        $url = sprintf('http://%s%s', $this->host, $path);
         if ($parameters) {
             $url .= '?'.http_build_query($parameters);
         }
@@ -35,10 +35,7 @@ class Client
         if (! $rawData instanceof \stdClass) {
             throw new InvalidResponseException('Unknow data received from server');
         }
-        if (! isset($rawData->resp)) {
-            throw new InvalidResponseException('Invalid data received from server (missing "resp")');
-        }
 
-        return $rawData->resp;
+        return $rawData;
     }
 }

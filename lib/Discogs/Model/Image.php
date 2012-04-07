@@ -1,0 +1,72 @@
+<?php
+namespace Discogs\Model;
+
+class Image
+{
+    private $uri;
+    private $height;
+    private $width;
+    private $resourceUrl;
+    private $type;
+    private $uri150;
+
+    public function setHeight($height)
+    {
+        $this->height = $height;
+    }
+
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    public function setResourceUrl($resourceUrl)
+    {
+        $this->resourceUrl = $resourceUrl;
+    }
+
+    public function getResourceUrl()
+    {
+        return $this->resourceUrl;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function setUri($uri)
+    {
+        $this->uri = $uri;
+    }
+
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    public function setUri150($uri150)
+    {
+        $this->uri150 = $uri150;
+    }
+
+    public function getUri150()
+    {
+        return $this->uri150;
+    }
+
+    public function setWidth($width)
+    {
+        $this->width = $width;
+    }
+
+    public function getWidth()
+    {
+        return $this->width;
+    }
+}

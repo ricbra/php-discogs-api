@@ -1,0 +1,150 @@
+<?php
+
+namespace Discogs\Model;
+
+class Result
+{
+    private $style;
+    private $thumb;
+    private $title;
+    private $country;
+    private $format;
+    private $uri;
+    private $label;
+    private $catno;
+    private $year;
+    private $genre;
+    private $resourceUrl;
+    private $type;
+    private $id;
+
+    public function setStyle($style)
+    {
+        $this->style = $style;
+    }
+
+    public function getStyle()
+    {
+        return $this->style;
+    }
+
+    public function setCatno($catno)
+    {
+        $this->catno = $catno;
+    }
+
+    public function getCatno()
+    {
+        return $this->catno;
+    }
+
+    public function setCountry($country)
+    {
+        $this->country = $country;
+    }
+
+    public function getCountry()
+    {
+        return $this->country;
+    }
+
+    public function setFormat($format)
+    {
+        $this->format = $format;
+    }
+
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
+    public function setGenre($genre)
+    {
+        $this->genre = $genre;
+    }
+
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setLabel($label)
+    {
+        $this->label = $label;
+    }
+
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    public function setResourceUrl($resourceUrl)
+    {
+        $this->resourceUrl = $resourceUrl;
+    }
+
+    public function getResourceUrl()
+    {
+        return $this->resourceUrl;
+    }
+
+    public function setThumb($thumb)
+    {
+        $this->thumb = $thumb;
+    }
+
+    public function getThumb()
+    {
+        return $this->thumb;
+    }
+
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    public function setUri($uri)
+    {
+        $this->uri = $uri;
+    }
+
+    public function getUri()
+    {
+        return $this->uri;
+    }
+
+    public function setYear($year)
+    {
+        $this->year = $year;
+    }
+
+    public function getYear()
+    {
+        return $this->year;
+    }
+}
