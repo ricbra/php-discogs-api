@@ -28,9 +28,9 @@ class Service
      * @param Client $client
      * @param int $itemsPerPage
      */
-    public function __construct(Client $client, $itemsPerPage = 50)
+    public function __construct(Client $client = null, $itemsPerPage = 50)
     {
-        $this->client       = $client;
+        $this->client       = $client ?: new Client();
         $this->itemsPerPage = $itemsPerPage;
     }
 
