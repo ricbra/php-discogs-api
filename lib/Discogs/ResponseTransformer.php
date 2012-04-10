@@ -1,9 +1,23 @@
 <?php
+/*
+* This file is part of the DiscogsAPI PHP SDK.
+*
+* (c) Richard van den Brand <richard@vandenbrand.org>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 
 namespace Discogs;
 
 class ResponseTransformer
 {
+    /**
+     * Transforms a response into useable objects
+     *
+     * @param \stdClass $response
+     * @return array
+     */
     public function tranformResponse(\stdClass $response)
     {
         $reflection = new \ReflectionObject($response);
@@ -17,7 +31,6 @@ class ResponseTransformer
                 $results[] = $this->transform($key, $response->$key);
             }
         }
-        print_r($results);die;
         return $results;
     }
 
@@ -30,9 +43,9 @@ class ResponseTransformer
      */
     public function transform($key, \stdClass $source)
     {
-        $class      = $this->getClass($key);
-        $reflection = new \ReflectionObject($source);
-        $instance   = new $class;
+        $class              = $this->getClass($key);
+        $reflection         = new \ReflectionObject($source);
+        $instance           = new $class;
 
         foreach($reflection->getProperties() as $property) {
             $setter = 'set'.$this->getCamelCase($property->getName());
@@ -56,6 +69,13 @@ class ResponseTransformer
         return $instance;
     }
 
+    /**
+     * Transforms an array into its correct classes, based on the key
+     *
+     * @param $property
+     * @param array $values
+     * @return array
+     */
     protected function transformArray($property, array $values)
     {
         // Converts plural form to singular
@@ -98,6 +118,12 @@ class ResponseTransformer
         }, explode('_', $var)));
     }
 
+    /**
+     * Returns singular for plural, ie company for companies
+     *
+     * @param $name
+     * @return bool|string
+     */
     protected function getSingular($name)
     {
         switch($name) {
@@ -106,11 +132,15 @@ class ResponseTransformer
             case 'labels':
             case 'artists':
             case 'results':
+            case 'videos':
+            case 'sublabels':
                 return substr($name, 0, strlen($name)-1);
             case 'aliases':
                 return substr($name, 0, strlen($name)-2);
             case 'companies':
                 return 'company';
+            case 'tracklist':
+                return 'track';
         }
         return false;
     }

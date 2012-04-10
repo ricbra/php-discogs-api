@@ -7,43 +7,31 @@
 * For the full copyright and license information, please view the LICENSE
 * file that was distributed with this source code.
 */
- 
+
 namespace Discogs\Model;
 
-class Artist
+class Label
 {
-    private $id;
-
-    private $name;
-
-    private $resourceUrl;
-
-    private $releasesUrl;
-
-    private $uri;
-
-    private $realname;
-
     private $profile;
-
+    private $releasesUrl;
+    private $name;
+    private $contactInfo;
+    private $uri;
+    private $sublabels;
+    private $urls;
+    private $images;
+    private $resourceUrl;
+    private $id;
     private $dataQuality;
 
-    private $namevariatons;
-
-    private $aliases;
-
-    private $urls;
-
-    private $images;
-
-    public function setAliases($aliases)
+    public function setContactInfo($contactInfo)
     {
-        $this->aliases = $aliases;
+        $this->contactInfo = $contactInfo;
     }
 
-    public function getAliases()
+    public function getContactInfo()
     {
-        return $this->aliases;
+        return $this->contactInfo;
     }
 
     public function setDataQuality($dataQuality)
@@ -86,16 +74,6 @@ class Artist
         return $this->name;
     }
 
-    public function setNamevariatons($namevariatons)
-    {
-        $this->namevariatons = $namevariatons;
-    }
-
-    public function getNamevariatons()
-    {
-        return $this->namevariatons;
-    }
-
     public function setProfile($profile)
     {
         $this->profile = $profile;
@@ -104,16 +82,6 @@ class Artist
     public function getProfile()
     {
         return $this->profile;
-    }
-
-    public function setRealname($realname)
-    {
-        $this->realname = $realname;
-    }
-
-    public function getRealname()
-    {
-        return $this->realname;
     }
 
     public function setReleasesUrl($releasesUrl)
@@ -134,6 +102,16 @@ class Artist
     public function getResourceUrl()
     {
         return $this->resourceUrl;
+    }
+
+    public function setSublabels($sublabels)
+    {
+        $this->sublabels = $sublabels;
+    }
+
+    public function getSublabels()
+    {
+        return $this->sublabels;
     }
 
     public function setUri($uri)

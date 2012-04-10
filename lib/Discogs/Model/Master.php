@@ -1,4 +1,12 @@
 <?php
+/*
+* This file is part of the DiscogsAPI PHP SDK.
+*
+* (c) Richard van den Brand <richard@vandenbrand.org>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
 
 namespace Discogs\Model;
 
@@ -18,10 +26,6 @@ class Master
     private $tracklist;
     private $id;
     private $dataQuality;
-    private $join;
-    private $anv;
-    private $tracks;
-    private $role;
     private $videos;
 
     public function setArtists($artists)
@@ -162,46 +166,6 @@ class Master
     public function getYear()
     {
         return $this->year;
-    }
-
-    public function setAnv($anv)
-    {
-        $this->anv = $anv;
-    }
-
-    public function getAnv()
-    {
-        return $this->anv;
-    }
-
-    public function setJoin($join)
-    {
-        $this->join = $join;
-    }
-
-    public function getJoin()
-    {
-        return $this->join;
-    }
-
-    public function setRole($role)
-    {
-        $this->role = $role;
-    }
-
-    public function getRole()
-    {
-        return $this->role;
-    }
-
-    public function setTracks($tracks)
-    {
-        $this->tracks = $tracks;
-    }
-
-    public function getTracks()
-    {
-        return $this->tracks;
     }
 
     public function setVideos($videos)

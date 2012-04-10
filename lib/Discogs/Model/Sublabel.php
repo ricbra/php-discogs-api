@@ -10,11 +10,11 @@
 
 namespace Discogs\Model;
 
-class Alias
+class Sublabel
 {
+    private $resourceUrl;
     private $id;
     private $name;
-    private $resourceUrl;
 
     public function setId($id)
     {

@@ -10,23 +10,11 @@
 
 namespace Discogs\Model;
 
-class Video
+class Track
 {
     private $duration;
-    private $embed;
+    private $position;
     private $title;
-    private $description;
-    private $uri;
-
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
-    }
 
     public function setDuration($duration)
     {
@@ -38,14 +26,14 @@ class Video
         return $this->duration;
     }
 
-    public function setEmbed($embed)
+    public function setPosition($position)
     {
-        $this->embed = $embed;
+        $this->position = $position;
     }
 
-    public function getEmbed()
+    public function getPosition()
     {
-        return $this->embed;
+        return $this->position;
     }
 
     public function setTitle($title)
@@ -56,15 +44,5 @@ class Video
     public function getTitle()
     {
         return $this->title;
-    }
-
-    public function setUri($uri)
-    {
-        $this->uri = $uri;
-    }
-
-    public function getUri()
-    {
-        return $this->uri;
     }
 }
