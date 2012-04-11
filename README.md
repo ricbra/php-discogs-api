@@ -1,4 +1,7 @@
 ## Discogs Api
+
+[![Build Status](https://secure.travis-ci.org/ricbra/php-discogs-api.png)](http://travis-ci.org/ricbra/php-discogs-api)
+
 This library is an PHP 5.3 implementation of the [Discogs API v2.0.](http://www.discogs.com/developers/index.html)
 The Discogs API is a REST-based interface. By using this library you don't have to worry about communicating with the
 API: all the hard work has already be done.
