@@ -1,0 +1,20 @@
+{
+    "name": "ricbra/php-discogs-api",
+    "description": "The Discogs API makes it easy for developers to communicate with the Discogs platform",
+    "type": "library",
+    "keywords": ["discogs", "api"],
+    "license": "MIT",
+    "require": {
+        "kriswallsmith/buzz": "v0.5",
+        "php": ">=5.3.0"
+    },
+    "authors": [
+        {
+            "name": "Richard van den Brand",
+            "email": "richard@vandenbrand.org"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Discogs": "lib/" }
+    }
+}
