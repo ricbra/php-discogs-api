@@ -62,8 +62,6 @@ class ResponseTransformer
                 }
 
                 $instance->$setter($value);
-            } else {
-                echo 'private $'.lcfirst($this->getCamelCase($property->getName())).';<br />';
             }
         }
         return $instance;

@@ -1,6 +1,6 @@
 <?php
 /*
-* This file is part of the DiscogsAPI PHP SDK.
+* This file is part of the php-discogs-api.
 *
 * (c) Richard van den Brand <richard@vandenbrand.org>
 *
@@ -81,5 +81,15 @@ class Client
         }
 
         return $url;
+    }
+
+    /**
+     * Ping API
+     *
+     * @return mixed
+     */
+    public function ping()
+    {
+        return $this->call('/');
     }
 }
