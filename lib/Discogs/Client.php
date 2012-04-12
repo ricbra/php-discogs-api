@@ -33,11 +33,11 @@ class Client
      * @param \Buzz\Browser $browser
      * @param string $host
      */
-    public function __construct(Browser $browser = null, $host = 'api.discogs.com')
+    public function __construct(Browser $browser = null, $host = 'api.discogs.com', $identifier = 'DiscogsApi/0.1 +https://github.com/ricbra/php-discogs-api')
     {
         $this->browser          = $browser?: new Browser();
         $this->host             = $host;
-        $this->identifier       = 'DiscogsApi/0.1 +https://github.com/ricbra/DiscogsApi';
+        $this->identifier       = $identifier;
     }
 
     /**
