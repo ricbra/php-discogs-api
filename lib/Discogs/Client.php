@@ -33,11 +33,11 @@ class Client
      * @param \Buzz\Browser $browser
      * @param string $host
      */
-    public function __construct(Browser $browser = null, $host = 'api.discogs.com')
+    public function __construct(Browser $browser = null, $host = 'api.discogs.com', $identifier = 'DiscogsApi/0.1 +https://github.com/ricbra/DiscogsApi')
     {
         $this->browser          = $browser?: new Browser();
         $this->host             = $host;
-        $this->identifier       = 'DiscogsApi/0.1 +https://github.com/ricbra/DiscogsApi';
+        $this->identifier       = $identifier;
     }
 
     /**
@@ -91,5 +91,53 @@ class Client
     public function ping()
     {
         return $this->call('/');
+    }
+
+    /**
+     * @param string $identifier
+     */
+    public function setIdentifier($identifier)
+    {
+        $this->identifier = $identifier;
+    }
+
+    /**
+     * @return string
+     */
+    public function getIdentifier()
+    {
+        return $this->identifier;
+    }
+
+    /**
+     * @param string $host
+     */
+    public function setHost($host)
+    {
+        $this->host = $host;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHost()
+    {
+        return $this->host;
+    }
+
+    /**
+     * @param \Buzz\Browser $browser
+     */
+    public function setBrowser(Browser $browser)
+    {
+        $this->browser = $browser;
+    }
+
+    /**
+     * @return \Buzz\Browser
+     */
+    public function getBrowser()
+    {
+        return $this->browser;
     }
 }
