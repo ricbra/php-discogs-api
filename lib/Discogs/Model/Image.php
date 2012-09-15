@@ -10,14 +10,16 @@
 
 namespace Discogs\Model;
 
-class Image
+use Discogs\Model\AbstractModel;
+
+class Image extends AbstractModel
 {
-    private $uri;
-    private $height;
-    private $width;
-    private $resourceUrl;
-    private $type;
-    private $uri150;
+    protected $uri;
+    protected $height;
+    protected $width;
+    protected $resourceUrl;
+    protected $type;
+    protected $uri150;
 
     public function setHeight($height)
     {

@@ -17,21 +17,35 @@ class Service
     /**
      * @var Client
      */
-    private $client;
+    protected $client;
 
     /**
      * @var int
      */
-    private $itemsPerPage;
+    protected $itemsPerPage;
+
+    /**
+     * Whether to enable request throttling (1 request per second)
+     * @var bool
+     */
+    protected $isEnableThrottle;
+
+    /**
+     * Microtime of last API request
+     * @var int
+     */
+    protected static $lastApiRequest = 0;
 
     /**
      * @param Client $client
-     * @param int $itemsPerPage
+     * @param int    $itemsPerPage
+     * @param bool   $isEnableThrottle Whether to enable request throttling (1 request per second)
      */
-    public function __construct(Client $client = null, $itemsPerPage = 50)
+    public function __construct(Client $client = null, $itemsPerPage = 50, $isEnableThrottle = true)
     {
         $this->client       = $client ?: new Client();
         $this->itemsPerPage = $itemsPerPage;
+        $this->isEnableThrottle = $isEnableThrottle;
     }
 
     /**
@@ -140,6 +154,17 @@ class Service
      */
     protected function call($path, $responseKey, array $parameters = array())
     {
+        if ($this->isEnableThrottle) {
+            $timestamp = round(microtime(true) * 1000);
+            $wait = static::$lastApiRequest + 1000000 - $timestamp;
+
+            if ($wait > 0) {
+                usleep($wait);
+            }
+
+            static::$lastApiRequest = round(microtime(true) * 1000);
+        }
+
         $rawData = $this->client->call($path, $parameters);
 
         if (isset($rawData->message)) {

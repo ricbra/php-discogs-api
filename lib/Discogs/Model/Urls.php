@@ -10,12 +10,14 @@
 
 namespace Discogs\Model;
 
-class Urls
+use Discogs\Model\AbstractModel;
+
+class Urls extends AbstractModel
 {
-    private $last;
-    private $next;
-    private $previous;
-    private $first;
+    protected $last;
+    protected $next;
+    protected $previous;
+    protected $first;
 
 
     public function setLast($last)
