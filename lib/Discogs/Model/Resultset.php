@@ -12,8 +12,8 @@ namespace Discogs\Model;
 
 class Resultset implements \Countable, \IteratorAggregate
 {
-    private $pagination;
-    private $results;
+    protected $pagination;
+    protected $results;
 
     public function setPagination($pagination)
     {

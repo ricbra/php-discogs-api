@@ -10,11 +10,13 @@
 
 namespace Discogs\Model;
 
-class Alias
+use Discogs\Model\AbstractModel;
+
+class Alias extends AbstractModel
 {
-    private $id;
-    private $name;
-    private $resourceUrl;
+    protected $id;
+    protected $name;
+    protected $resourceUrl;
 
     public function setId($id)
     {

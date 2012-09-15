@@ -10,11 +10,13 @@
 
 namespace Discogs\Model;
 
-class Track
+use Discogs\Model\AbstractModel;
+
+class Track extends AbstractModel
 {
-    private $duration;
-    private $position;
-    private $title;
+    protected $duration;
+    protected $position;
+    protected $title;
 
     public function setDuration($duration)
     {

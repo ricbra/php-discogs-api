@@ -10,11 +10,13 @@
 
 namespace Discogs\Model;
 
-class Sublabel
+use Discogs\Model\AbstractModel;
+
+class Sublabel extends AbstractModel
 {
-    private $resourceUrl;
-    private $id;
-    private $name;
+    protected $resourceUrl;
+    protected $id;
+    protected $name;
 
     public function setId($id)
     {

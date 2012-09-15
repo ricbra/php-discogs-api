@@ -17,12 +17,12 @@ class Service
     /**
      * @var Client
      */
-    private $client;
+    protected $client;
 
     /**
      * @var int
      */
-    private $itemsPerPage;
+    protected $itemsPerPage;
 
     /**
      * @param Client $client

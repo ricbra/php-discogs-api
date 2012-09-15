@@ -10,23 +10,25 @@
 
 namespace Discogs\Model;
 
-class Master
+use Discogs\Model\AbstractModel;
+
+class Master extends AbstractModel
 {
-    private $styles;
-    private $genres;
-    private $title;
-    private $mainRelease;
-    private $mainReleaseUrl;
-    private $year;
-    private $uri;
-    private $versionsUrl;
-    private $artists;
-    private $images;
-    private $resourceUrl;
-    private $tracklist;
-    private $id;
-    private $dataQuality;
-    private $videos;
+    protected $styles;
+    protected $genres;
+    protected $title;
+    protected $mainRelease;
+    protected $mainReleaseUrl;
+    protected $year;
+    protected $uri;
+    protected $versionsUrl;
+    protected $artists;
+    protected $images;
+    protected $resourceUrl;
+    protected $tracklist;
+    protected $id;
+    protected $dataQuality;
+    protected $videos;
 
     public function setArtists($artists)
     {

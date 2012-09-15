@@ -10,13 +10,15 @@
 
 namespace Discogs\Model;
 
-class Video
+use Discogs\Model\AbstractModel;
+
+class Video extends AbstractModel
 {
-    private $duration;
-    private $embed;
-    private $title;
-    private $description;
-    private $uri;
+    protected $duration;
+    protected $embed;
+    protected $title;
+    protected $description;
+    protected $uri;
 
     public function setDescription($description)
     {

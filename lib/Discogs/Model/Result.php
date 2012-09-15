@@ -10,21 +10,23 @@
 
 namespace Discogs\Model;
 
-class Result
+use Discogs\Model\AbstractModel;
+
+class Result extends AbstractModel
 {
-    private $style;
-    private $thumb;
-    private $title;
-    private $country;
-    private $format;
-    private $uri;
-    private $label;
-    private $catno;
-    private $year;
-    private $genre;
-    private $resourceUrl;
-    private $type;
-    private $id;
+    protected $style;
+    protected $thumb;
+    protected $title;
+    protected $country;
+    protected $format;
+    protected $uri;
+    protected $label;
+    protected $catno;
+    protected $year;
+    protected $genre;
+    protected $resourceUrl;
+    protected $type;
+    protected $id;
 
     public function setStyle($style)
     {
