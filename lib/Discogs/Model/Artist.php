@@ -7,34 +7,36 @@
 * For the full copyright and license information, please view the LICENSE
 * file that was distributed with this source code.
 */
- 
+
 namespace Discogs\Model;
 
-class Artist
+use Discogs\Model\AbstractModel;
+
+class Artist extends AbstractModel
 {
-    private $id;
+    protected $id;
 
-    private $name;
+    protected $name;
 
-    private $resourceUrl;
+    protected $resourceUrl;
 
-    private $releasesUrl;
+    protected $releasesUrl;
 
-    private $uri;
+    protected $uri;
 
-    private $realname;
+    protected $realname;
 
-    private $profile;
+    protected $profile;
 
-    private $dataQuality;
+    protected $dataQuality;
 
-    private $namevariatons;
+    protected $namevariatons;
 
-    private $aliases;
+    protected $aliases;
 
-    private $urls;
+    protected $urls;
 
-    private $images;
+    protected $images;
 
     public function setAliases($aliases)
     {

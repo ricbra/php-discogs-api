@@ -17,17 +17,17 @@ class Client
     /**
      * @var string
      */
-    private $host;
+    protected $host;
 
     /**
      * @var \Buzz\Browser
      */
-    private $browser;
+    protected $browser;
 
     /**
      * @var string
      */
-    private $identifier;
+    protected $identifier;
 
     /**
      * @param \Buzz\Browser $browser

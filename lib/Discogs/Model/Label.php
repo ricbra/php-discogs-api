@@ -10,19 +10,21 @@
 
 namespace Discogs\Model;
 
-class Label
+use Discogs\Model\AbstractModel;
+
+class Label extends AbstractModel
 {
-    private $profile;
-    private $releasesUrl;
-    private $name;
-    private $contactInfo;
-    private $uri;
-    private $sublabels;
-    private $urls;
-    private $images;
-    private $resourceUrl;
-    private $id;
-    private $dataQuality;
+    protected $profile;
+    protected $releasesUrl;
+    protected $name;
+    protected $contactInfo;
+    protected $uri;
+    protected $sublabels;
+    protected $urls;
+    protected $images;
+    protected $resourceUrl;
+    protected $id;
+    protected $dataQuality;
 
     public function setContactInfo($contactInfo)
     {

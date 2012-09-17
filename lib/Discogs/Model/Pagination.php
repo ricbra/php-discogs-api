@@ -12,11 +12,11 @@ namespace Discogs\Model;
 
 class Pagination implements \Countable
 {
-    private $perPage;
-    private $items;
-    private $page;
-    private $urls;
-    private $pages;
+    protected $perPage;
+    protected $items;
+    protected $page;
+    protected $urls;
+    protected $pages;
 
     public function setItems($items)
     {
