@@ -30,6 +30,11 @@ class Client
     protected $identifier;
 
     /**
+     * @var string
+     */
+    protected $rawResponse;
+
+    /**
      * @param \Buzz\Browser $browser
      * @param string $host
      */
@@ -59,12 +64,11 @@ class Client
             throw new ConnectionException('Could not connect to Discogs', null, $e);
         }
 
-        $rawData = json_decode($response->getContent());
-        if (! $rawData instanceof \stdClass) {
-            throw new InvalidResponseException('Unknow data received from server');
-        }
+        // Save to a field to avoid unnecessary decoding later in Service::call() (if caching is enabled)
+        $this->rawResponse = $response->getContent();
+        $stdClass = $this->convertResponse($this->rawResponse);
 
-        return $rawData;
+        return $stdClass;
     }
 
     /**
@@ -139,5 +143,33 @@ class Client
     public function getBrowser()
     {
         return $this->browser;
+    }
+
+    /**
+     * Returns original JSON response
+     *
+     * @return string
+     */
+    public function getRawResponse()
+    {
+        return $this->rawResponse;
+    }
+
+    /**
+     * Converts JSON response got from Discogs API into StdClass for further transformation into model
+     *
+     * @param string $rawResponse
+     * @return \stdClass
+     * @throws InvalidResponseException
+     */
+    public function convertResponse($rawResponse)
+    {
+        $stdClass = json_decode($rawResponse);
+
+        if (! $stdClass instanceof \stdClass) {
+            throw new InvalidResponseException('Unknow data received from server');
+        }
+
+        return $stdClass;
     }
 }
