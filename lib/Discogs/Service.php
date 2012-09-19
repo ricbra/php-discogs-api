@@ -11,6 +11,7 @@
 namespace Discogs;
 
 use Discogs\Model\Resultset;
+use Discogs\CacherInterface;
 
 class Service
 {
@@ -37,9 +38,19 @@ class Service
     protected static $lastApiRequest = 0;
 
     /**
-     * @param Client $client
-     * @param int    $itemsPerPage
-     * @param bool   $isEnableThrottle Whether to enable request throttling (1 request per second)
+     * @var CacherInterface
+     */
+    protected $cacher;
+
+    /**
+     * @var bool
+     */
+    protected $isCacheEnabled = false;
+
+    /**
+     * @param Client          $client
+     * @param int             $itemsPerPage
+     * @param bool            $isEnableThrottle Whether to enable request throttling (1 request per second)
      */
     public function __construct(Client $client = null, $itemsPerPage = 50, $isEnableThrottle = true)
     {
@@ -144,6 +155,33 @@ class Service
     }
 
     /**
+     * @param CacherInterface $cacher
+     */
+    public function setCacher(CacherInterface $cacher)
+    {
+        $this->cacher = $cacher;
+        $this->cacher->isOperational() ? $this->enableCache() : $this->disableCache();
+    }
+
+    public function enableCache()
+    {
+        $this->isCacheEnabled = true;
+    }
+
+    public function disableCache()
+    {
+        $this->isCacheEnabled = false;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCacheEnabled()
+    {
+        return $this->isCacheEnabled;
+    }
+
+    /**
      * Calls client and transforms response
      *
      * @param $path
@@ -154,25 +192,43 @@ class Service
      */
     protected function call($path, $responseKey, array $parameters = array())
     {
-        if ($this->isEnableThrottle) {
-            $timestamp = round(microtime(true) * 1000);
-            $wait = static::$lastApiRequest + 1000000 - $timestamp;
+        $isFromCache = false;
 
-            if ($wait > 0) {
-                usleep($wait);
+        if ($this->isCacheEnabled) {
+            $json = $this->cacher->retrieve($path);
+
+            if ($json) {
+                $isFromCache = true;
             }
-
-            static::$lastApiRequest = round(microtime(true) * 1000);
         }
 
-        $rawData = $this->client->call($path, $parameters);
+        if ($isFromCache) {
+            $rawData = $this->client->convertResponse($json);
+        } else {
+            if ($this->isEnableThrottle) {
+                $timestamp = round(microtime(true) * 1000);
+                $wait = static::$lastApiRequest + 1000000 - $timestamp;
+
+                if ($wait > 0) {
+                    usleep($wait);
+                }
+
+                static::$lastApiRequest = round(microtime(true) * 1000);
+            }
+
+            $rawData = $this->client->call($path, $parameters);
+        }
 
         if (isset($rawData->message)) {
             throw new NoResultException($rawData->message);
         }
+
+        if ($this->isCacheEnabled && !$isFromCache) {
+            $this->cacher->persist($path, $this->client->getRawResponse());
+        }
+
         $transformer = new ResponseTransformer();
 
         return $transformer->transform($responseKey, $rawData);
-
     }
 }
