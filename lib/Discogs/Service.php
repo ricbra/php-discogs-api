@@ -10,10 +10,11 @@
 
 namespace Discogs;
 
-use Discogs\Model\Resultset;
 use Discogs\CacherInterface;
 use Discogs\ResponseTransformer\ResponseTransformerInterface;
 use Discogs\ResponseTransformer\Model as ModelResponseTransformer;
+use Discogs\ResponseTransformer\TransformException;
+use Discogs\NoResultException;
 
 class Service
 {
@@ -97,21 +98,18 @@ class Service
     /**
      * Fetch next resultset
      *
-     * @param Model\Resultset $resultset
+     * @param mixed $transformedResponse
      * @return bool|mixed
      */
-    public function next(Resultset $resultset)
+    public function next($transformedResponse)
     {
-        $urls = $resultset->getPagination()->getUrls();
+        try {
+            $next = $this->getResponseTransformer()->get('pagination/urls/next', $transformedResponse);
 
-        if ($urls->getNext()) {
-            $a      = explode('?', $urls->getNext());
-            $path   = '/database/search?' . end($a);
-
-            return $this->call($path);
+            return $this->call($next);
+        } catch (TransformException $e) {
+            return false;
         }
-
-        return false;
     }
 
     /**
@@ -129,8 +127,8 @@ class Service
      * Implements API releases method
      *
      * @param $releaseId
-     * @return Release
-     * @throws NoResultFoundException
+     * @return mixed
+     * @throws NoResultException
      */
     public function getRelease($releaseId)
     {
@@ -138,11 +136,22 @@ class Service
     }
 
     /**
+     * Returns releases of the particular artist
+     *
+     * @param int $artistId
+     * @return mixed
+     */
+    public function getReleases($artistId)
+    {
+        return $this->call(sprintf('/artists/%d/releases', $artistId));
+    }
+
+    /**
      * Implements API masters method
      *
      * @param $masterId
      * @return mixed
-     * @throws NoResultFoundException
+     * @throws NoResultException
      */
     public function getMaster($masterId)
     {
@@ -154,7 +163,7 @@ class Service
      *
      * @param $labelId
      * @return mixed
-     * @throws NoResultFoundException
+     * @throws NoResultException
      */
     public function getLabel($labelId)
     {

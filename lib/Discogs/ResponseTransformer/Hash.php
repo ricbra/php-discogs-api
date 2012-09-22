@@ -10,6 +10,7 @@
 namespace Discogs\ResponseTransformer;
 
 use Discogs\ResponseTransformer\ResponseTransformerInterface;
+use Discogs\ResponseTransformer\TransformException;
 
 /**
  * @author Artem Komarov <i.linker@gmail.com>
@@ -42,5 +43,29 @@ class Hash implements ResponseTransformerInterface
         }
 
         return $result;
+    }
+
+    /**
+     * Get value for some node in transformed response
+     *
+     * @param string $path
+     * @param array  $transformed
+     * @return mixed
+     * @throws TransformException
+     */
+    public function get($path, $transformed)
+    {
+        $keys = explode('/', $path);
+        $currentNode = $transformed;
+
+        foreach ($keys as $key) {
+            if (!is_array($currentNode) || !isset($currentNode[$key])) {
+                throw new TransformException(sprintf('Node does not exist: %s', $path));
+            }
+
+            $currentNode = $currentNode[$key];
+        }
+
+        return $currentNode;
     }
 }

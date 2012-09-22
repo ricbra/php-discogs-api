@@ -49,6 +49,31 @@ class Model implements ResponseTransformerInterface
     }
 
     /**
+     * Get value for some node in transformed response
+     *
+     * @param string $path
+     * @param mixed  $transformed
+     * @return mixed
+     * @throws TransformException
+     */
+    public function get($path, $transformed)
+    {
+        $currentNode = $transformed;
+
+        foreach (explode('/', $path) as $key) {
+            $methodName = 'get' . $this->getCamelCase($key);
+
+            if (!is_object($currentNode) || !method_exists($currentNode, $methodName)) {
+                throw new TransformException(sprintf('Node does not exist: %s', $path));
+            }
+
+            $currentNode = $currentNode->$methodName();
+        }
+
+        return $currentNode;
+    }
+
+    /**
      * Transforms an array into its correct classes, based on the key
      *
      * @param $property
