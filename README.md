@@ -90,6 +90,20 @@ $master  = $service->getMaster(1);
 echo $master->getTitle()."\n";
 ```
 
+### Response transformation
+
+You have two options in which form to receive formatted response: as object using supplied models, or as plain array.
+By default (if nothing has been set via setter) Model response transformer is chosen. You can manipulate it via
+the `setResponseTransfomer` setter:
+
+``` php
+$discogs->setResponseTransformer(new \Discogs\ResponseTransformer\Model());
+// or
+$discogs->setResponseTransformer(new \Discogs\ResponseTransformer\Hash());
+```
+
+You can also set your own response transformer which need to implement the `ResponseTransformerInterface`
+
 **NOTE** At this moment only the "Database" resource has been implemented. The "Marketplace" and "User" are missing.
 
 ## Documentation

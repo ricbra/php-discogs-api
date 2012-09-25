@@ -10,8 +10,11 @@
 
 namespace Discogs;
 
-use Discogs\Model\Resultset;
 use Discogs\CacherInterface;
+use Discogs\ResponseTransformer\ResponseTransformerInterface;
+use Discogs\ResponseTransformer\Model as ModelResponseTransformer;
+use Discogs\ResponseTransformer\TransformException;
+use Discogs\NoResultException;
 
 class Service
 {
@@ -46,6 +49,11 @@ class Service
      * @var bool
      */
     protected $isCacheEnabled = false;
+
+    /**
+     * @var ResponseTransformerInterface
+     */
+    protected $transformer;
 
     /**
      * @param Client          $client
@@ -84,27 +92,24 @@ class Service
             throw new InvalidArgumentException(sprintf('Invalid type given: "%s"', $params['type']));
         }
 
-        return $this->call('/database/search', 'resultset', $params);
+        return $this->call('/database/search', $params);
     }
 
     /**
      * Fetch next resultset
      *
-     * @param Model\Resultset $resultset
+     * @param mixed $transformedResponse
      * @return bool|mixed
      */
-    public function next(Resultset $resultset)
+    public function next($transformedResponse)
     {
-        $urls = $resultset->getPagination()->getUrls();
+        try {
+            $next = $this->getResponseTransformer()->get('pagination/urls/next', $transformedResponse);
 
-        if ($urls->getNext()) {
-            $a      = explode('?', $urls->getNext());
-            $path   = '/database/search?' . end($a);
-
-            return $this->call($path, 'resultset');
+            return $this->call($next);
+        } catch (TransformException $e) {
+            return false;
         }
-
-        return false;
     }
 
     /**
@@ -115,19 +120,30 @@ class Service
      */
     public function getArtist($artistId)
     {
-        return $this->call(sprintf('/artists/%d', $artistId), 'artist');
+        return $this->call(sprintf('/artists/%d', $artistId));
     }
 
     /**
      * Implements API releases method
      *
      * @param $releaseId
-     * @return Release
-     * @throws NoResultFoundException
+     * @return mixed
+     * @throws NoResultException
      */
     public function getRelease($releaseId)
     {
-        return $this->call(sprintf('/releases/%d', $releaseId), 'release');
+        return $this->call(sprintf('/releases/%d', $releaseId));
+    }
+
+    /**
+     * Returns releases of the particular artist
+     *
+     * @param int $artistId
+     * @return mixed
+     */
+    public function getReleases($artistId)
+    {
+        return $this->call(sprintf('/artists/%d/releases', $artistId));
     }
 
     /**
@@ -135,11 +151,11 @@ class Service
      *
      * @param $masterId
      * @return mixed
-     * @throws NoResultFoundException
+     * @throws NoResultException
      */
     public function getMaster($masterId)
     {
-        return $this->call(sprintf('/masters/%d', $masterId), 'master');
+        return $this->call(sprintf('/masters/%d', $masterId));
     }
 
     /**
@@ -147,11 +163,11 @@ class Service
      *
      * @param $labelId
      * @return mixed
-     * @throws NoResultFoundException
+     * @throws NoResultException
      */
     public function getLabel($labelId)
     {
-        return $this->call(sprintf('/labels/%d', $labelId), 'label');
+        return $this->call(sprintf('/labels/%d', $labelId));
     }
 
     /**
@@ -182,15 +198,34 @@ class Service
     }
 
     /**
+     * @param ResponseTransformerInterface $transformer
+     */
+    public function setResponseTransformer(ResponseTransformerInterface $transformer)
+    {
+        $this->transformer = $transformer;
+    }
+
+    /**
+     * @return ResponseTransformerInterface
+     */
+    public function getResponseTransformer()
+    {
+        if (empty($this->transformer)) {
+            $this->transformer = new ModelResponseTransformer();
+        }
+
+        return $this->transformer;
+    }
+
+    /**
      * Calls client and transforms response
      *
      * @param $path
-     * @param $responseKey
      * @param array $parameters
      * @return mixed
      * @throws NoResultException
      */
-    protected function call($path, $responseKey, array $parameters = array())
+    protected function call($path, array $parameters = array())
     {
         $isFromCache = false;
 
@@ -227,8 +262,6 @@ class Service
             $this->cacher->persist($path, $this->client->getRawResponse());
         }
 
-        $transformer = new ResponseTransformer();
-
-        return $transformer->transform($responseKey, $rawData);
+        return $this->getResponseTransformer()->transform($rawData, $path);
     }
 }

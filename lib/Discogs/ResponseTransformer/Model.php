@@ -8,50 +8,31 @@
 * file that was distributed with this source code.
 */
 
-namespace Discogs;
+namespace Discogs\ResponseTransformer;
 
-class ResponseTransformer
+use Discogs\ResponseTransformer\ResponseTransformerInterface;
+use Discogs\InvalidArgumentException;
+
+class Model implements ResponseTransformerInterface
 {
-    /**
-     * Transforms a response into useable objects
-     *
-     * @param \stdClass $response
-     * @return array
-     */
-    public function tranformResponse(\stdClass $response)
-    {
-        $reflection = new \ReflectionObject($response);
-        $results    = array();
-
-        foreach ($reflection->getProperties() as $property) {
-            $key   = $property->getName();
-            $class = $this->getClass($key);
-
-            if (class_exists($class)) {
-                $results[] = $this->transform($key, $response->$key);
-            }
-        }
-        return $results;
-    }
-
     /**
      * Transform a stdClass object in the corresponding Model class
      *
-     * @param $key
-     * @param \stdClass $source
+     * @param \stdClass $response
+     * @param string    $path     Discogs API URN (e.g. '/database/search')
      * @return mixed
      */
-    public function transform($key, \stdClass $source)
+    public function transform($response, $path = '')
     {
-        $class              = $this->getClass($key);
-        $reflection         = new \ReflectionObject($source);
+        $class              = $this->getClass($path);
+        $reflection         = new \ReflectionObject($response);
         $instance           = new $class;
 
         foreach($reflection->getProperties() as $property) {
             $setter = 'set'.$this->getCamelCase($property->getName());
             if (method_exists($instance, $setter)) {
                 $prop  = $property->getName();
-                $value = $source->$prop;
+                $value = $response->$prop;
 
                 if (is_object($value) && class_exists($this->getClass($prop))) {
                     $value = $this->transform($prop, $value);
@@ -65,6 +46,31 @@ class ResponseTransformer
             }
         }
         return $instance;
+    }
+
+    /**
+     * Get value for some node in transformed response
+     *
+     * @param string $path
+     * @param mixed  $transformed
+     * @return mixed
+     * @throws TransformException
+     */
+    public function get($path, $transformed)
+    {
+        $currentNode = $transformed;
+
+        foreach (explode('/', $path) as $key) {
+            $methodName = 'get' . $this->getCamelCase($key);
+
+            if (!is_object($currentNode) || !method_exists($currentNode, $methodName)) {
+                throw new TransformException(sprintf('Node does not exist: %s', $path));
+            }
+
+            $currentNode = $currentNode->$methodName();
+        }
+
+        return $currentNode;
     }
 
     /**
@@ -95,12 +101,27 @@ class ResponseTransformer
     /**
      * Converts property into classname
      *
-     * @param $var
+     * @param string $path
      * @return string
+     * @throws InvalidArgumentException
      */
-    protected function getClass($var)
+    protected function getClass($path)
     {
-        return sprintf('Discogs\\Model\\%s', $this->getCamelCase($var));
+        $className = sprintf('Discogs\\Model\\%s', $this->getCamelCase($path));
+
+        if (class_exists($className)) {
+            return $className;
+        }
+
+        if (preg_match('#^/database/search#', $path)) {
+            $key = 'resultset';
+        } else if (preg_match('#^/(artists|releases|masters|labels)/#', $path, $matches)) {
+            $key = $this->getSingular($matches[1]);
+        } else {
+            throw new InvalidArgumentException("Can't transform response for path {$path}");
+        }
+
+        return sprintf('Discogs\\Model\\%s', $this->getCamelCase($key));
     }
 
     /**
