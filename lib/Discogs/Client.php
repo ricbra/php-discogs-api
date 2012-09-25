@@ -78,10 +78,14 @@ class Client
      */
     public function getUrl($path, array $parameters = array())
     {
-        $url = sprintf('http://%s%s', $this->host, $path);
+        if (substr($path, 0, 7) == 'http://') {
+            $url = $path;
+        } else {
+            $url = sprintf('http://%s%s', $this->host, $path);
 
-        if ($parameters) {
-            $url .= '?'.http_build_query($parameters);
+            if ($parameters) {
+                $url .= '?'.http_build_query($parameters);
+            }
         }
 
         return $url;
