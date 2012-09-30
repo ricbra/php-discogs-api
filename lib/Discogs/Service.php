@@ -230,7 +230,8 @@ class Service
         $isFromCache = false;
 
         if ($this->isCacheEnabled) {
-            $json = $this->cacher->retrieve($path);
+            $cachePath = empty($parameters) ? $path : sprintf('%s?%s', $path, http_build_query($parameters));
+            $json = $this->cacher->retrieve($cachePath);
 
             if ($json) {
                 $isFromCache = true;
@@ -259,7 +260,7 @@ class Service
         }
 
         if ($this->isCacheEnabled && !$isFromCache) {
-            $this->cacher->persist($path, $this->client->getRawResponse());
+            $this->cacher->persist($cachePath, $this->client->getRawResponse());
         }
 
         return $this->getResponseTransformer()->transform($rawData, $path);

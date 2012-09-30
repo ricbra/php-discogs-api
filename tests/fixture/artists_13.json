@@ -1,0 +1,145 @@
+{
+   "profile":"New Jersey-based duo.\r\n[a=Chris Herbert] was a member but left the group in the early '90s.\r\n",
+   "releases_url":"http://api.discogs.com/artists/13/releases",
+   "name":"Blaze",
+   "namevariations":[
+      "A Blaze Project",
+      "Blace",
+      "Blaze Production",
+      "Blaze Production Presents James Toney Jr. Project",
+      "Blaze Productions",
+      "Blaze Project",
+      "Blaze, The",
+      "Funky People"
+   ],
+   "uri":"http://www.discogs.com/artist/Blaze",
+   "members":[
+      {
+         "resource_url":"http://api.discogs.com/artists/56890",
+         "id":56890,
+         "name":"Chris Herbert"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/13815",
+         "id":13815,
+         "name":"Josh Milan"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/13814",
+         "id":13814,
+         "name":"Kevin Hedge"
+      }
+   ],
+   "urls":[
+      "http://en.wikipedia.org/wiki/Blaze_(band)"
+   ],
+   "images":[
+      {
+         "uri":"http://api.discogs.com/image/A-13-001.jpg",
+         "height":310,
+         "width":240,
+         "resource_url":"http://api.discogs.com/image/A-13-001.jpg",
+         "type":"primary",
+         "uri150":"http://api.discogs.com/image/A-150-13-001.jpg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/A-13-1278286471.jpeg",
+         "height":497,
+         "width":339,
+         "resource_url":"http://api.discogs.com/image/A-13-1278286471.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/A-150-13-1278286471.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/A-13-1184131250.jpeg",
+         "height":600,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/A-13-1184131250.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/A-150-13-1184131250.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/A-13-1184131297.jpeg",
+         "height":400,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/A-13-1184131297.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/A-150-13-1184131297.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/A-13-1184131320.jpeg",
+         "height":800,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/A-13-1184131320.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/A-150-13-1184131320.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/A-13-1184131456.jpeg",
+         "height":450,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/A-13-1184131456.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/A-150-13-1184131456.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/A-13-1215850558.jpeg",
+         "height":400,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/A-13-1215850558.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/A-150-13-1215850558.jpeg"
+      }
+   ],
+   "resource_url":"http://api.discogs.com/artists/13",
+   "aliases":[
+      {
+         "resource_url":"http://api.discogs.com/artists/2946",
+         "id":2946,
+         "name":"Black Rascals"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/5267",
+         "id":5267,
+         "name":"Colour Funky, The"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/17928",
+         "id":17928,
+         "name":"Exit"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/2571",
+         "id":2571,
+         "name":"Funky People"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/239233",
+         "id":239233,
+         "name":"In-Sync (2)"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/29584",
+         "id":29584,
+         "name":"Klubhead"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/57785",
+         "id":57785,
+         "name":"Project MSC"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/36594",
+         "id":36594,
+         "name":"Stardust (2)"
+      },
+      {
+         "resource_url":"http://api.discogs.com/artists/9545",
+         "id":9545,
+         "name":"System VIII"
+      }
+   ],
+   "id":13,
+   "data_quality":"Needs Vote",
+   "realname":"Kevin Hedge & Josh Milan"
+}

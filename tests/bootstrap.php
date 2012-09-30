@@ -8,4 +8,4 @@
 * file that was distributed with this source code.
 */
 
-require 'vendor/.composer/autoload.php';
+require 'vendor/autoload.php';
