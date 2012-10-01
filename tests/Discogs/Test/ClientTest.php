@@ -15,6 +15,9 @@ use Buzz\Browser;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @var Client
+     */
     private $client;
 
     public function setUp()
@@ -22,21 +25,30 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->client = new Client();
     }
 
-    public function testPing()
+    /**
+     * @dataProvider dataProviderGetUrl
+     */
+    public function testGetUrl($path, $expected)
     {
-        $response = $this->client->ping();
-        $this->assertEquals($response->hello, "Welcome to the Discogs API.");
+        $url = $this->client->getUrl($path);
+        $this->assertEquals($expected, $url);
+    }
+
+    public function dataProviderGetUrl()
+    {
+        return array(
+            array('/database/search', 'http://api.discogs.com/database/search'),
+            array('http://api.discogs.com/my/path', 'http://api.discogs.com/my/path'),
+        );
     }
 
     /**
-     * @depends testPing
-     * @expectedException Discogs\ConnectionException
-     * @expectedExceptionMessage Could not connect to Discogs
+     * @expectedException \Discogs\InvalidResponseException
+     * @expectedExceptionMessage Unknown data received from server
      * @expectedExceptionCode 0
      */
-    public function testConnection()
+    public function testConvertResponse()
     {
-        $client = new Client(null, 'http://thishostdoesnotexistsyet.nlo');
-        $client->call('/fake-path');
+        $this->client->convertResponse('this is not JSON');
     }
 }

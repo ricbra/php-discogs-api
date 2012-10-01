@@ -1,0 +1,45 @@
+{
+   "profile":"Profan regards itself not as a techno label in the traditional sense. Founed in 1993 by [a=Wolfgang Voigt], it follows more the meandering side-paths of Techno. The crackling besides. The grooving in the groove.\r\nProfan is complex and theoritical. Tough and light. It is pop, not intelligent Techno. [a=Bee Gees], not Dokumenta.\r\nIt was distributed via Piktomania.\n",
+   "releases_url":"http://api.discogs.com/labels/1518/releases",
+   "name":"Profan",
+   "contact_info":"Werderstr.15-19\r\n50672 K\u00f6ln (Cologne)\r\nGermany\r\n\r\nFon: 0221-94995-110\r\nFax: 0221-94995-150\n",
+   "parent_label":{
+      "resource_url":"http://api.discogs.com/labels/715",
+      "id":715,
+      "name":"Kompakt"
+   },
+   "uri":"http://www.discogs.com/label/Profan",
+   "sublabels":[
+      {
+         "resource_url":"http://api.discogs.com/labels/246021",
+         "id":246021,
+         "name":"Kafkatrax"
+      },
+      {
+         "resource_url":"http://api.discogs.com/labels/199841",
+         "id":199841,
+         "name":"Protest (2)"
+      },
+      {
+         "resource_url":"http://api.discogs.com/labels/1810",
+         "id":1810,
+         "name":"Studio 1"
+      }
+   ],
+   "urls":[
+      "http://www.kompakt.fm"
+   ],
+   "images":[
+      {
+         "uri":"http://api.discogs.com/image/L-1518-1190985854.jpeg",
+         "height":105,
+         "width":298,
+         "resource_url":"http://api.discogs.com/image/L-1518-1190985854.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/L-150-1518-1190985854.jpeg"
+      }
+   ],
+   "resource_url":"http://api.discogs.com/labels/1518",
+   "id":1518,
+   "data_quality":"Needs Vote"
+}

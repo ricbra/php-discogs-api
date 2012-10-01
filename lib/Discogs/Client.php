@@ -171,7 +171,7 @@ class Client
         $stdClass = json_decode($rawResponse);
 
         if (! $stdClass instanceof \stdClass) {
-            throw new InvalidResponseException('Unknow data received from server');
+            throw new InvalidResponseException('Unknown data received from server');
         }
 
         return $stdClass;

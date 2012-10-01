@@ -1,0 +1,539 @@
+{
+   "pagination":{
+      "per_page":50,
+      "items":1522,
+      "page":1,
+      "urls":{
+         "last":"http://api.discogs.com/artists/13/releases?per_page=50&page=31",
+         "next":"http://api.discogs.com/artists/13/releases?per_page=50&page=2"
+      },
+      "pages":31
+   },
+   "releases":[
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-190112-1140916293.jpeg",
+         "title":"Yearnin'",
+         "format":"12\"",
+         "label":"Ace Beat Records",
+         "role":"Main",
+         "year":1985,
+         "resource_url":"http://api.discogs.com/releases/190112",
+         "type":"release",
+         "id":190112
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-44399-1155299519.jpeg",
+         "title":"Whatcha Gonna Do",
+         "main_release":44399,
+         "role":"Main",
+         "year":1986,
+         "resource_url":"http://api.discogs.com/masters/11594",
+         "type":"master",
+         "id":11594
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-52760-1082818155.jpg",
+         "title":"If You Should Need A Friend",
+         "main_release":52760,
+         "role":"Main",
+         "year":1987,
+         "resource_url":"http://api.discogs.com/masters/93190",
+         "type":"master",
+         "id":93190
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-14580-1115995723.jpg",
+         "title":"Can't Win For Losin'",
+         "main_release":14580,
+         "role":"Main",
+         "year":1988,
+         "resource_url":"http://api.discogs.com/masters/52665",
+         "type":"master",
+         "id":52665
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-38185-1198365732.jpeg",
+         "title":"25 Years Later",
+         "main_release":38185,
+         "role":"Main",
+         "year":1990,
+         "resource_url":"http://api.discogs.com/masters/93194",
+         "type":"master",
+         "id":93194
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-1399504-1255068211.jpeg",
+         "title":"So Special",
+         "main_release":1399504,
+         "role":"Main",
+         "year":1990,
+         "resource_url":"http://api.discogs.com/masters/93652",
+         "type":"master",
+         "id":93652
+      },
+      {
+         "status":"Accepted",
+         "title":"So Special : New Remix",
+         "format":"CD, Promo",
+         "label":"Motown",
+         "role":"Main",
+         "year":1990,
+         "resource_url":"http://api.discogs.com/releases/3107432",
+         "type":"release",
+         "id":3107432
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-434556-1312980331.jpeg",
+         "title":"We All Must Live Together",
+         "main_release":434556,
+         "role":"Main",
+         "year":1990,
+         "resource_url":"http://api.discogs.com/masters/93628",
+         "type":"master",
+         "id":93628
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-16074-001.jpg",
+         "title":"#6 Hubert St.",
+         "main_release":16074,
+         "role":"Main",
+         "year":1993,
+         "resource_url":"http://api.discogs.com/masters/93202",
+         "type":"master",
+         "id":93202
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-6920-1086274456.jpg",
+         "title":"Why Can't We Live Together",
+         "format":"12\"",
+         "label":"Shelter Records (3)",
+         "role":"Main",
+         "year":1993,
+         "resource_url":"http://api.discogs.com/releases/6920",
+         "type":"release",
+         "id":6920
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-757832-1314540410.jpeg",
+         "title":"#6 Hubert St.",
+         "format":"CD, Comp",
+         "label":"Cutting Edge",
+         "role":"Main",
+         "year":1994,
+         "resource_url":"http://api.discogs.com/releases/757832",
+         "type":"release",
+         "id":757832
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-421024-1239049177.jpeg",
+         "title":"Dancing",
+         "main_release":421024,
+         "role":"Main",
+         "year":1994,
+         "resource_url":"http://api.discogs.com/masters/469013",
+         "type":"master",
+         "id":469013
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-56470-001.jpg",
+         "title":"Just A Little Different",
+         "main_release":56470,
+         "role":"Main",
+         "year":1994,
+         "resource_url":"http://api.discogs.com/masters/93665",
+         "type":"master",
+         "id":93665
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-63595-1119464273.jpg",
+         "title":"Live The Happy Life",
+         "main_release":63595,
+         "role":"Main",
+         "year":1994,
+         "resource_url":"http://api.discogs.com/masters/124100",
+         "type":"master",
+         "id":124100
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-r_53532-001.jpg",
+         "title":"Brothers & Sisters",
+         "main_release":53532,
+         "role":"Main",
+         "year":1995,
+         "resource_url":"http://api.discogs.com/masters/93268",
+         "type":"master",
+         "id":93268
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-6945-1261073289.jpeg",
+         "title":"Fly Away",
+         "main_release":6945,
+         "role":"Main",
+         "year":1995,
+         "resource_url":"http://api.discogs.com/masters/93598",
+         "type":"master",
+         "id":93598
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-102131-1251729859.jpeg",
+         "title":"Happy Day",
+         "main_release":102131,
+         "role":"Main",
+         "year":1995,
+         "resource_url":"http://api.discogs.com/masters/308284",
+         "type":"master",
+         "id":308284
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-r_16030-001.jpg",
+         "title":"The Blaze Tracks EP",
+         "main_release":16030,
+         "role":"Main",
+         "year":1995,
+         "resource_url":"http://api.discogs.com/masters/208345",
+         "type":"master",
+         "id":208345
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-r_27702-001.jpg",
+         "title":"Love Comes Around",
+         "format":"12\"",
+         "label":"Simplex Records",
+         "role":"Main",
+         "year":1996,
+         "resource_url":"http://api.discogs.com/releases/27702",
+         "type":"release",
+         "id":27702
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-62793-002.jpg",
+         "title":"The Colour Funky EP (A Music Perspective)",
+         "format":"12\"",
+         "label":"Funky People",
+         "role":"Main",
+         "year":1996,
+         "resource_url":"http://api.discogs.com/releases/62793",
+         "type":"release",
+         "id":62793
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-38173-1220810763.jpeg",
+         "title":"Trans-Jazz EP",
+         "main_release":38173,
+         "role":"Main",
+         "year":1996,
+         "resource_url":"http://api.discogs.com/masters/208347",
+         "type":"master",
+         "id":208347
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-85809-1296137727.jpeg",
+         "title":"What Can U Do",
+         "main_release":85809,
+         "role":"Main",
+         "year":1996,
+         "resource_url":"http://api.discogs.com/masters/93624",
+         "type":"master",
+         "id":93624
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-2081-1249883282.jpeg",
+         "title":"Basic Blaze",
+         "main_release":2081,
+         "role":"Main",
+         "year":1997,
+         "resource_url":"http://api.discogs.com/masters/93216",
+         "type":"master",
+         "id":93216
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-14531-1215623684.jpeg",
+         "title":"Directions",
+         "main_release":14531,
+         "role":"Main",
+         "year":1997,
+         "resource_url":"http://api.discogs.com/masters/351009",
+         "type":"master",
+         "id":351009
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-21449-1202708612.jpeg",
+         "title":"Feel The Music",
+         "format":"12\"",
+         "label":"157 Shelter Records, 157 Shelter Records",
+         "role":"Main",
+         "year":1997,
+         "resource_url":"http://api.discogs.com/releases/21449",
+         "type":"release",
+         "id":21449
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-17669-1151489177.jpeg",
+         "title":"Lovelee Dae",
+         "main_release":17669,
+         "role":"Main",
+         "year":1997,
+         "resource_url":"http://api.discogs.com/masters/73016",
+         "type":"master",
+         "id":73016
+      },
+      {
+         "status":"Accepted",
+         "title":"Lovelee Dae (Part One)",
+         "format":"12\", W/Lbl, Promo",
+         "label":"Playhouse",
+         "role":"Main",
+         "year":1998,
+         "resource_url":"http://api.discogs.com/releases/3626183",
+         "type":"release",
+         "id":3626183
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-2526911-1307043551.jpeg",
+         "title":"My Beat",
+         "format":"11xFile, MP3, Single, 320",
+         "label":"Slip 'n' Slide",
+         "role":"Main",
+         "year":1998,
+         "resource_url":"http://api.discogs.com/releases/2526911",
+         "type":"release",
+         "id":2526911
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-180486-1122249620.jpg",
+         "title":"My Beat",
+         "main_release":180486,
+         "role":"Main",
+         "year":1998,
+         "resource_url":"http://api.discogs.com/masters/31918",
+         "type":"master",
+         "id":31918
+      },
+      {
+         "status":"Accepted",
+         "title":"My Beat (Remixes)",
+         "format":"2x12\", W/Lbl",
+         "label":"Slip 'n' Slide",
+         "role":"Main",
+         "year":1998,
+         "resource_url":"http://api.discogs.com/releases/3843654",
+         "type":"release",
+         "id":3843654
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-3290-001.jpg",
+         "title":"Seasons Of Love",
+         "main_release":3290,
+         "role":"Main",
+         "year":1998,
+         "resource_url":"http://api.discogs.com/masters/391202",
+         "type":"master",
+         "id":391202
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-60633-1223065786.jpeg",
+         "title":"Space Sampler",
+         "main_release":60633,
+         "role":"Main",
+         "year":1998,
+         "resource_url":"http://api.discogs.com/masters/248740",
+         "type":"master",
+         "id":248740
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-185355-1326654415.jpeg",
+         "title":"Blaze Productions",
+         "main_release":185355,
+         "role":"Main",
+         "year":1999,
+         "resource_url":"http://api.discogs.com/masters/93256",
+         "type":"master",
+         "id":93256
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-96182-1294416886.gif",
+         "title":"Cult Of Soul",
+         "main_release":96182,
+         "role":"Main",
+         "year":1999,
+         "resource_url":"http://api.discogs.com/masters/273666",
+         "type":"master",
+         "id":273666
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-59294-1265199052.jpeg",
+         "title":"Funky People",
+         "main_release":59294,
+         "role":"Main",
+         "year":1999,
+         "resource_url":"http://api.discogs.com/masters/156577",
+         "type":"master",
+         "id":156577
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-23940-1119798006.jpg",
+         "title":"More Than Gold",
+         "format":"12\"",
+         "label":"Nite Grooves",
+         "role":"Main",
+         "year":1999,
+         "resource_url":"http://api.discogs.com/releases/23940",
+         "type":"release",
+         "id":23940
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-2082-1249476680.jpeg",
+         "title":"The Many Colours Of Blaze",
+         "main_release":2082,
+         "role":"Main",
+         "year":1999,
+         "resource_url":"http://api.discogs.com/masters/195454",
+         "type":"master",
+         "id":195454
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-75481-002.jpg",
+         "title":"Wishing You Were Here",
+         "main_release":75481,
+         "role":"Main",
+         "year":1999,
+         "resource_url":"http://api.discogs.com/masters/93619",
+         "type":"master",
+         "id":93619
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-3015-1184577164.jpeg",
+         "title":"Elements Of Life",
+         "main_release":3015,
+         "role":"Main",
+         "year":2000,
+         "resource_url":"http://api.discogs.com/masters/309696",
+         "type":"master",
+         "id":309696
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-3529545-1334048664.jpeg",
+         "title":"Elevation",
+         "format":"12\", W/Lbl, Promo, Sti",
+         "label":"Life Line",
+         "role":"Main",
+         "year":2000,
+         "resource_url":"http://api.discogs.com/releases/3529545",
+         "type":"release",
+         "id":3529545
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-3135-1223136800.jpeg",
+         "title":"Elevation",
+         "main_release":3135,
+         "role":"Main",
+         "year":2000,
+         "resource_url":"http://api.discogs.com/masters/93597",
+         "type":"master",
+         "id":93597
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-6866-1335640201.jpeg",
+         "title":"Home Is Where The Heart Is",
+         "main_release":6866,
+         "role":"Main",
+         "year":2000,
+         "resource_url":"http://api.discogs.com/masters/283934",
+         "type":"master",
+         "id":283934
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-3858-1153319355.jpeg",
+         "title":"Unreleased Mixes - Ekabo / Elements Of Life",
+         "main_release":3858,
+         "role":"Main",
+         "year":2000,
+         "resource_url":"http://api.discogs.com/masters/93630",
+         "type":"master",
+         "id":93630
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-7160-1180063570.jpeg",
+         "title":"Fantasy",
+         "main_release":7160,
+         "role":"Main",
+         "year":2001,
+         "resource_url":"http://api.discogs.com/masters/168130",
+         "type":"master",
+         "id":168130
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-296701-1114796350.jpg",
+         "title":"House Nation 221",
+         "format":"12\"",
+         "label":"DMC",
+         "role":"Main",
+         "year":2001,
+         "resource_url":"http://api.discogs.com/releases/296701",
+         "type":"release",
+         "id":296701
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-1640373-1235151265.jpeg",
+         "title":"How Deep Is Your Love",
+         "main_release":1640373,
+         "role":"Main",
+         "year":2001,
+         "resource_url":"http://api.discogs.com/masters/309697",
+         "type":"master",
+         "id":309697
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-21448-1149701580.jpeg",
+         "title":"Jump 4 Luv",
+         "main_release":21448,
+         "role":"Main",
+         "year":2001,
+         "resource_url":"http://api.discogs.com/masters/124124",
+         "type":"master",
+         "id":124124
+      },
+      {
+         "status":"Accepted",
+         "thumb":"http://api.discogs.com/image/R-150-25003-1220342001.jpeg",
+         "title":"Lovely Ones",
+         "format":"12\"",
+         "label":"Life Line",
+         "role":"Main",
+         "year":2001,
+         "resource_url":"http://api.discogs.com/releases/25003",
+         "type":"release",
+         "id":25003
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-1196336-1309716196.jpeg",
+         "title":"Natural Blaze",
+         "main_release":1196336,
+         "role":"Main",
+         "year":2001,
+         "resource_url":"http://api.discogs.com/masters/93657",
+         "type":"master",
+         "id":93657
+      },
+      {
+         "thumb":"http://api.discogs.com/image/R-150-58464-1199706886.jpeg",
+         "title":"Paradise",
+         "main_release":58464,
+         "role":"Main",
+         "year":2001,
+         "resource_url":"http://api.discogs.com/masters/184208",
+         "type":"master",
+         "id":184208
+      }
+   ]
+}

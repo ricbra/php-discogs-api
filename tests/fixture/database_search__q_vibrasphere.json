@@ -1,0 +1,1049 @@
+{
+   "pagination":{
+      "per_page":50,
+      "items":305,
+      "page":1,
+      "urls":{
+         "last":"http://api.discogs.com/database/search?q=vibrasphere&per_page=50&page=7",
+         "next":"http://api.discogs.com/database/search?q=vibrasphere&per_page=50&page=2"
+      },
+      "pages":7
+   },
+   "results":[
+      {
+         "thumb":"http://api.discogs.com/image/A-90-20726-1179235615.jpeg",
+         "title":"Vibrasphere",
+         "uri":"/artist/Vibrasphere",
+         "resource_url":"http://api.discogs.com/artists/20726",
+         "type":"artist",
+         "id":20726
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-643258-1238291360.jpeg",
+         "title":"Vibrasphere - Landmark",
+         "uri":"/Vibrasphere-Landmark/master/53764",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53764",
+         "type":"master",
+         "id":53764
+      },
+      {
+         "style":[
+            "Tribal",
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-27204-1208953781.jpeg",
+         "title":"Vibrasphere - Echo",
+         "uri":"/Vibrasphere-Echo/master/53731",
+         "year":"2000",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53731",
+         "type":"master",
+         "id":53731
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Landmark",
+         "uri":"/Vibrasphere-Landmark/release/1291915",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291915",
+         "type":"release",
+         "id":1291915
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-655471-1178925464.jpeg",
+         "title":"Vibrasphere - Archipelago",
+         "uri":"/Vibrasphere-Archipelago/master/53755",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53755",
+         "type":"master",
+         "id":53755
+      },
+      {
+         "style":[
+            "Tribal",
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Echo",
+         "uri":"/Vibrasphere-Echo/release/1291920",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291920",
+         "type":"release",
+         "id":1291920
+      },
+      {
+         "style":[
+            "Tribal",
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-27204-1208953781.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Echo",
+         "uri":"/Vibrasphere-Echo/release/27204",
+         "label":"Spiral Trax",
+         "catno":"SPITCD006",
+         "year":"2000",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/27204",
+         "type":"release",
+         "id":27204
+      },
+      {
+         "style":[
+            "Goa Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-140780-1166274480.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Echo",
+         "uri":"/Vibrasphere-Echo/release/140780",
+         "label":"Spiral Trax",
+         "catno":"SPITLP006",
+         "year":"2000",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/140780",
+         "type":"release",
+         "id":140780
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-649193-1313446691.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Landmark",
+         "uri":"/Vibrasphere-Landmark/release/649193",
+         "label":"Digital Structures",
+         "catno":"DIG030",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/649193",
+         "type":"release",
+         "id":649193
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Archipelago",
+         "uri":"/Vibrasphere-Archipelago/release/1291931",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291931",
+         "type":"release",
+         "id":1291931
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-655471-1178925464.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Archipelago",
+         "uri":"/Vibrasphere-Archipelago/release/655471",
+         "label":"Digital Structures",
+         "catno":"DIGCD018",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/655471",
+         "type":"release",
+         "id":655471
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-643258-1238291360.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Landmark",
+         "uri":"/Vibrasphere-Landmark/release/643258",
+         "label":"Digital Structures",
+         "catno":"DIGCDS005",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/643258",
+         "type":"release",
+         "id":643258
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Downtempo",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-964863-1239172040.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"Sweden",
+         "title":"Various - Vibrasphere Remix Collection",
+         "uri":"/Various-Vibrasphere-Remix-Collection/release/964863",
+         "label":"Cloud 99 Music",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/964863",
+         "type":"release",
+         "id":964863
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-162442-1104824567.jpg",
+         "title":"Vibrasphere - Lime Remixes",
+         "uri":"/Vibrasphere-Lime-Remixes/master/53772",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53772",
+         "type":"master",
+         "id":53772
+      },
+      {
+         "style":[
+            "Progressive House",
+            "Downtempo",
+            "Psy-Trance",
+            "Tech House",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1595810-1238290569.jpeg",
+         "format":[
+            "Memory Stick"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - Lungs Of Life",
+         "uri":"/Vibrasphere-Lungs-Of-Life/release/1595810",
+         "label":"Tribal Vision, Cloud 99 Music",
+         "catno":"TVRCS022none",
+         "year":"2008",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1595810",
+         "type":"release",
+         "id":1595810
+      },
+      {
+         "style":[
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-193569-1238165663.jpeg",
+         "title":"Vibrasphere - Stereo Gun",
+         "uri":"/Vibrasphere-Stereo-Gun/master/53748",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53748",
+         "type":"master",
+         "id":53748
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1555296-1246979109.jpeg",
+         "title":"Vibrasphere - Autumn Lights",
+         "uri":"/master/53807?text=Vibrasphere-Autumn-Lights",
+         "year":"2008",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53807",
+         "type":"master",
+         "id":53807
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Lime Remixes",
+         "uri":"/Vibrasphere-Lime-Remixes/release/3629658",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/3629658",
+         "type":"release",
+         "id":3629658
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Lime Remixes",
+         "uri":"/Vibrasphere-Lime-Remixes/release/1291809",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291809",
+         "type":"release",
+         "id":1291809
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Downtempo",
+            "Progressive Trance",
+            "Minimal"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1572241-1229355878.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - Lungs Of Life",
+         "uri":"/Vibrasphere-Lungs-Of-Life/release/1572241",
+         "label":"Tribal Vision, Cloud 99 Music",
+         "catno":"TVRCD022C99CD002",
+         "year":"2008",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1572241",
+         "type":"release",
+         "id":1572241
+      },
+      {
+         "style":[
+            "Psy-Trance"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - Floating Free",
+         "uri":"/Vibrasphere-Floating-Free/release/827238",
+         "label":"Tribal Vision",
+         "catno":"TVRDD028",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/827238",
+         "type":"release",
+         "id":827238
+      },
+      {
+         "style":[
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-987022-1181057501.jpeg",
+         "title":"Vibrasphere - Exploring The Tributaries",
+         "uri":"http://www.discogs.com/Vibrasphere-Exploring-The-Tributaries/master/53781",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53781",
+         "type":"master",
+         "id":53781
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-107404-1209024556.jpeg",
+         "title":"Vibrasphere - Lime Structure",
+         "uri":"/Vibrasphere-Lime-Structure/master/53740",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53740",
+         "type":"master",
+         "id":53740
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-162442-1104824567.jpg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Lime Remixes",
+         "uri":"/Vibrasphere-Lime-Remixes/release/162442",
+         "label":"Digital Structures",
+         "catno":"DIG024",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/162442",
+         "type":"release",
+         "id":162442
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1555296-1246979109.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"UK",
+         "title":"Vibrasphere - Autumn Lights",
+         "uri":"/Vibrasphere-Autumn-Lights/release/1555296",
+         "label":"Joof Recordings",
+         "catno":"JOOF044",
+         "year":"2008",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1555296",
+         "type":"release",
+         "id":1555296
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-91759-001.jpg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Airfield / Urban Grace",
+         "uri":"/Vibrasphere-Airfield-Urban-Grace/release/91759",
+         "label":"Acid Casualties",
+         "catno":"ACDC008",
+         "year":"2001",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/91759",
+         "type":"release",
+         "id":91759
+      },
+      {
+         "style":[
+            "Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-172640-1159470612.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Lime Structure",
+         "uri":"/Vibrasphere-Lime-Structure/release/172640",
+         "label":"Digital Structures",
+         "catno":"DIGLP010",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/172640",
+         "type":"release",
+         "id":172640
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Downtempo",
+            "Progressive Trance",
+            "Minimal"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1572241-1229355878.jpeg",
+         "title":"Vibrasphere - Lungs Of Life",
+         "uri":"http://www.discogs.com/Vibrasphere-Lungs-Of-Life/master/53789",
+         "year":"2008",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53789",
+         "type":"master",
+         "id":53789
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Archipelago Remixed",
+         "uri":"/Vibrasphere-Archipelago-Remixed/release/1291841",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291841",
+         "type":"release",
+         "id":1291841
+      },
+      {
+         "style":[
+            "Dub",
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-763581-1238999015.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Strictly 12\"",
+         "uri":"/Vibrasphere-Strictly-12/release/763581",
+         "label":"Cloud 99 Music",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/763581",
+         "type":"release",
+         "id":763581
+      },
+      {
+         "style":[
+            "Progressive House",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1002714-1184322939.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - In Control",
+         "uri":"/Vibrasphere-In-Control/release/1002714",
+         "label":"Tribal Vision, Cloud 99 Music",
+         "catno":"TVRDD049none",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1002714",
+         "type":"release",
+         "id":1002714
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1291929-1319212825.png",
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Lime Structure",
+         "uri":"/Vibrasphere-Lime-Structure/release/1291929",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291929",
+         "type":"release",
+         "id":1291929
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance",
+            "Tech House",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-937798-1209037371.jpeg",
+         "title":"Vibrasphere - Archipelago Remixed",
+         "uri":"/Vibrasphere-Archipelago-Remixed/master/53777",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53777",
+         "type":"master",
+         "id":53777
+      },
+      {
+         "style":[
+            "Goa Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-110539-1148678366.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"UK",
+         "title":"Vibrasphere - Nowhere / Autopilot",
+         "uri":"/Vibrasphere-Nowhere-Autopilot/release/110539",
+         "label":"Transient Records",
+         "catno":"TRA055",
+         "year":"1999",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/110539",
+         "type":"release",
+         "id":110539
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1352539-1342057570-2686.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"UK",
+         "title":"Vibrasphere - Autumn Lights",
+         "uri":"/Vibrasphere-Autumn-Lights/release/1352539",
+         "label":"Joof Recordings",
+         "catno":"JOOF044",
+         "year":"2008",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1352539",
+         "type":"release",
+         "id":1352539
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "House",
+            "Downtempo",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-967872-1184323017.jpeg",
+         "title":"Vibrasphere - Floating Free Remixes",
+         "uri":"/Vibrasphere-Floating-Free-Remixes/master/53795",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/53795",
+         "type":"master",
+         "id":53795
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-656620-1313204433.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Archipelago EP",
+         "uri":"/Vibrasphere-Archipelago-EP/release/656620",
+         "label":"Digital Structures",
+         "catno":"DIG031",
+         "year":"2006",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/656620",
+         "type":"release",
+         "id":656620
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-73418-1221848446.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"UK",
+         "title":"Vibrasphere - Ni\u00f1o Loco / Sendero",
+         "uri":"/Vibrasphere-Ni\u00f1o-Loco-Sendero/release/73418",
+         "label":"Dragonfly Records",
+         "catno":"BFLT80",
+         "year":"2002",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/73418",
+         "type":"release",
+         "id":73418
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-107404-1209024556.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Lime Structure",
+         "uri":"/Vibrasphere-Lime-Structure/release/107404",
+         "label":"Digital Structures",
+         "catno":"DIGCD010",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/107404",
+         "type":"release",
+         "id":107404
+      },
+      {
+         "style":[
+            "Progressive House",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1567064-1251399885.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - Erosion EP",
+         "uri":"/Vibrasphere-Erosion-EP/release/1567064",
+         "label":"Tribal Vision",
+         "catno":"TVRD037",
+         "year":"2008",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1567064",
+         "type":"release",
+         "id":1567064
+      },
+      {
+         "style":[
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-193569-1238165663.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Stereo Gun",
+         "uri":"/Vibrasphere-Stereo-Gun/release/193569",
+         "label":"Spiral Trax, Spiral Trax",
+         "catno":"spit031cdSPIT031CD",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/193569",
+         "type":"release",
+         "id":193569
+      },
+      {
+         "style":[
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-967617-1178805564.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - Floating Free EP",
+         "uri":"/Vibrasphere-Floating-Free-EP/release/967617",
+         "label":"Tribal Vision, Cloud 99 Music",
+         "catno":"TVR005C99M001",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/967617",
+         "type":"release",
+         "id":967617
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "House",
+            "Downtempo",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-967872-1184323017.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Floating Free Remixes",
+         "uri":"/Vibrasphere-Floating-Free-Remixes/release/967872",
+         "label":"Tribal Vision, Cloud 99 Music",
+         "catno":"TVRDD044none",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/967872",
+         "type":"release",
+         "id":967872
+      },
+      {
+         "style":[
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":null,
+         "format":[
+            "File"
+         ],
+         "country":"Germany",
+         "title":"Vibrasphere - Exploring The Tributaries",
+         "uri":"/Vibrasphere-Exploring-The-Tributaries/release/1291844",
+         "label":"MusicDock",
+         "catno":"none",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291844",
+         "type":"release",
+         "id":1291844
+      },
+      {
+         "style":[
+            "House",
+            "Electro",
+            "Downtempo",
+            "Progressive Trance",
+            "Psy-Trance"
+         ],
+         "thumb":null,
+         "format":[
+            "CDr"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Floating Free Remixes",
+         "uri":"/Vibrasphere-Floating-Free-Remixes/release/1291867",
+         "label":"Tribal Vision",
+         "catno":"TVRDIGI005",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1291867",
+         "type":"release",
+         "id":1291867
+      },
+      {
+         "style":[
+            "Downtempo",
+            "House",
+            "Electro",
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1571648-1280776975.jpeg",
+         "format":[
+            "File"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - Floating Free (Remixes)",
+         "uri":"/Vibrasphere-Floating-Free-Remixes/release/1571648",
+         "label":"Tribal Vision",
+         "catno":"TVRDIGI005",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/1571648",
+         "type":"release",
+         "id":1571648
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance",
+            "Tech House",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-937798-1209037371.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Archipelago Remixed",
+         "uri":"/Vibrasphere-Archipelago-Remixed/release/937798",
+         "label":"Digital Structures",
+         "catno":"DIGCD019",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/937798",
+         "type":"release",
+         "id":937798
+      },
+      {
+         "style":[
+            "Progressive Trance",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-987022-1181057501.jpeg",
+         "format":[
+            "CD"
+         ],
+         "country":"Czech Republic",
+         "title":"Vibrasphere - Exploring The Tributaries",
+         "uri":"/Vibrasphere-Exploring-The-Tributaries/release/987022",
+         "label":"Tribal Vision, Cloud 99 Music",
+         "catno":"TVRCD014C99CD001",
+         "year":"2007",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/987022",
+         "type":"release",
+         "id":987022
+      },
+      {
+         "style":[
+            "Psy-Trance",
+            "Progressive Trance"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-154104-1212265856.jpeg",
+         "format":[
+            "Vinyl"
+         ],
+         "country":"Sweden",
+         "title":"Vibrasphere - Stereo Gun / Mental Bearing",
+         "uri":"/Vibrasphere-Stereo-Gun-Mental-Bearing/release/154104",
+         "label":"Spiral Trax",
+         "catno":"spit031",
+         "year":"2003",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/releases/154104",
+         "type":"release",
+         "id":154104
+      },
+      {
+         "style":[
+            "Dub",
+            "Downtempo",
+            "Ambient"
+         ],
+         "thumb":"http://api.discogs.com/image/R-90-1655939-1234900310.jpeg",
+         "title":"Vibrasphere - Selected Downbeats Vol. 2",
+         "uri":"/Vibrasphere-Selected-Downbeats-Vol-2/master/306034",
+         "year":"2009",
+         "genre":[
+            "Electronic"
+         ],
+         "resource_url":"http://api.discogs.com/masters/306034",
+         "type":"master",
+         "id":306034
+      }
+   ]
+}

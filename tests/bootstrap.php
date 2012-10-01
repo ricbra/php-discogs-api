@@ -8,4 +8,8 @@
 * file that was distributed with this source code.
 */
 
+<<<<<<< HEAD
 require 'vendor/autoload.php';
+=======
+require 'vendor/autoload.php';
+>>>>>>> 0d86cfc8b6dfa301e173bc2f4c7995b25c055127

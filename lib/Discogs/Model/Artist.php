@@ -30,7 +30,7 @@ class Artist extends AbstractModel
 
     protected $dataQuality;
 
-    protected $namevariatons;
+    protected $namevariations;
 
     protected $aliases;
 
@@ -88,14 +88,14 @@ class Artist extends AbstractModel
         return $this->name;
     }
 
-    public function setNamevariatons($namevariatons)
+    public function setNamevariations($namevariatons)
     {
-        $this->namevariatons = $namevariatons;
+        $this->namevariations = $namevariatons;
     }
 
-    public function getNamevariatons()
+    public function getNamevariations()
     {
-        return $this->namevariatons;
+        return $this->namevariations;
     }
 
     public function setProfile($profile)

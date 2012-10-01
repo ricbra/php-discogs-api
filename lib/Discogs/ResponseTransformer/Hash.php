@@ -32,7 +32,7 @@ class Hash implements ResponseTransformerInterface
             $reflection = new \ReflectionObject($response);
 
             foreach ($reflection->getProperties() as $property) {
-                $result[$property->getName()] = $this->transform($property->getValue($property));
+                $result[$property->getName()] = $this->transform($response->{$property->getName()});
             }
         } else if (is_array($response)) {
             foreach ($response as $item) {

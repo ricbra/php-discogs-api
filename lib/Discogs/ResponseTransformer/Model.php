@@ -20,10 +20,15 @@ class Model implements ResponseTransformerInterface
      *
      * @param \stdClass $response
      * @param string    $path     Discogs API URN (e.g. '/database/search')
+     * @throws InvalidArgumentException
      * @return mixed
      */
     public function transform($response, $path = '')
     {
+        if (!is_object($response)) {
+            throw new InvalidArgumentException('$response expected to be object');
+        }
+
         $class              = $this->getClass($path);
         $reflection         = new \ReflectionObject($response);
         $instance           = new $class;
@@ -34,9 +39,12 @@ class Model implements ResponseTransformerInterface
                 $prop  = $property->getName();
                 $value = $response->$prop;
 
-                if (is_object($value) && class_exists($this->getClass($prop))) {
-                    $value = $this->transform($prop, $value);
-                }
+                try {
+                    if (is_object($value) && $this->getClass($prop)) {
+                        $value = $this->transform($value, $prop);
+                    }
+                } catch (InvalidArgumentException $e) {}
+
                 // This automatically converts images, releases, aliases
                 if (is_array($value)) {
                     $value = $this->transformArray($prop, $value);
@@ -61,13 +69,20 @@ class Model implements ResponseTransformerInterface
         $currentNode = $transformed;
 
         foreach (explode('/', $path) as $key) {
-            $methodName = 'get' . $this->getCamelCase($key);
-
-            if (!is_object($currentNode) || !method_exists($currentNode, $methodName)) {
-                throw new TransformException(sprintf('Node does not exist: %s', $path));
+            if (is_numeric($key)) {
+                if (isset($currentNode[$key])) {
+                    $currentNode = $currentNode[$key];
+                    continue;
+                }
             }
 
-            $currentNode = $currentNode->$methodName();
+            $methodName = 'get' . $this->getCamelCase($key);
+
+            if (is_object($currentNode) && method_exists($currentNode, $methodName)) {
+                $currentNode = $currentNode->$methodName();
+            } else {
+                throw new TransformException(sprintf('Node does not exist: %s', $path));
+            }
         }
 
         return $currentNode;
@@ -86,13 +101,16 @@ class Model implements ResponseTransformerInterface
         if (! $property = $this->getSingular($property)) {
             return $values;
         }
-        if (! class_exists($this->getClass($property))) {
+
+        try {
+            $this->getClass($property);
+        } catch (InvalidArgumentException $e) {
             return $values;
         }
 
         $return = array();
         foreach ($values as $value) {
-            $return[] = $this->transform($property, $value);
+            $return[] = $this->transform($value, $property);
         }
 
         return $return;
@@ -107,21 +125,32 @@ class Model implements ResponseTransformerInterface
      */
     protected function getClass($path)
     {
+        if (!is_string($path)) {
+            throw new InvalidArgumentException('$path expected to be string');
+        }
+
+        $path = preg_replace('#http://[^/]+#i', '', $path);
         $className = sprintf('Discogs\\Model\\%s', $this->getCamelCase($path));
 
         if (class_exists($className)) {
             return $className;
         }
 
-        if (preg_match('#^/database/search#', $path)) {
+        if (preg_match('#^/(database/search|artists/\d+/releases)#i', $path)) {
             $key = 'resultset';
-        } else if (preg_match('#^/(artists|releases|masters|labels)/#', $path, $matches)) {
+        } else if (preg_match('#^/(artists|releases|masters|labels)/#i', $path, $matches)) {
             $key = $this->getSingular($matches[1]);
         } else {
+            $key = '';
+        }
+
+        $className = sprintf('Discogs\\Model\\%s', $this->getCamelCase($key));
+
+        if (!class_exists($className)) {
             throw new InvalidArgumentException("Can't transform response for path {$path}");
         }
 
-        return sprintf('Discogs\\Model\\%s', $this->getCamelCase($key));
+        return $className;
     }
 
     /**
@@ -153,6 +182,8 @@ class Model implements ResponseTransformerInterface
             case 'results':
             case 'videos':
             case 'sublabels':
+            case 'masters':
+            case 'releases':
                 return substr($name, 0, strlen($name)-1);
             case 'aliases':
                 return substr($name, 0, strlen($name)-2);

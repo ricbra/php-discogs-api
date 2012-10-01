@@ -1,0 +1,100 @@
+{
+   "styles":[
+      "Techno",
+      "Minimal"
+   ],
+   "videos":[
+      {
+         "duration":451,
+         "description":"Swayzak -- Doobie",
+         "embed":true,
+         "uri":"http://www.youtube.com/watch?v=GkJqNcpJVwM",
+         "title":"Swayzak -- Doobie"
+      }
+   ],
+   "series":[
+
+   ],
+   "labels":[
+      {
+         "name":"Swayzak Recordings",
+         "entity_type":"1",
+         "catno":"SWZ006",
+         "resource_url":"http://api.discogs.com/labels/99",
+         "id":99,
+         "entity_type_name":"Label"
+      }
+   ],
+   "year":1999,
+   "artists":[
+      {
+         "join":"",
+         "name":"Swayzak",
+         "anv":"",
+         "tracks":"",
+         "role":"",
+         "resource_url":"http://api.discogs.com/artists/232",
+         "id":232
+      }
+   ],
+   "images":[
+      {
+         "uri":"http://api.discogs.com/image/R-146-1201305608.jpeg",
+         "height":600,
+         "width":594,
+         "resource_url":"http://api.discogs.com/image/R-146-1201305608.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/R-150-146-1201305608.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/R-146-1201305630.jpeg",
+         "height":595,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/R-146-1201305630.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/R-150-146-1201305630.jpeg"
+      }
+   ],
+   "id":146,
+   "genres":[
+      "Electronic"
+   ],
+   "thumb":"http://api.discogs.com/image/R-150-146-1201305608.jpeg",
+   "extraartists":[
+
+   ],
+   "title":"Doobie / Floyd",
+   "master_id":321965,
+   "tracklist":[
+      {
+         "duration":"",
+         "position":"A",
+         "title":"Doobie"
+      },
+      {
+         "duration":"",
+         "position":"B",
+         "title":"Floyd"
+      }
+   ],
+   "status":"Accepted",
+   "released_formatted":"1999",
+   "master_url":"http://api.discogs.com/masters/321965",
+   "released":"1999",
+   "country":"UK",
+   "companies":[
+
+   ],
+   "uri":"http://www.discogs.com/Swayzak-Doobie-Floyd/release/146",
+   "formats":[
+      {
+         "descriptions":[
+            "12\""
+         ],
+         "name":"Vinyl",
+         "qty":"1"
+      }
+   ],
+   "resource_url":"http://api.discogs.com/releases/146",
+   "data_quality":"Needs Vote"
+}

@@ -1,0 +1,1663 @@
+{
+   "styles":[
+      "Acid House",
+      "Techno",
+      "IDM",
+      "Electro",
+      "Downtempo",
+      "Experimental"
+   ],
+   "genres":[
+      "Electronic"
+   ],
+   "title":"A Bugged Out Mix",
+   "main_release":674304,
+   "main_release_url":"http://api.discogs.com/releases/674304",
+   "uri":"http://www.discogs.com/Miss-Kittin-A-Bugged-Out-Mix/master/896",
+   "artists":[
+      {
+         "join":"",
+         "name":"Miss Kittin",
+         "anv":"",
+         "tracks":"",
+         "role":"",
+         "resource_url":"http://api.discogs.com/artists/5593",
+         "id":5593
+      }
+   ],
+   "versions_url":"http://api.discogs.com/masters/896/versions",
+   "year":2006,
+   "images":[
+      {
+         "uri":"http://api.discogs.com/image/R-674304-1146266709.jpeg",
+         "height":455,
+         "width":455,
+         "resource_url":"http://api.discogs.com/image/R-674304-1146266709.jpeg",
+         "type":"primary",
+         "uri150":"http://api.discogs.com/image/R-150-674304-1146266709.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/R-674304-1157991497.jpeg",
+         "height":461,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/R-674304-1157991497.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/R-150-674304-1157991497.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/R-674304-1247822232.jpeg",
+         "height":600,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/R-674304-1247822232.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/R-150-674304-1247822232.jpeg"
+      },
+      {
+         "uri":"http://api.discogs.com/image/R-674304-1247822239.jpeg",
+         "height":600,
+         "width":600,
+         "resource_url":"http://api.discogs.com/image/R-674304-1247822239.jpeg",
+         "type":"secondary",
+         "uri150":"http://api.discogs.com/image/R-150-674304-1247822239.jpeg"
+      }
+   ],
+   "resource_url":"http://api.discogs.com/masters/896",
+   "tracklist":[
+      {
+         "duration":"",
+         "position":"",
+         "title":"A Bugged Out Mix - Perfect Night"
+      },
+      {
+         "duration":"0:45",
+         "position":"1-1",
+         "title":"Perfect (A Capella)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Concetta Kirschner",
+               "anv":"C. Kirschner",
+               "tracks":"",
+               "role":"Composed By",
+               "resource_url":"http://api.discogs.com/artists/233628",
+               "id":233628
+            },
+            {
+               "join":"",
+               "name":"Milo Berger",
+               "anv":"M. Berger",
+               "tracks":"",
+               "role":"Composed By",
+               "resource_url":"http://api.discogs.com/artists/186295",
+               "id":186295
+            },
+            {
+               "join":"",
+               "name":"DJ Mighty Mi",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/44397",
+               "id":44397
+            },
+            {
+               "join":"",
+               "name":"Concetta Kirschner",
+               "anv":"C. Kirschner",
+               "tracks":"",
+               "role":"Written-By, Vocals",
+               "resource_url":"http://api.discogs.com/artists/233628",
+               "id":233628
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Princess Superstar",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/70867",
+               "id":70867
+            }
+         ]
+      },
+      {
+         "duration":"3:40",
+         "position":"1-2",
+         "title":"Plastic People (K-1 Original Mix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Keith Tucker",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/8204",
+               "id":8204
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"DJ K-1",
+               "anv":"DJ K!",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/9095",
+               "id":9095
+            }
+         ]
+      },
+      {
+         "duration":"4:37",
+         "position":"1-3",
+         "title":"Ibiza",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Bernd Augustinski",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer, Mixed By, Arranged By",
+               "resource_url":"http://api.discogs.com/artists/142843",
+               "id":142843
+            },
+            {
+               "join":"",
+               "name":"Frank K\u00fcnne",
+               "anv":"Frank Kuenne",
+               "tracks":"",
+               "role":"Producer, Mixed By, Arranged By",
+               "resource_url":"http://api.discogs.com/artists/35993",
+               "id":35993
+            },
+            {
+               "join":"",
+               "name":"Tamara Huber",
+               "anv":"",
+               "tracks":"",
+               "role":"Voice [Words Spoken By]",
+               "resource_url":"http://api.discogs.com/artists/608433",
+               "id":608433
+            },
+            {
+               "join":"",
+               "name":"Bruno Van Garsse",
+               "anv":"B. Van Garsse",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/93016",
+               "id":93016
+            },
+            {
+               "join":"",
+               "name":"M. De San Antonio",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/113562",
+               "id":113562
+            },
+            {
+               "join":"",
+               "name":"Stephan Novak",
+               "anv":"S. Novak",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/523929",
+               "id":523929
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"El Loco",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/53110",
+               "id":53110
+            }
+         ]
+      },
+      {
+         "duration":"3:00",
+         "position":"1-4",
+         "title":"Percolator (Keep Movin Mix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Cajmere",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer, Remix",
+               "resource_url":"http://api.discogs.com/artists/2474",
+               "id":2474
+            },
+            {
+               "join":"",
+               "name":"Curtis Alan Jones",
+               "anv":"Curtis Jones",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/771348",
+               "id":771348
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Cajmere",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/2474",
+               "id":2474
+            }
+         ]
+      },
+      {
+         "duration":"4:07",
+         "position":"1-5",
+         "title":"151 (Terrace Mixx)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Terrace",
+               "anv":"",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/347",
+               "id":347
+            },
+            {
+               "join":"",
+               "name":"Armando",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/870",
+               "id":870
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Armando",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/870",
+               "id":870
+            }
+         ]
+      },
+      {
+         "duration":"3:52",
+         "position":"1-6",
+         "title":"Vakuum Audio",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Christopher Bleckmann",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/484457",
+               "id":484457
+            },
+            {
+               "join":"",
+               "name":"Hannes Wenner",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/449580",
+               "id":449580
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Misc.",
+               "anv":"Misc",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/15528",
+               "id":15528
+            }
+         ]
+      },
+      {
+         "duration":"4:17",
+         "position":"1-7",
+         "title":"Serpentine",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Carsten Klemann",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/535572",
+               "id":535572
+            },
+            {
+               "join":"",
+               "name":"Lee Jones",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/57216",
+               "id":57216
+            },
+            {
+               "join":"",
+               "name":"Nick H\u00f6ppner",
+               "anv":"Nicolas H\u00f6ppner",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/248236",
+               "id":248236
+            },
+            {
+               "join":"",
+               "name":"Nick H\u00f6ppner",
+               "anv":"Nicolas H\u00f6ppner",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/248236",
+               "id":248236
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"My My",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/274668",
+               "id":274668
+            }
+         ]
+      },
+      {
+         "duration":"3:22",
+         "position":"1-8",
+         "title":"Avon 1 (James Ruskin Remix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"James Ruskin",
+               "anv":"",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/1175",
+               "id":1175
+            },
+            {
+               "join":"",
+               "name":"Karl O'Connor",
+               "anv":"Karl OConnor",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/16931",
+               "id":16931
+            },
+            {
+               "join":"",
+               "name":"Peter Sutton",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/208682",
+               "id":208682
+            }
+         ],
+         "artists":[
+            {
+               "join":"vs.",
+               "name":"Female",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/727",
+               "id":727
+            },
+            {
+               "join":"",
+               "name":"Regis",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/1165",
+               "id":1165
+            }
+         ]
+      },
+      {
+         "duration":"4:35",
+         "position":"1-9",
+         "title":"A Walking Contradiction (Part 1)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Adam Beyer",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/1360",
+               "id":1360
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Adam Beyer",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/1360",
+               "id":1360
+            }
+         ]
+      },
+      {
+         "duration":"4:55",
+         "position":"1-10",
+         "title":"Freefall (The Hacker Remix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Fixmer / McCarthy",
+               "anv":"Fixmer/McCarthy",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/159433",
+               "id":159433
+            },
+            {
+               "join":"",
+               "name":"Hacker, The",
+               "anv":"",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/1737",
+               "id":1737
+            },
+            {
+               "join":"",
+               "name":"Douglas McCarthy",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/25406",
+               "id":25406
+            },
+            {
+               "join":"",
+               "name":"Terence Fixmer",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/3885",
+               "id":3885
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Fixmer / McCarthy",
+               "anv":"Fixmer/McCarthy",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/159433",
+               "id":159433
+            }
+         ]
+      },
+      {
+         "duration":"4:31",
+         "position":"1-11",
+         "title":"Base 6",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Chemical Brothers, The",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/2290",
+               "id":2290
+            },
+            {
+               "join":"",
+               "name":"Ed Simons",
+               "anv":"Simons",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/428784",
+               "id":428784
+            },
+            {
+               "join":"",
+               "name":"Tom Rowlands",
+               "anv":"Rowlands",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/88375",
+               "id":88375
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Chemical Brothers, The",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/2290",
+               "id":2290
+            }
+         ]
+      },
+      {
+         "duration":"4:13",
+         "position":"1-12",
+         "title":"Lost Vessel",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Drexciya",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/1172",
+               "id":1172
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Drexciya",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/1172",
+               "id":1172
+            }
+         ]
+      },
+      {
+         "duration":"3:41",
+         "position":"1-13",
+         "title":"13 (In 2 Parts)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Ian R. Clark",
+               "anv":"Ian Clarke",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/569036",
+               "id":569036
+            },
+            {
+               "join":"",
+               "name":"Ian R. Clark",
+               "anv":"Ian Clark",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/569036",
+               "id":569036
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Perspects",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/3721",
+               "id":3721
+            }
+         ]
+      },
+      {
+         "duration":"3:00",
+         "position":"1-14",
+         "title":"Seven Eleven",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"GE & GM",
+               "anv":"GE / GM",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/167870",
+               "id":167870
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"GE & GM",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/167870",
+               "id":167870
+            }
+         ]
+      },
+      {
+         "duration":"3:57",
+         "position":"1-15",
+         "title":"Hasir",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Gernot Bronsert",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/482088",
+               "id":482088
+            },
+            {
+               "join":"",
+               "name":"Sebastian Szary",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/482087",
+               "id":482087
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Modeselektor",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/34120",
+               "id":34120
+            }
+         ]
+      },
+      {
+         "duration":"4:10",
+         "position":"1-16",
+         "title":"Paroles",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Mike Ink",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/1420",
+               "id":1420
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Mike Ink",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/1420",
+               "id":1420
+            }
+         ]
+      },
+      {
+         "duration":"3:18",
+         "position":"1-17",
+         "title":"Don't Go (Kicks Like A Mule Mix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Kicks Like A Mule",
+               "anv":"",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/1879",
+               "id":1879
+            },
+            {
+               "join":"",
+               "name":"Pete Orme",
+               "anv":"P. Orme",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/582923",
+               "id":582923
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Awesome 3",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/36871",
+               "id":36871
+            }
+         ]
+      },
+      {
+         "duration":"3:43",
+         "position":"1-18",
+         "title":"Vanilla Monkey",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Milanese",
+               "anv":"Steve Milanese",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/182218",
+               "id":182218
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Milanese",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/182218",
+               "id":182218
+            }
+         ]
+      },
+      {
+         "duration":"1:46",
+         "position":"1-19",
+         "title":"First In, First Out",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Daniel B.",
+               "anv":"Bressanutti",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/43841",
+               "id":43841
+            },
+            {
+               "join":"",
+               "name":"Jean-Luc De Meyer",
+               "anv":"De Meyer",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/92674",
+               "id":92674
+            },
+            {
+               "join":"",
+               "name":"Patrick Codenys",
+               "anv":"Codenys",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/43842",
+               "id":43842
+            },
+            {
+               "join":"",
+               "name":"Richard 23",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/232851",
+               "id":232851
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Front 242",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/4655",
+               "id":4655
+            }
+         ]
+      },
+      {
+         "duration":"2:46",
+         "position":"1-20",
+         "title":"Destiny",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"DJ Maxximus",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/23727",
+               "id":23727
+            },
+            {
+               "join":"",
+               "name":"Something J",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/23726",
+               "id":23726
+            }
+         ],
+         "artists":[
+            {
+               "join":"&",
+               "name":"DJ Maxximus",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/23727",
+               "id":23727
+            },
+            {
+               "join":"",
+               "name":"Something J",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/23726",
+               "id":23726
+            }
+         ]
+      },
+      {
+         "duration":"1:22",
+         "position":"1-21",
+         "title":"My Red Hot Car",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Tom Jenkinson",
+               "anv":"Thomas Jenkinson",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/268",
+               "id":268
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Squarepusher",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/269",
+               "id":269
+            }
+         ]
+      },
+      {
+         "duration":"3:41",
+         "position":"1-22",
+         "title":"Perfect Girl",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Alexander Chesler",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/168851",
+               "id":168851
+            },
+            {
+               "join":"",
+               "name":"Matt Moran",
+               "anv":"Matthew Moran",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/376238",
+               "id":376238
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Acrosome",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/40086",
+               "id":40086
+            }
+         ]
+      },
+      {
+         "duration":"",
+         "position":"",
+         "title":"A Bugged In Mix - Perfect Day"
+      },
+      {
+         "duration":"0:43",
+         "position":"2-1",
+         "title":"Sting \u22603 (That's Good)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Si Begg",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/340",
+               "id":340
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Si Begg",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/340",
+               "id":340
+            }
+         ]
+      },
+      {
+         "duration":"4:05",
+         "position":"2-2",
+         "title":"Shadows",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Luke Vibert",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/253",
+               "id":253
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Wagon Christ",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/163",
+               "id":163
+            }
+         ]
+      },
+      {
+         "duration":"4:35",
+         "position":"2-3",
+         "title":"Invisible",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Monolake",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/534",
+               "id":534
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Monolake",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/534",
+               "id":534
+            }
+         ]
+      },
+      {
+         "duration":"5:02",
+         "position":"2-4",
+         "title":"Normal (Is It Normal? Club Mix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Baby Ford",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/5099",
+               "id":5099
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Baby Ford",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/5099",
+               "id":5099
+            }
+         ]
+      },
+      {
+         "duration":"5:51",
+         "position":"2-5",
+         "title":"Metal Slave",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Brando Lupi",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/226822",
+               "id":226822
+            },
+            {
+               "join":"",
+               "name":"Donato Scaramuzzi",
+               "anv":"D. Scaramuzzi",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/984791",
+               "id":984791
+            }
+         ],
+         "artists":[
+            {
+               "join":"&",
+               "name":"Donato Dozzy",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/202097",
+               "id":202097
+            },
+            {
+               "join":"",
+               "name":"Brando Lupi",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/226822",
+               "id":226822
+            }
+         ]
+      },
+      {
+         "duration":"2:57",
+         "position":"2-6",
+         "title":"Heart Failed (Two Lone Swordsmen Mix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Two Lone Swordsmen",
+               "anv":"",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/958",
+               "id":958
+            },
+            {
+               "join":"",
+               "name":"Bob Stanley",
+               "anv":"B. Stanley",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/438155",
+               "id":438155
+            },
+            {
+               "join":"",
+               "name":"Pete Wiggs",
+               "anv":"P. Wiggs",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/438192",
+               "id":438192
+            },
+            {
+               "join":"",
+               "name":"Sarah Cracknell",
+               "anv":"S. Cracknall",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/36147",
+               "id":36147
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Saint Etienne",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/2807",
+               "id":2807
+            }
+         ]
+      },
+      {
+         "duration":"2:03",
+         "position":"2-7",
+         "title":"Groove",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Jay Haze",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/71701",
+               "id":71701
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Jay Haze",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/71701",
+               "id":71701
+            }
+         ]
+      },
+      {
+         "duration":"4:13",
+         "position":"2-8",
+         "title":"Untitled A1",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Richard Devine",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/416",
+               "id":416
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Richard Devine",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/416",
+               "id":416
+            }
+         ]
+      },
+      {
+         "duration":"2:36",
+         "position":"2-9",
+         "title":"Aluminum Rectangles",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Adam Equation",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/500017",
+               "id":500017
+            },
+            {
+               "join":"",
+               "name":"Ian Cinch-Jones",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/862238",
+               "id":862238
+            },
+            {
+               "join":"",
+               "name":"Jack Vulpine",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/108225",
+               "id":108225
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Le Car",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/13197",
+               "id":13197
+            }
+         ]
+      },
+      {
+         "duration":"5:45",
+         "position":"2-10",
+         "title":"Falling Free (Aphex Twin Mix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Aphex Twin",
+               "anv":"",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/45",
+               "id":45
+            },
+            {
+               "join":"",
+               "name":"Dean Garcia",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/128624",
+               "id":128624
+            },
+            {
+               "join":"",
+               "name":"Toni Halliday",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/40584",
+               "id":40584
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Curve",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/5373",
+               "id":5373
+            }
+         ]
+      },
+      {
+         "duration":"4:09",
+         "position":"2-11",
+         "title":"The Knowledge",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Damien Russell",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/608435",
+               "id":608435
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Toasty",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/242531",
+               "id":242531
+            }
+         ]
+      },
+      {
+         "duration":"3:18",
+         "position":"2-12",
+         "title":"Rank",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Arthur Smith",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/237437",
+               "id":237437
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Artwork",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/66107",
+               "id":66107
+            }
+         ]
+      },
+      {
+         "duration":"3:42",
+         "position":"2-13",
+         "title":"Another Level",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"MC Soom-T",
+               "anv":"",
+               "tracks":"",
+               "role":"Featuring",
+               "resource_url":"http://api.discogs.com/artists/142045",
+               "id":142045
+            },
+            {
+               "join":"",
+               "name":"Daniel Meteo",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/216504",
+               "id":216504
+            },
+            {
+               "join":"",
+               "name":"Tobias Hett",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/68801",
+               "id":68801
+            },
+            {
+               "join":"",
+               "name":"Daniel Meteo",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/216504",
+               "id":216504
+            },
+            {
+               "join":"",
+               "name":"Sumati Bhardwaj",
+               "anv":"Sumartie Bhardwaj",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/216505",
+               "id":216505
+            },
+            {
+               "join":"",
+               "name":"Tobias Hett",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/68801",
+               "id":68801
+            }
+         ],
+         "artists":[
+            {
+               "join":"Featuring",
+               "name":"Alb",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/129558",
+               "id":129558
+            },
+            {
+               "join":"",
+               "name":"MC Soom-T",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/142045",
+               "id":142045
+            }
+         ]
+      },
+      {
+         "duration":"3:21",
+         "position":"2-14",
+         "title":"08:00",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Richie Hawtin",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/835",
+               "id":835
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Concept 1",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/14531",
+               "id":14531
+            }
+         ]
+      },
+      {
+         "duration":"2:48",
+         "position":"2-15",
+         "title":"Transfer Please, Perfect Wednesday",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Sixtoo",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/43174",
+               "id":43174
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Sixtoo",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/43174",
+               "id":43174
+            }
+         ]
+      },
+      {
+         "duration":"3:28",
+         "position":"2-16",
+         "title":"Easy Lee (Cassy Lee Mix)",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Cassy",
+               "anv":"Cathrin Britton",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/47174",
+               "id":47174
+            },
+            {
+               "join":"",
+               "name":"Tobias Freund",
+               "anv":"",
+               "tracks":"",
+               "role":"Remix",
+               "resource_url":"http://api.discogs.com/artists/207302",
+               "id":207302
+            },
+            {
+               "join":"",
+               "name":"Ricardo Villalobos",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/3057",
+               "id":3057
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Ricardo Villalobos",
+               "anv":"Villalobos",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/3057",
+               "id":3057
+            }
+         ]
+      },
+      {
+         "duration":"4:02",
+         "position":"2-17",
+         "title":"Inside Your Heaven",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Hanno Leichtmann",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/292406",
+               "id":292406
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Static (7)",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/56925",
+               "id":56925
+            }
+         ]
+      },
+      {
+         "duration":"4:53",
+         "position":"2-18",
+         "title":"Le Grand D\u00f4me",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Geir Jenssen",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/25441",
+               "id":25441
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Biosphere",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/3956",
+               "id":3956
+            }
+         ]
+      },
+      {
+         "duration":"5:39",
+         "position":"2-19",
+         "title":"Kalea Morning",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Twine",
+               "anv":"",
+               "tracks":"",
+               "role":"Producer",
+               "resource_url":"http://api.discogs.com/artists/6640",
+               "id":6640
+            },
+            {
+               "join":"",
+               "name":"Chad Mossholder",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/809303",
+               "id":809303
+            },
+            {
+               "join":"",
+               "name":"Greg Malcolm",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By",
+               "resource_url":"http://api.discogs.com/artists/197634",
+               "id":197634
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Twine",
+               "anv":"",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/6640",
+               "id":6640
+            }
+         ]
+      },
+      {
+         "duration":"1:13",
+         "position":"2-20",
+         "title":"Medulla Oblongata",
+         "extraartists":[
+            {
+               "join":"",
+               "name":"Liquid Chris H",
+               "anv":"",
+               "tracks":"",
+               "role":"Written-By, Producer",
+               "resource_url":"http://api.discogs.com/artists/608434",
+               "id":608434
+            }
+         ],
+         "artists":[
+            {
+               "join":"",
+               "name":"Christ.",
+               "anv":"Christ",
+               "tracks":"",
+               "role":"",
+               "resource_url":"http://api.discogs.com/artists/31633",
+               "id":31633
+            }
+         ]
+      }
+   ],
+   "id":896,
+   "data_quality":"Correct"
+}
