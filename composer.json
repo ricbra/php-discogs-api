@@ -5,7 +5,7 @@
     "keywords": ["discogs", "api"],
     "license": "MIT",
     "require": {
-        "kriswallsmith/buzz": "v0.5",
+        "kriswallsmith/buzz": ">=0.5",
         "php": ">=5.3.0"
     },
     "authors": [
