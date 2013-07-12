@@ -77,7 +77,7 @@ class Service
     public function search(array $options = array())
     {
         $legal = array(
-            'q', 'artist', 'release_title', 'label', 'title', 'catno', 'barcode', 'year', 'type'
+            'q', 'type', 'title', 'release_title', 'credit', 'artist', 'anv', 'label', 'genre', 'style', 'country', 'year', 'format', 'catno', 'barcode', 'track', 'submitter', 'contributor'
         );
         $params = array();
         foreach ($options as $key => $value) {
