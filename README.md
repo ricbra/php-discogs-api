@@ -108,3 +108,6 @@ You can also set your own response transformer which need to implement the `Resp
 
 ## Documentation
 Further documentation can be found at the [Discogs API v2.0 Documentation](http://www.discogs.com/developers/index.html).
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ricbra/php-discogs-api/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
