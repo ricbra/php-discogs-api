@@ -140,6 +140,8 @@ class Model implements ResponseTransformerInterface
             $key = 'resultset';
         } else if (preg_match('#^/(artists|releases|masters|labels)/#i', $path, $matches)) {
             $key = $this->getSingular($matches[1]);
+        } else if (preg_match('#^/users/[\d\w_-]+/inventory#i', $path, $matches)) {
+            $key = 'inventory';
         } else {
             $key = '';
         }
