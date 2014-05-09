@@ -169,6 +169,17 @@ class Service
     {
         return $this->call(sprintf('/labels/%d', $labelId));
     }
+    /**
+     * Implements API users inventory method
+     *
+     * @param string $discogsUsername
+     * @return mixed
+     * @throws NoResultException
+     */
+    public function getInventory($discogsUsername)
+    {
+        return $this->call(sprintf('/users/%s/inventory', $discogsUsername));
+    }
 
     /**
      * @param CacherInterface $cacher
