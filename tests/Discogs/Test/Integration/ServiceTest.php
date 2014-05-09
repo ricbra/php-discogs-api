@@ -87,6 +87,14 @@ class ServiceTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($response->getId(), 1);
     }
 
+    public function testInventory(){
+        $response = $this->service->getInventory('buyreggae');
+        $this->assertInstanceOf('Discogs\Model\Pagination', $response->getPagination());
+        $this->assertTrue(is_array($response->getListings()));
+        $this->assertGreaterThan(0, $response->count());
+        $this->assertInstanceOf('ArrayIterator', $response->getIterator());
+    }
+
     public function testNext()
     {
         $response = $this->service->search(array('q' => 'vibrasphere'));
