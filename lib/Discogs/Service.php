@@ -147,6 +147,17 @@ class Service
     }
 
     /**
+     * Returns releases of the particular label
+     *
+     * @param int $labelId
+     * @return Model\Resultset
+     */
+    public function getReleasesByLabelId($labelId)
+    {
+        return $this->call(sprintf('/labels/%d/releases', $labelId));
+    }
+
+    /**
      * Implements API masters method
      *
      * @param $masterId

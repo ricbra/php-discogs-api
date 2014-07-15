@@ -136,7 +136,7 @@ class Model implements ResponseTransformerInterface
             return $className;
         }
 
-        if (preg_match('#^/(database/search|artists/\d+/releases)#i', $path)) {
+        if (preg_match('#^/(database/search|(artists|labels)/\d+/releases)#i', $path)) {
             $key = 'resultset';
         } else if (preg_match('#^/(artists|releases|masters|labels)/#i', $path, $matches)) {
             $key = $this->getSingular($matches[1]);
