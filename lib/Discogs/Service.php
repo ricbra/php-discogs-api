@@ -264,14 +264,14 @@ class Service
             $rawData = $this->client->convertResponse($json);
         } else {
             if ($this->isEnableThrottle) {
-                $timestamp = round(microtime(true) * 1000);
+                $timestamp = floor(microtime(true) * 1000);
                 $wait = static::$lastApiRequest + 1000000 - $timestamp;
 
                 if ($wait > 0) {
                     usleep($wait);
                 }
 
-                static::$lastApiRequest = round(microtime(true) * 1000);
+                static::$lastApiRequest = ceil(microtime(true) * 1000);
             }
 
             $rawData = $this->client->call($path, $parameters);
