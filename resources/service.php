@@ -154,6 +154,18 @@ return [
                 ]
             ]
         ],
+        'getMaster' => [
+            'httpMethod' => 'GET',
+            'uri' => 'masters/{id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
     ],
     'models' => [
         'GetResponse' => [
