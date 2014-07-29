@@ -188,6 +188,18 @@ return [
                 ]
             ]
         ],
+        'getLabel' => [
+            'httpMethod' => 'GET',
+            'uri' => 'labels/{id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
     ],
     'models' => [
         'GetResponse' => [

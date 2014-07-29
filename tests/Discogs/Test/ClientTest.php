@@ -115,6 +115,21 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
+    public function testGetLabel()
+    {
+        $history = new History();
+        $client = $this->createClient('get_label', $history);
+        $response = $client->getLabel([
+            'id' => 1
+        ]);
+        $this->assertArrayHasKey('releases_url', $response);
+        $this->assertSame('http://api.discogs.com/labels/1/releases', $response['releases_url']);
+        $this->assertArrayHasKey('sublabels', $response);
+        $this->assertCount(6, $response['sublabels']);
+        $this->assertSame('http://api.discogs.com/labels/1', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
+
     protected function createClient($mock, History $history)
     {
         $path = sprintf('%s/../../fixtures/%s', __DIR__, $mock);
