@@ -200,6 +200,28 @@ return [
                 ]
             ]
         ],
+        'getLabelReleases' => [
+            'httpMethod' => 'GET',
+            'uri' => 'labels/{id}/releases',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'per_page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ]
+            ]
+        ],
     ],
     'models' => [
         'GetResponse' => [
