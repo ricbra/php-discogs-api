@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Reproxy-Status: yes
+Access-Control-Allow-Origin: *
+Cache-Control: public, must-revalidate
+Content-Type: application/json
+Link: <http://api.discogs.com/masters/33687/versions?per_page=4&page=3>; rel="next", <http://api.discogs.com/masters/33687/versions?per_page=4&page=1>; rel="prev", <http://api.discogs.com/masters/33687/versions?per_page=4&page=3>; rel="last", <http://api.discogs.com/masters/33687/versions?per_page=4&page=1>; rel="first"
+Server: lighttpd
+Content-Length: 1584
+Date: Tue, 29 Jul 2014 19:47:44 GMT
+X-Varnish: 1931290184
+Age: 0
+Via: 1.1 varnish
+Connection: close
+
+{"pagination": {"per_page": 4, "items": 9, "page": 2, "urls": {"next": "http://api.discogs.com/masters/33687/versions?per_page=4&page=3", "prev": "http://api.discogs.com/masters/33687/versions?per_page=4&page=1", "last": "http://api.discogs.com/masters/33687/versions?per_page=4&page=3", "first": "http://api.discogs.com/masters/33687/versions?per_page=4&page=1"}, "pages": 3}, "versions": [{"status": "Accepted", "thumb": "http://api.discogs.com/image/R-150-1418157-1218011131.jpeg", "title": "O Fortuna", "country": "Belgium", "format": "Cass, Single", "label": "Indisc", "released": "1991", "catno": "300170-4", "resource_url": "http://api.discogs.com/releases/1418157", "id": 1418157}, {"status": "Accepted", "thumb": "http://api.discogs.com/image/R-150-179412-1291392874.jpeg", "title": "O Fortuna", "country": "Germany", "format": "12\"", "label": "ZYX Records", "released": "1992", "catno": "ZYX 6743-12", "resource_url": "http://api.discogs.com/releases/179412", "id": 179412}, {"status": "Accepted", "thumb": "http://api.discogs.com/image/R-150-84503-1205531119.jpeg", "title": "O Fortuna", "country": "Belgium", "format": "7\", Single", "label": "Indisc", "released": "1991", "catno": "DIS 8319", "resource_url": "http://api.discogs.com/releases/84503", "id": 84503}, {"status": "Accepted", "thumb": "http://api.discogs.com/image/R-150-307198-1195545301.jpeg", "title": "O Fortuna", "country": "US", "format": "CD, Single, Car", "label": "Radikal Records", "released": "1992", "catno": "CDS 12299-2", "resource_url": "http://api.discogs.com/releases/307198", "id": 307198}]}

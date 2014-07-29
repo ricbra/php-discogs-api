@@ -98,6 +98,23 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
+    public function testGetMasterVersions()
+    {
+        $history = new History();
+        $client = $this->createClient('get_master_versions', $history);
+
+        $response = $client->getMasterVersions([
+            'id' => 33687,
+            'per_page' => 4,
+            'page' => 2
+        ]);
+        $this->assertArrayHasKey('pagination', $response);
+        $this->assertArrayHasKey('versions', $response);
+        $this->assertCount(4, $response['versions']);
+        $this->assertSame('http://api.discogs.com/masters/33687/versions?per_page=4&page=2', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
+
     protected function createClient($mock, History $history)
     {
         $path = sprintf('%s/../../fixtures/%s', __DIR__, $mock);

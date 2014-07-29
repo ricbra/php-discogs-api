@@ -166,6 +166,28 @@ return [
                 ]
             ]
         ],
+        'getMasterVersions' => [
+            'httpMethod' => 'GET',
+            'uri' => 'masters/{id}/versions',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'per_page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ]
+            ]
+        ],
     ],
     'models' => [
         'GetResponse' => [
