@@ -30,6 +30,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(9, $response['images']);
 
         $this->assertSame('http://api.discogs.com/artists/45', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
     public function testGetArtistReleases()
@@ -47,6 +48,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('per_page', $response['pagination']);
 
         $this->assertSame('http://api.discogs.com/artists/45/releases?per_page=50&page=1', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
     public function testSearch()
@@ -63,6 +65,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('per_page', $response['pagination']);
         $this->assertSame('http://api.discogs.com/database/search?q=prodigy&type=release&title=1', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
     public function testGetRelease()
@@ -77,6 +80,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('videos', $response);
         $this->assertCount(6, $response['videos']);
         $this->assertSame('http://api.discogs.com/releases/1', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
     protected function createClient($mock, History $history)
