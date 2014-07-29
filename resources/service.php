@@ -141,7 +141,19 @@ return [
                     'required' => false
                 ]
             ]
-        ]
+        ],
+        'getRelease' => [
+            'httpMethod' => 'GET',
+            'uri' => 'releases/{id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
     ],
     'models' => [
         'GetResponse' => [
