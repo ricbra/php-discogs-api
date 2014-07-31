@@ -222,6 +222,11 @@ return [
                 ]
             ]
         ],
+        'getOAuthIdentity' => [
+            'httpMethod' => 'GET',
+            'uri' => 'oauth/identity',
+            'responseModel' => 'GetResponse',
+        ]
     ],
     'models' => [
         'GetResponse' => [

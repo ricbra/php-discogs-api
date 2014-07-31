@@ -147,6 +147,17 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
+    public function testGetOAuthIdentity()
+    {
+        $history = new History();
+        $client = $this->createClient('get_oauth_identity', $history);
+        $response = $client->getOAuthIdentity();
+
+        $this->assertSame($response['username'], 'R-Search');
+        $this->assertSame($response['resource_url'], 'http://api.discogs.com/users/R-Search');
+        $this->assertSame($response['consumer_name'], 'RicbraDiscogsBundle');
+    }
+
     protected function createClient($mock, History $history)
     {
         $path = sprintf('%s/../../fixtures/%s', __DIR__, $mock);

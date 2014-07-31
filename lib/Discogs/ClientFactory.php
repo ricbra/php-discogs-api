@@ -21,9 +21,9 @@ class ClientFactory
         $defaultConfig = [
             'defaults' => [
                 'headers' => ['User-Agent' => 'php-discogs-api'],
-            ]
+                'auth' => 'oauth'
+            ],
         ];
-
         $client = new Client(array_merge($defaultConfig, $config));
         $service = include __DIR__ . '/../../resources/service.php';
         $description = new Description($service);
