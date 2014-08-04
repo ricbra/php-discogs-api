@@ -156,6 +156,23 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($response['username'], 'R-Search');
         $this->assertSame($response['resource_url'], 'http://api.discogs.com/users/R-Search');
         $this->assertSame($response['consumer_name'], 'RicbraDiscogsBundle');
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
+
+    public function testGetInventory()
+    {
+        $client = $this->createClient('get_inventory', $history = new History());
+        $response = $client->getInventory([
+            'username'      => '360vinyl',
+            'sort'          => 'price',
+            'sort_order'    => 'asc'
+        ]);
+
+        $this->assertArrayHasKey('pagination', $response);
+        $this->assertArrayHasKey('listings', $response);
+        $this->assertCount(50, $response['listings']);
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('http://api.discogs.com/users/360vinyl/inventory?sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
     }
 
     protected function createClient($mock, History $history)

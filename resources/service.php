@@ -226,6 +226,43 @@ return [
             'httpMethod' => 'GET',
             'uri' => 'oauth/identity',
             'responseModel' => 'GetResponse',
+        ],
+        'getInventory' => [
+            'httpMethod' => 'GET',
+            'uri' => 'users/{username}/inventory',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'status' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false,
+                ],
+                'sort' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false,
+                ],
+                'sort_order' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false,
+                ],
+                'per_page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ]
+            ]
         ]
     ],
     'models' => [
