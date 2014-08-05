@@ -32,6 +32,18 @@ Creating a new instance is as simple as:
 $client = Discogs\ClientFactory::factory([]);
 ```
 
+### User-Agent
+Discogs requires that you supply a User-Agent. You can do this easily:
+
+```php
+<?php
+$client = Discogs\ClientFactory::factory([
+    'defaults' => [
+        'headers' => ['User-Agent' => 'your-app-name/0.1 +https://www.awesomesite.com'],
+    ]
+]);
+```
+
 ### OAuth
 There a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts.
 
