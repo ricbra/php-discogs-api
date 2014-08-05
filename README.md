@@ -1,53 +1,100 @@
 ## Discogs Api
 
 [![Build Status](https://secure.travis-ci.org/ricbra/php-discogs-api.png)](http://travis-ci.org/ricbra/php-discogs-api)
+[![Latest Stable Version](https://poser.pugx.org/ricbra/php-discogs-api/v/stable.svg)](https://packagist.org/packages/ricbra/php-discogs-api)
+[![Total Downloads](https://poser.pugx.org/ricbra/php-discogs-api/downloads.png)](https://packagist.org/packages/ricbra/php-discogs-api)
+[![License](https://poser.pugx.org/ricbra/php-discogs-api/license.png)](https://packagist.org/packages/ricbra/php-discogs-api)
+[![Quality](https://scrutinizer-ci.com/g/ricbra/php-discogs-api/badges/quality-score.png)](https://scrutinizer-ci.com/g/ricbra/php-discogs-api/)
 
-This library is an PHP 5.3 implementation of the [Discogs API v2.0.](http://www.discogs.com/developers/index.html)
+This library is a PHP 5.4 implementation of the [Discogs API v2.0.](http://www.discogs.com/developers/index.html)
 The Discogs API is a REST-based interface. By using this library you don't have to worry about communicating with the
 API: all the hard work has already be done.
+
+This API is build upon the shoulders of a giant: [Guzzle 4.0](http://guzzle.readthedocs.org/en/latest/). This is an absolutely awesome library.
 
 ## License
 This library is released under the MIT license. See the complete license in the LICENSE file.
 
 ## Installation
-Start by [installing composer](http://getcomposer.org/doc/01-basic-usage.md#installation) and finally
-[install the dependencies](http://getcomposer.org/doc/01-basic-usage.md#installing-dependencies).
+Start by [installing composer](http://getcomposer.org/doc/01-basic-usage.md#installation).
+Next do:
+
+    $ composer require ricbra/php-discogs-api ~1.0.0
 
 ## Requirements
-PHP >=5.3.0
+PHP >=5.4.0
 
 ## Usage
 Creating a new instance is as simple as:
 
 ```php
 <?php
-$service = new \Discogs\Service();
+$client = Discogs\ClientFactory::factory([]);
 ```
 
-### Perform a search:
+### OAuth
+There a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts.
 
 ```php
 <?php
 
-$resultset = $service->search(array(
-    'q'     => 'Meagashira',
-    'label' => 'Enzyme'
-));
+$client = Discogs\ClientFactory::factory([]);
+$oauth = new GuzzleHttp\Subscriber\Oauth\Oauth1([
+    'consumer_key'    => $consumerKey, // from Discogs developer page
+    'consumer_secret' => $consumerSecret, // from Discogs developer page
+    'token'           => $token['oauth_token'], // get this using a OAuth library
+    'token_secret'    => $token['oauth_token_secret'] // get this using a OAuth library
+]);
+$client->getHttpClient()->getEmitter()->attach($oauth);
 
-// Total results
-echo count($resultset)."\n";
-// Total pages
-$pagination = $resultset->getPagination();
-echo count($pagination)."\n";
+$response = $client->search([
+    'q' => 'searchstring'
+]);
+```
 
-// Fetch all results (use on your own risk, only one request per second allowed)
-do {
-    $pagination = $resultset->getPagination();
-    echo $pagination->getPage().'<br />';
-    foreach ($resultset as $result) {
-        echo get_class($result).'<br />';
-    }
-} while($resultset = $service->next($resultset));
+### History
+Another cool plugin is the History plugin:
+
+```php
+<?php
+
+$client = Discogs\ClientFactory::factory([]);
+$history = new GuzzleHttp\Subscriber\History();
+$client->getHttpClient()->getEmitter()->attach($history);
+
+$response = $client->search([
+    'q' => 'searchstring'
+]);
+
+foreach ($history as $row) {
+    print (string) $row['request'];
+    print (string) $row['response'];
+}
+
+```
+
+### More info and plugins
+For more information about Guzzle and its plugins checkout [the docs.](http://guzzle.readthedocs.org/en/latest/)
+
+### Perform a search:
+Per august 2014 an signed OAuth request is required for this endpoint.
+
+```php
+<?php
+
+$response = $client->search([
+    'q' => 'Meagashira'
+]);
+// Loop through results
+foreach ($response['results'] as $result) {
+    var_dump($result['title']);
+}
+// Pagination data
+var_dump($response['pagination']);
+
+// Dump all data
+var_dump($response->toArray());
+
 ```
 
 ### Get information about a label:
@@ -55,9 +102,10 @@ do {
 ```php
 <?php
 
-$label = $service->getLabel(1);
+$label = $service->getLabel([
+    'id' => 1
+]);
 
-echo $label->getName()."\n";
 ```
 
 ### Get information about an artist:
@@ -65,9 +113,10 @@ echo $label->getName()."\n";
 ```php
 <?php
 
-$artist = $service->getArtist(1);
+$artist = $service->getArtist([
+    'id' => 1
+]);
 
-echo $artist->getName()."\n";
 ```
 
 ### Get information about a release:
@@ -75,9 +124,11 @@ echo $artist->getName()."\n";
 ```php
 <?php
 
-$release = $service->getRelease(1);
+$release = $service->getRelease([
+    'id' => 1
+]);
 
-echo $release->getTitle()."\n";
+echo $release['title']."\n";
 ```
 
 ### Get information about a master release:
@@ -85,29 +136,19 @@ echo $release->getTitle()."\n";
 ```php
 <?php
 
-$master  = $service->getMaster(1);
+$master  = $service->getMaster([
+    'id' => 1
+]);
 
-echo $master->getTitle()."\n";
+echo $master['title']."\n";
 ```
-
-### Response transformation
-
-You have two options in which form to receive formatted response: as object using supplied models, or as plain array.
-By default (if nothing has been set via setter) Model response transformer is chosen. You can manipulate it via
-the `setResponseTransfomer` setter:
-
-``` php
-$discogs->setResponseTransformer(new \Discogs\ResponseTransformer\Model());
-// or
-$discogs->setResponseTransformer(new \Discogs\ResponseTransformer\Hash());
-```
-
-You can also set your own response transformer which need to implement the `ResponseTransformerInterface`
-
-**NOTE** At this moment only the "Database" resource has been implemented. The "Marketplace" and "User" are missing.
 
 ## Documentation
 Further documentation can be found at the [Discogs API v2.0 Documentation](http://www.discogs.com/developers/index.html).
+
+## Contributing
+Implemented a missing call? PR's are welcome! 
+
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/ricbra/php-discogs-api/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Reproxy-Status: yes
+Access-Control-Allow-Origin: *
+Cache-Control: public, must-revalidate
+Content-Type: application/json
+Server: lighttpd
+Content-Length: 135
+Date: Thu, 31 Jul 2014 20:14:35 GMT
+X-Varnish: 1965254583
+Age: 0
+Via: 1.1 varnish
+Connection: keep-alive
+
+{"username": "R-Search", "resource_url": "http://api.discogs.com/users/R-Search", "consumer_name": "RicbraDiscogsBundle", "id": 557870}

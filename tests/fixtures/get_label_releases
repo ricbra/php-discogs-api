@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Reproxy-Status: yes
+Access-Control-Allow-Origin: *
+Cache-Control: public, must-revalidate
+Content-Type: application/json
+Link: <http://api.discogs.com/labels/1/releases?per_page=2&page=169>; rel="last", <http://api.discogs.com/labels/1/releases?per_page=2&page=2>; rel="next"
+Server: lighttpd
+Content-Length: 758
+Date: Tue, 29 Jul 2014 19:58:12 GMT
+X-Varnish: 1931448274
+Age: 0
+Via: 1.1 varnish
+Connection: close
+
+{"pagination": {"per_page": 2, "items": 338, "page": 1, "urls": {"last": "http://api.discogs.com/labels/1/releases?per_page=2&page=169", "next": "http://api.discogs.com/labels/1/releases?per_page=2&page=2"}, "pages": 169}, "releases": [{"status": "Accepted", "thumb": "http://api.discogs.com/image/R-150-2801-1335473692.jpeg", "format": "CD, Mixed", "title": "DJ-Kicks", "catno": "!K7071CD", "resource_url": "http://api.discogs.com/releases/2801", "artist": "Andrea Parker", "id": 2801}, {"status": "Accepted", "thumb": "http://api.discogs.com/image/R-150-9922-1220186706.jpeg", "format": "CD, Album, P/Mixed", "title": "Programmed", "catno": "546 137-2", "resource_url": "http://api.discogs.com/releases/9922", "artist": "Innerzone Orchestra", "id": 9922}]}
