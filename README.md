@@ -44,6 +44,18 @@ $client = Discogs\ClientFactory::factory([
 ]);
 ```
 
+### Throttling
+Discogs doesn't like it when you hit their API at a too high connection rate. Use the <code>ThrottleSubscriber</code> to
+prevent getting errors or banned:
+
+```php
+<?php
+
+$client = Discogs\ClientFactory::factory();
+$client->getHttpClient()->getEmitter()->attach(new Discogs\Subscriber\ThrottleSubscriber());
+
+```
+
 ### OAuth
 There a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts.
 

@@ -29,4 +29,4 @@ class ClientFactoryTest extends \PHPUnit_Framework_TestCase
         $default = ['User-Agent' => 'test'];
         $this->assertSame($default, $client->getHttpClient()->getDefaultOption('headers'));
     }
-} 
+}
