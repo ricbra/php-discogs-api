@@ -59,12 +59,12 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $response = $client->search([
             'q' => 'prodigy',
             'type' => 'release',
-            'title' => true
+            'title' => 'the fat of the land'
         ]);
         $this->assertCount(50, $response['results']);
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('per_page', $response['pagination']);
-        $this->assertSame('http://api.discogs.com/database/search?q=prodigy&type=release&title=1', $history->getLastRequest()->getUrl());
+        $this->assertSame('http://api.discogs.com/database/search?q=prodigy&type=release&title=the%20fat%20of%20the%20land', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 

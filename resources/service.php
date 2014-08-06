@@ -61,82 +61,82 @@ return [
                     'required' => false
                 ],
                 'title' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'release_title' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'credit' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'artist' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'anv' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'label' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'genre' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'style' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'country' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'year' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'format' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'catno' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'barcode' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'track' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'submitter' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
                 'contributor' => [
-                    'type' => 'boolean',
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ]
