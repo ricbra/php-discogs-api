@@ -59,7 +59,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $response = $client->search([
             'q' => 'prodigy',
             'type' => 'release',
-            'title' => true
+            'title' => 'the fat of the land'
         ]);
         $this->assertCount(50, $response['results']);
         $this->assertArrayHasKey('pagination', $response);
