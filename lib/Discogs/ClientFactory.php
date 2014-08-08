@@ -24,7 +24,8 @@ class ClientFactory
                 'auth' => 'oauth'
             ],
         ];
-        $client = new Client(array_merge($defaultConfig, $config));
+
+        $client = new Client(array_merge_recursive($defaultConfig, $config));
         $service = include __DIR__ . '/../../resources/service.php';
         $description = new Description($service);
 
