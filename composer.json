@@ -26,5 +26,8 @@
         "branch-alias": {
             "dev-master": "1.0.x-dev"
         }
+    },
+    "suggest": {
+        "ricbra/discogs-bundle": "For integrating Discogs into Symfony2"
     }
 }
