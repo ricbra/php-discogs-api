@@ -175,6 +175,21 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('http://api.discogs.com/users/360vinyl/inventory?sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
     }
 
+    public function testGetImage()
+    {
+        $client = $this->createClient('get_inventory', $history = new History());
+        $response = $client->getImage([
+            'filename' => 'R-5840514-1404162639-4473.jpeg'
+        ]);
+
+        $this->assertArrayHasKey('image', $response);
+        $this->assertSame(37814, strlen($response['image']));
+        $this->assertInstanceOf('GuzzleHttp\Stream\Stream', $response['image']);
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('http://api.discogs.com/images/R-5840514-1404162639-4473.jpeg', $history->getLastRequest()->getUrl());
+    }
+
+
     protected function createClient($mock, History $history)
     {
         $path = sprintf('%s/../../fixtures/%s', __DIR__, $mock);
