@@ -263,6 +263,18 @@ return [
                     'required' => false
                 ]
             ]
+        ],
+        'getImage' => [
+            'httpMethod' => 'GET',
+            'uri' => 'images/{filename}',
+            'responseModel' => 'GetImage',
+            'parameters' => [
+                'filename' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
         ]
     ],
     'models' => [
@@ -270,6 +282,15 @@ return [
             'type' => 'object',
             'additionalProperties' => [
                 'location' => 'json'
+            ],
+        ],
+        'GetImage' => [
+            'type' => 'object',
+            'properties' => [
+                'image' => [
+                    'location' => 'body',
+                    'type' => 'string'
+                ]
             ],
         ]
     ]
