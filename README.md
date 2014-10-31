@@ -19,7 +19,7 @@ This library is released under the MIT license. See the complete license in the 
 Start by [installing composer](http://getcomposer.org/doc/01-basic-usage.md#installation).
 Next do:
 
-    $ composer require ricbra/php-discogs-api ~1.0.0
+    $ composer require ricbra/php-discogs-api
 
 ## Requirements
 PHP >=5.4.0
