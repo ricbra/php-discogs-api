@@ -57,7 +57,7 @@ $client->getHttpClient()->getEmitter()->attach(new Discogs\Subscriber\ThrottleSu
 ```
 
 ### OAuth
-There a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts.
+There are a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts.
 
 ```php
 <?php
@@ -101,7 +101,7 @@ foreach ($history as $row) {
 For more information about Guzzle and its plugins checkout [the docs.](http://guzzle.readthedocs.org/en/latest/)
 
 ### Perform a search:
-Per august 2014 an signed OAuth request is required for this endpoint.
+Per august 2014 a signed OAuth request is required for this endpoint.
 
 ```php
 <?php
