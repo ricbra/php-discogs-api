@@ -57,7 +57,7 @@ $client->getHttpClient()->getEmitter()->attach(new Discogs\Subscriber\ThrottleSu
 ```
 
 ### OAuth
-There are a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts.
+There are a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts. If you're having trouble obtaining the token and token_secret, please check out my [example implementation](https://github.com/ricbra/php-discogs-api-example).
 
 ```php
 <?php
