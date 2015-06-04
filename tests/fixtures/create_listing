@@ -1,0 +1,17 @@
+HTTP/1.1 204 OK
+Reproxy-Status: yes
+Access-Control-Allow-Origin: *
+Cache-Control: public, must-revalidate
+Content-Type: application/json
+Server: lighttpd
+Content-Length: 780
+Date: Tue, 15 Jul 2014 19:59:59 GMT
+X-Varnish: 1702965334
+Age: 0
+Via: 1.1 varnish
+Connection: keep-alive
+
+{
+  "listing_id": 41578241,
+  "resource_url": "https://api.discogs.com/marketplace/listings/41578241"
+}

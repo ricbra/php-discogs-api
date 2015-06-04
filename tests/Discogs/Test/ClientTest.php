@@ -189,6 +189,58 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('http://api.discogs.com/images/R-5840514-1404162639-4473.jpeg', $history->getLastRequest()->getUrl());
     }
 
+    public function testGetOrders()
+    {
+        $client = $this->createClient('get_orders', $history = new History());
+        $response = $client->getOrders([
+            'status'      => 'New Order',
+            'sort'        => 'price',
+            'sort_order'  => 'asc'
+        ]);
+
+        $this->assertArrayHasKey('pagination', $response);
+        $this->assertArrayHasKey('orders', $response);
+        $this->assertCount(1, $response['orders']);
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('http://api.discogs.com/marketplace/orders?status=New%20Order&sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
+    }
+
+    public function testChangeOrder()
+    {
+        $client = $this->createClient('change_order', $history = new History());
+        $response = $client->changeOrder([
+            'id'        => '1-1',
+            'shipping'  => 5.0
+        ]);
+
+        $this->assertSame('POST', $history->getLastRequest()->getMethod());
+        $this->assertSame('http://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
+    }
+
+    public function testCreateListing()
+    {
+        $client = $this->createClient('create_listing', $history = new History());
+        $response = $client->createListing([
+            'release_id' => '1',
+            'condition'   => 'Mint (M)',
+            'price' => 5.90
+        ]);
+
+        $this->assertSame('POST', $history->getLastRequest()->getMethod());
+        $this->assertSame('http://api.discogs.com/marketplace/listings', $history->getLastRequest()->getUrl());
+    }
+
+    public function testDeleteListing()
+    {
+        $client = $this->createClient('delete_listing', $history = new History());
+        $response = $client->deleteListing([
+            'listing_id' => '129242581'
+        ]);
+
+        $this->assertSame('DELETE', $history->getLastRequest()->getMethod());
+        $this->assertSame('http://api.discogs.com/marketplace/listings/129242581', $history->getLastRequest()->getUrl());
+    }
+
 
     protected function createClient($mock, History $history)
     {
