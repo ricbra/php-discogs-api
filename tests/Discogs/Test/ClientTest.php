@@ -205,6 +205,33 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('http://api.discogs.com/marketplace/orders?status=New%20Order&sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
     }
 
+    public function testGetOrder()
+    {
+        $client = $this->createClient('get_order', $history = new History());
+        $response = $client->getOrder([
+            'id' => '1-1'
+        ]);
+
+        $this->assertArrayHasKey('id', $response);
+        $this->assertArrayHasKey('resource_url', $response);
+        $this->assertArrayHasKey('messages_url', $response);
+        $this->assertArrayHasKey('uri', $response);
+        $this->assertArrayHasKey('status', $response);
+        $this->assertArrayHasKey('next_status', $response);
+        $this->assertArrayHasKey('fee', $response);
+        $this->assertArrayHasKey('created', $response);
+        $this->assertArrayHasKey('shipping', $response);
+        $this->assertArrayHasKey('shipping_address', $response);
+        $this->assertArrayHasKey('additional_instructions', $response);
+        $this->assertArrayHasKey('seller', $response);
+        $this->assertArrayHasKey('last_activity', $response);
+        $this->assertArrayHasKey('buyer', $response);
+        $this->assertArrayHasKey('total', $response);
+        $this->assertCount(1, $response['items']);
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('http://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
+    }
+
     public function testChangeOrder()
     {
         $client = $this->createClient('change_order', $history = new History());
