@@ -276,6 +276,18 @@ return [
                 ]
             ]
         ],
+        'getOrder' => [
+            'httpMethod' => 'GET',
+            'uri' => 'marketplace/orders/{id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
         'getOrders' => [
             'httpMethod' => 'GET',
             'uri' => 'marketplace/orders',
