@@ -372,7 +372,7 @@ return [
                 'status' => [
                     'type' => 'string',
                     'location' => 'json',
-                    'required' => false,
+                    'required' => true,
                 ],
                 'external_id' => [
                     'type' => 'string',
