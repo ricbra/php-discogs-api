@@ -244,12 +244,23 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('http://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
     }
 
+    public function testCreateListingValidation(){
+        $this->setExpectedException('GuzzleHttp\Command\Exception\CommandException', 'Validation errors: [status] is a required string');
+        $client = $this->createClient('create_listing', $history = new History());
+        $client->createListing([
+            'release_id' => '1',
+            'condition' => 'Mint (M)',
+            'price' => 5.90
+        ]);
+    }
+
     public function testCreateListing()
     {
         $client = $this->createClient('create_listing', $history = new History());
         $response = $client->createListing([
             'release_id' => '1',
-            'condition'   => 'Mint (M)',
+            'condition' => 'Mint (M)',
+            'status' => 'For Sale',
             'price' => 5.90
         ]);
 
