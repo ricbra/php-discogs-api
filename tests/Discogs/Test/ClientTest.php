@@ -29,7 +29,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertInternalType('array', $response['images']);
         $this->assertCount(9, $response['images']);
 
-        $this->assertSame('http://api.discogs.com/artists/45', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/artists/45', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -47,7 +47,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('per_page', $response['pagination']);
 
-        $this->assertSame('http://api.discogs.com/artists/45/releases?per_page=50&page=1', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/artists/45/releases?per_page=50&page=1', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -64,7 +64,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(50, $response['results']);
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('per_page', $response['pagination']);
-        $this->assertSame('http://api.discogs.com/database/search?q=prodigy&type=release&title=the%20fat%20of%20the%20land', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/database/search?q=prodigy&type=release&title=the%20fat%20of%20the%20land', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -79,7 +79,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('Accepted', $response['status']);
         $this->assertArrayHasKey('videos', $response);
         $this->assertCount(6, $response['videos']);
-        $this->assertSame('http://api.discogs.com/releases/1', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/releases/1', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -94,7 +94,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('O Fortuna', $response['title']);
         $this->assertArrayHasKey('tracklist', $response);
         $this->assertCount(2, $response['tracklist']);
-        $this->assertSame('http://api.discogs.com/masters/33687', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/masters/33687', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -111,7 +111,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('versions', $response);
         $this->assertCount(4, $response['versions']);
-        $this->assertSame('http://api.discogs.com/masters/33687/versions?per_page=4&page=2', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/masters/33687/versions?per_page=4&page=2', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -123,10 +123,10 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             'id' => 1
         ]);
         $this->assertArrayHasKey('releases_url', $response);
-        $this->assertSame('http://api.discogs.com/labels/1/releases', $response['releases_url']);
+        $this->assertSame('https://api.discogs.com/labels/1/releases', $response['releases_url']);
         $this->assertArrayHasKey('sublabels', $response);
         $this->assertCount(6, $response['sublabels']);
-        $this->assertSame('http://api.discogs.com/labels/1', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/labels/1', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -143,7 +143,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('releases', $response);
         $this->assertCount(2, $response['releases']);
-        $this->assertSame('http://api.discogs.com/labels/1/releases?per_page=2&page=1', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/labels/1/releases?per_page=2&page=1', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
@@ -154,7 +154,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $response = $client->getOAuthIdentity();
 
         $this->assertSame($response['username'], 'R-Search');
-        $this->assertSame($response['resource_url'], 'http://api.discogs.com/users/R-Search');
+        $this->assertSame($response['resource_url'], 'https://api.discogs.com/users/R-Search');
         $this->assertSame($response['consumer_name'], 'RicbraDiscogsBundle');
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
@@ -172,7 +172,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('listings', $response);
         $this->assertCount(50, $response['listings']);
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
-        $this->assertSame('http://api.discogs.com/users/360vinyl/inventory?sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/users/360vinyl/inventory?sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
     }
 
     public function testGetImage()
@@ -183,10 +183,10 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertArrayHasKey('image', $response);
-        $this->assertSame(37814, strlen($response['image']));
+        $this->assertSame(37966, strlen($response['image']));
         $this->assertInstanceOf('GuzzleHttp\Stream\Stream', $response['image']);
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
-        $this->assertSame('http://api.discogs.com/images/R-5840514-1404162639-4473.jpeg', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/images/R-5840514-1404162639-4473.jpeg', $history->getLastRequest()->getUrl());
     }
 
     public function testGetOrders()
@@ -202,7 +202,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('orders', $response);
         $this->assertCount(1, $response['orders']);
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
-        $this->assertSame('http://api.discogs.com/marketplace/orders?status=New%20Order&sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/marketplace/orders?status=New%20Order&sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
     }
 
     public function testGetOrder()
@@ -229,7 +229,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('total', $response);
         $this->assertCount(1, $response['items']);
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
-        $this->assertSame('http://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
     }
 
     public function testChangeOrder()
@@ -241,7 +241,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertSame('POST', $history->getLastRequest()->getMethod());
-        $this->assertSame('http://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
     }
 
     public function testCreateListingValidation(){
@@ -265,7 +265,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertSame('POST', $history->getLastRequest()->getMethod());
-        $this->assertSame('http://api.discogs.com/marketplace/listings', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/marketplace/listings', $history->getLastRequest()->getUrl());
     }
 
     public function testDeleteListing()
@@ -276,7 +276,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         ]);
 
         $this->assertSame('DELETE', $history->getLastRequest()->getMethod());
-        $this->assertSame('http://api.discogs.com/marketplace/listings/129242581', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/marketplace/listings/129242581', $history->getLastRequest()->getUrl());
     }
 
 

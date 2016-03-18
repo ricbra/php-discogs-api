@@ -11,4 +11,4 @@ Age: 0
 Via: 1.1 varnish
 Connection: keep-alive
 
-{"username": "R-Search", "resource_url": "http://api.discogs.com/users/R-Search", "consumer_name": "RicbraDiscogsBundle", "id": 557870}
+{"username": "R-Search", "resource_url": "https://api.discogs.com/users/R-Search", "consumer_name": "RicbraDiscogsBundle", "id": 557870}
