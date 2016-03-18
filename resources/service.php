@@ -9,7 +9,7 @@
  */
 
 return [
-    'baseUrl' => 'http://api.discogs.com/',
+    'baseUrl' => 'https://api.discogs.com/',
     'operations' => [
         'getArtist' => [
             'httpMethod' => 'GET',
