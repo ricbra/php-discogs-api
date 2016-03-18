@@ -209,7 +209,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $client = $this->createClient('get_order', $history = new History());
         $response = $client->getOrder([
-            'id' => '1-1'
+            'order_id' => '1-1'
         ]);
 
         $this->assertArrayHasKey('id', $response);
@@ -236,7 +236,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     {
         $client = $this->createClient('change_order', $history = new History());
         $response = $client->changeOrder([
-            'id'        => '1-1',
+            'order_id'  => '1-1',
             'shipping'  => 5.0
         ]);
 
