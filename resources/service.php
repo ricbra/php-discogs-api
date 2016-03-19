@@ -278,10 +278,10 @@ return [
         ],
         'getOrder' => [
             'httpMethod' => 'GET',
-            'uri' => 'marketplace/orders/{id}',
+            'uri' => 'marketplace/orders/{order_id}',
             'responseModel' => 'GetResponse',
             'parameters' => [
-                'id' => [
+                'order_id' => [
                     'type' => 'string',
                     'location' => 'uri',
                     'required' => true
@@ -312,11 +312,11 @@ return [
         ],
         'changeOrder' => [
             'httpMethod' => 'POST',
-            'uri' => 'marketplace/orders/{id}',
+            'uri' => 'marketplace/orders/{order_id}',
             'summary' => 'Edit the data associated with an order.',
             'responseModel' => 'GetResponse',
             'parameters' => [
-                'id' => [
+                'order_id' => [
                     'type' => 'string',
                     'location' => 'uri',
                     'required' => true
