@@ -167,6 +167,26 @@ $master  = $service->getMaster([
 echo $master['title']."\n";
 ```
 
+### Get image
+
+Discogs returns the full url to images so just use the internal client to get those:
+
+```
+php
+
+$release = $client->getRelease([
+    'id' => 1
+]);
+foreach ($release['images'] as $image) {
+    $response = $client->getHttpClient()->get($image['uri']);
+    // response code
+    echo $response->getStatusCode();
+    // image blob itself
+    echo $client->getHttpClient()->get($image['uri'])->getBody()->getContents();
+}
+
+```
+
 ## Documentation
 Further documentation can be found at the [Discogs API v2.0 Documentation](http://www.discogs.com/developers/index.html).
 
