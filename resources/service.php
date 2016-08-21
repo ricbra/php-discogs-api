@@ -151,6 +151,11 @@ return [
                     'type' => 'string',
                     'location' => 'uri',
                     'required' => true
+                ],
+                'curr_abbr' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
                 ]
             ]
         ],

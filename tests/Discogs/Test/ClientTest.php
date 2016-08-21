@@ -73,13 +73,15 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $history = new History();
         $client = $this->createClient('get_release', $history);
         $response = $client->getRelease([
-            'id' => 1
+            'id' => 1,
+            'curr_abbr' => 'USD'
         ]);
 
+        $this->assertLessThanOrEqual(8.077169493076712, $response['lowest_price']);
         $this->assertSame('Accepted', $response['status']);
         $this->assertArrayHasKey('videos', $response);
         $this->assertCount(6, $response['videos']);
-        $this->assertSame('https://api.discogs.com/releases/1', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/releases/1?curr_abbr=USD', $history->getLastRequest()->getUrl());
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
