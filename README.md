@@ -56,6 +56,29 @@ $client->getHttpClient()->getEmitter()->attach(new Discogs\Subscriber\ThrottleSu
 
 ```
 
+#### Authentication
+
+Discogs API allow to access protected endpoints with either a simple [Discogs Auth Flow](https://www.discogs.com/developers/#page:authentication,header:authentication-discogs-auth-flow) or a more advanced (and more complex) [Oauth Flow](https://www.discogs.com/developers/#page:authentication,header:authentication-oauth-flow)
+
+### Discogs Auth
+
+As stated in the Discogs Authentication documentation:
+> In order to access protected endpoints, you’ll need to register for either a consumer key and secret or user token, depending on your situation:
+> - To easily access your own user account information, use a *User token*.
+> - To get access to an endpoint that requires authentication and build 3rd party apps, use a *Consumer Key and Secret*.
+
+With the Discogs Php API you can add your credentials to each request by adding a `query` key to your own defaults like this:
+```php
+$client = ClientFactory::factory([
+    'defaults' => [
+        'query' => [
+            'key' => 'my-key',
+            'secret' => 'my-secret',
+        ],
+    ]
+]);
+```
+
 ### OAuth
 There are a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts. If you're having trouble obtaining the token and token_secret, please check out my [example implementation](https://github.com/ricbra/php-discogs-api-example).
 
