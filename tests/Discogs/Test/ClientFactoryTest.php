@@ -29,4 +29,26 @@ class ClientFactoryTest extends \PHPUnit_Framework_TestCase
         $default = ['User-Agent' => 'test'];
         $this->assertSame($default, $client->getHttpClient()->getDefaultOption('headers'));
     }
+
+
+    public function testFactoryWithCustomDefaultNotInClassDefaults()
+    {
+        $client = ClientFactory::factory([
+            'defaults' => [
+                'headers' => ['User-Agent' => 'test'],
+                'query' => [
+                    'key' => 'my-key',
+                    'secret' => 'my-secret',
+                ],
+            ]
+        ]);
+        $default_headers = ['User-Agent' => 'test'];
+        $default_query = [
+                'key' => 'my-key',
+                'secret' => 'my-secret'
+        ];
+        $this->assertSame($default_headers, $client->getHttpClient()->getDefaultOption('headers'));
+        $this->assertSame($default_query, $client->getHttpClient()->getDefaultOption('query'));
+    }
+
 }
