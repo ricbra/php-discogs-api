@@ -400,6 +400,62 @@ return [
                     'required' => true
                 ]
             ]
+        ],
+        'getCollectionFolders' => [
+            'httpMethod' => 'GET',
+            'uri' => 'users/{username}/collection/folders',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
+        'getFolder' => [
+            'httpMethod' => 'GET',
+            'uri' => 'users/{username}/collection/folders/{folder_id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'folder_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+            ]
+        ],
+        'getFolderRelease' => [
+            'httpMethod' => 'GET',
+            'uri' => 'users/{username}/collection/folders/{folder_id}/releases',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'folder_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],                
+                'per_page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'page' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ]
+            ]
         ]
     ],
     'models' => [
