@@ -21,7 +21,12 @@ class ClientFactory
         $defaultConfig = [
             'defaults' => [
                 'headers' => ['User-Agent' => 'php-discogs-api/1.0.0 +https://github.com/ricbra/php-discogs-api'],
-                'auth' => 'oauth'
+                'auth' => 'oauth',
+                'config' => [
+                    'curl' => [
+                        CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1_2
+                    ]
+                ]
             ],
         ];
 
