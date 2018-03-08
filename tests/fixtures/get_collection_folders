@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Reproxy-Status: yes
+Access-Control-Allow-Origin: *
+Cache-Control: public, must-revalidate
+Content-Type: application/json
+Server: lighttpd
+Content-Length: 132
+Date: Wed, 16 Jul 2014 23:20:21 GMT
+X-Varnish: 1722533701
+Age: 0
+Via: 1.1 varnish
+Connection: keep-alive
+
+{"folders":[{"id":0,"count":23,"name":"All","resource_url":"https://api.discogs.com/users/example/collection/folders/0"},{"id":1,"count":20,"name":"Uncategorized","resource_url":"https://api.discogs.com/users/example/collection/folders/1"}]}
