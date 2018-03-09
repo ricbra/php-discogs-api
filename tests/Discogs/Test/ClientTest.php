@@ -267,6 +267,59 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('https://api.discogs.com/marketplace/listings/129242581', $history->getLastRequest()->getUrl());
     }
 
+    public function testGetCollectionFolders()
+    {
+        $history = new History();
+        $client = $this->createClient('get_collection_folders', $history);
+        $response = $client->getCollectionFolders([
+            'username' => 'example'
+        ]);
+
+        $this->assertInternalType('array', $response['folders']);
+        $this->assertCount(2, $response['folders']);
+
+        $this->assertSame('https://api.discogs.com/users/example/collection/folders', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
+
+    public function testGetCollectionFolder()
+    {
+        $history = new History();
+        $client = $this->createClient('get_collection_folder', $history);
+        $response = $client->getCollectionFolder([
+            'username' => 'example',
+            'folder_id' => 1
+        ]);
+
+        $this->assertSame($response['id'], 1);
+        $this->assertSame($response['count'], 20);
+        $this->assertSame($response['name'], 'Uncategorized');
+        $this->assertSame($response['resource_url'], "https://api.discogs.com/users/example/collection/folders/1");
+
+        $this->assertSame('https://api.discogs.com/users/example/collection/folders/1', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
+
+    public function testGetCollectionItemsByFolder()
+    {
+        $history = new History();
+        $client = $this->createClient('get_collection_items_by_folder', $history);
+        $response = $client->getCollectionItemsByFolder([
+            'username' => 'rodneyfool',
+            'folder_id' => 3,
+            'sort' => 'artist',
+            'sort_order' => 'desc',
+            'per_page' => 50,
+            'page' => 1
+        ]);
+
+        $this->assertCount(1, $response['releases']);
+        $this->assertArrayHasKey('pagination', $response);
+        $this->assertArrayHasKey('per_page', $response['pagination']);
+
+        $this->assertSame('https://api.discogs.com/users/rodneyfool/collection/folders/3/releases?per_page=50&page=1', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
 
     protected function createClient($mock, History $history)
     {

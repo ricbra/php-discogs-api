@@ -210,6 +210,43 @@ foreach ($release['images'] as $image) {
 
 ```
 
+### User Collection
+
+Authorization is required when `folder_id` is not `0`.
+
+#### Get collection folders
+
+```php
+<?php
+
+$folders = $service->getCollectionFolders([
+    'username' => 'example'
+]);
+```
+
+#### Get collection folder
+
+
+```php
+<?php
+
+$folder = $service->getCollectionFolder([
+    'username' => 'example',
+    'folder_id' => 1
+]);
+```
+
+#### Get collection items by folder
+
+```php
+<?php
+
+$items = $service->getCollectionItemsByFolder([
+    'username' => 'example',
+    'folder_id' => 3
+]);
+```
+
 ## Documentation
 Further documentation can be found at the [Discogs API v2.0 Documentation](http://www.discogs.com/developers/index.html).
 
