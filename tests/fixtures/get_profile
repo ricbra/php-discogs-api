@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Reproxy-Status: yes
+Access-Control-Allow-Origin: *
+Cache-Control: public, must-revalidate
+Content-Type: application/json
+Server: lighttpd
+Content-Length: 858
+Date: Thu, 31 Jul 2014 20:14:35 GMT
+X-Varnish: 1718492795
+Age: 0
+Via: 1.1 varnish
+Connection: keep-alive
+
+{"profile": "", "banner_url": "", "wantlist_url": "https://api.discogs.com/users/maxperei/wants", "seller_num_ratings": 13, "rank": 57.0, "num_pending": 6, "id": 1861520, "buyer_rating": 100.0, "num_for_sale": 63, "home_page": "http://maxperei.info", "location": "France", "collection_folders_url": "https://api.discogs.com/users/maxperei/collection/folders", "username": "maxperei", "collection_fields_url": "https://api.discogs.com/users/maxperei/collection/fields", "releases_contributed": 7, "registered": "2013-05-26T05:59:09-07:00", "rating_avg": 4.48, "num_collection": 414, "releases_rated": 46, "curr_abbr": "", "seller_rating_stars": 5.0, "num_lists": 0, "name": "\u2234", "buyer_rating_stars": 5.0, "inventory_url": "https://api.discogs.com/users/maxperei/inventory", "uri": "https://www.discogs.com/user/maxperei", "buyer_num_ratings": 32, "avatar_url": "https://img.discogs.com/mDaw_OUjHspYLj77C_tcobr2eXc=/500x500/filters:strip_icc():format(jpeg):quality(40)/discogs-avatars/U-1861520-1498224434.jpeg.jpg", "resource_url": "https://api.discogs.com/users/maxperei", "seller_rating": 100.0}

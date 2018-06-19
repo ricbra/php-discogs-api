@@ -161,6 +161,25 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
+    public function testGetProfile()
+    {
+        $history = new History();
+        $client = $this->createClient('get_profile', $history);
+        $response = $client->getProfile([
+            'username' => 'maxperei'
+        ]);
+
+        $this->assertEquals(200, $history->getLastResponse()->getStatusCode());
+        $this->assertArrayHasKey('name', $response);
+        $this->assertArrayHasKey('avatar_url', $response);
+        $this->assertArrayHasKey('home_page', $response);
+        $this->assertArrayNotHasKey('email', $response);
+        $this->assertSame($response['name'], '∴');
+        $this->assertSame($response['avatar_url'], 'https://img.discogs.com/mDaw_OUjHspYLj77C_tcobr2eXc=/500x500/filters:strip_icc():format(jpeg):quality(40)/discogs-avatars/U-1861520-1498224434.jpeg.jpg');
+        $this->assertSame($response['home_page'], 'http://maxperei.info');
+        $this->assertSame('https://api.discogs.com/users/maxperei', $history->getLastRequest()->getUrl());
+    }
+
     public function testGetInventory()
     {
         $client = $this->createClient('get_inventory', $history = new History());

@@ -233,16 +233,16 @@ return [
             'responseModel' => 'GetResponse',
         ],
         'getProfile' => [
-	        'httpMethod' => 'GET',
-	        'uri' => 'users/{username}',
-	        'responseModel' => 'GetResponse',
-	        'parameters' => [
-		        'username' => [
-			        'type' => 'string',
-			        'location' => 'uri',
-			        'required' => true
-		        ],
-	        ],
+            'httpMethod' => 'GET',
+            'uri' => 'users/{username}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+            ],
         ],
         'getInventory' => [
             'httpMethod' => 'GET',
