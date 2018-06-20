@@ -232,6 +232,18 @@ return [
             'uri' => 'oauth/identity',
             'responseModel' => 'GetResponse',
         ],
+        'getProfile' => [
+            'httpMethod' => 'GET',
+            'uri' => 'users/{username}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'username' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+            ],
+        ],
         'getInventory' => [
             'httpMethod' => 'GET',
             'uri' => 'users/{username}/inventory',
