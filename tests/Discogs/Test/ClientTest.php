@@ -340,6 +340,23 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('GET', $history->getLastRequest()->getMethod());
     }
 
+    public function testGetWantlist()
+    {
+        $history = new History();
+        $client = $this->createClient('get_wantlist', $history);
+        $response = $client->getWantlist([
+            'username' => 'Rock_it_science',
+            'per_page' => 25,
+            'page' => 1
+        ]);
+
+        $this->assertArrayHasKey('pagination', $response);
+        $this->assertArrayHasKey('releases', $response);
+        $this->assertCount(25, $response['releases']);
+        $this->assertSame('https://www.discogs.com/mywantlist?page=1&limit=25', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
+
     protected function createClient($mock, History $history)
     {
         $path = sprintf('%s/../../fixtures/%s', __DIR__, $mock);
