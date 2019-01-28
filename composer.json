@@ -1,5 +1,5 @@
 {
-    "name": "ricbra/php-discogs-api",
+    "name": "chrobane/php-discogs-api",
     "description": "The Discogs API makes it easy for developers to communicate with the Discogs platform",
     "type": "library",
     "keywords": ["discogs", "api"],
