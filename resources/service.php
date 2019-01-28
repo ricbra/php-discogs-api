@@ -312,7 +312,17 @@ return [
                     'type' => 'string',
                     'location' => 'query',
                     'required' => false,
-                ]
+                ],
+                'per_page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
             ]
         ],
         'changeOrder' => [
