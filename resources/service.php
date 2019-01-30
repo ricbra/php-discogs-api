@@ -290,7 +290,12 @@ return [
                     'type' => 'string',
                     'location' => 'uri',
                     'required' => true
-                ]
+                ],
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
             ]
         ],
         'getOrders' => [
@@ -316,10 +321,15 @@ return [
                 'per_page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false
+                    'required' => false,
                 ],
                 'page' => [
                     'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'token' => [
+                    'type' => 'string',
                     'location' => 'query',
                     'required' => false
                 ],
