@@ -29,7 +29,7 @@ class ClientFactory
         $service = include __DIR__ . '/../../resources/service.php';
         $description = new Description($service);
 
-        return new GuzzleClient($client, $description);
+        return new GuzzleClient($client, $description, null, null, null, $config);
     }
 
     public static function &mergeRecursive(array &$array1, &$array2 = null)
