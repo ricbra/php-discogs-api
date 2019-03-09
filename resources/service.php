@@ -467,7 +467,7 @@ return [
                     'location' => 'query',
                     'required' => false
                 ],
-                    'sort' => [
+				'sort' => [
                     'type' => 'string',
                     'location' => 'query',
                     'required' => false
