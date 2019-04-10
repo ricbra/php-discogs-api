@@ -488,7 +488,24 @@ return [
                     'required' => false
                 ]
             ]
-        ]
+        ],
+        'postInventoryExport' => [
+            'httpMethod' => 'POST',
+            'uri' => 'inventory/export',
+            'responseModel' => 'GetResponse',
+        ],
+        'getInventoryExport' => [
+            'httpMethod' => 'GET',
+            'uri' => 'inventory/export/{id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'integer',
+                    'location' => 'uri',
+                    'required' => true,
+                ],
+            ],
+        ],
     ],
     'models' => [
         'GetResponse' => [
