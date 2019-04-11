@@ -489,7 +489,7 @@ return [
                 ]
             ]
         ],
-        'postInventoryExport' => [
+        'exportInventory' => [
             'httpMethod' => 'POST',
             'uri' => 'inventory/export',
             'responseModel' => 'GetResponse',
@@ -499,9 +499,21 @@ return [
                     'location' => 'query',
                     'required' => false
                 ],
-            ]
+            ],
         ],
-        'getInventoryExport' => [
+        'getRecentExports' => [
+            'httpMethod' => 'GET',
+            'uri' => 'inventory/export',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+            ],
+        ],
+        'getExport' => [
             'httpMethod' => 'GET',
             'uri' => 'inventory/export/{id}',
             'responseModel' => 'GetResponse',
@@ -526,5 +538,5 @@ return [
                 'location' => 'json'
             ],
         ],
-    ]
+    ],
 ];
