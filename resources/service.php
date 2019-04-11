@@ -493,6 +493,13 @@ return [
             'httpMethod' => 'POST',
             'uri' => 'inventory/export',
             'responseModel' => 'GetResponse',
+            'parameters' => [
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+            ]
         ],
         'getInventoryExport' => [
             'httpMethod' => 'GET',
@@ -503,6 +510,11 @@ return [
                     'type' => 'integer',
                     'location' => 'uri',
                     'required' => true,
+                ],
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
                 ],
             ],
         ],
