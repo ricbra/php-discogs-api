@@ -530,6 +530,23 @@ return [
                 ],
             ],
         ],
+        'downloadExport' => [
+            'httpMethod' => 'GET',
+            'url' => 'inventory/export/{id}/download',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'integer',
+                    'location' => 'uri',
+                    'required' => true,
+                ],
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+            ],
+        ],
     ],
     'models' => [
         'GetResponse' => [
