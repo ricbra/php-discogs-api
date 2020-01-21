@@ -511,6 +511,16 @@ return [
                     'location' => 'query',
                     'required' => false
                 ],
+                'page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'per_page' => [
+                    'type' => 'integer',
+                    'location' => 'query',
+                    'required' => false
+                ],
             ],
         ],
         'getExport' => [
@@ -553,6 +563,23 @@ return [
             'type' => 'object',
             'additionalProperties' => [
                 'location' => 'json'
+            ],
+            'properties' => [
+                'rateLimit' => [
+                    'location' => 'header',
+                    'sentAs' => 'X-Discogs-Ratelimit',
+                    'type' => 'integer'
+                ],
+                'rateLimitUsed' => [
+                    'location' => 'header',
+                    'sentAs' => 'X-Discogs-Ratelimit-Used',
+                    'type' => 'integer'
+                ],
+                'rateLimitRemaining' => [
+                    'location' => 'header',
+                    'sentAs' => 'X-Discogs-Ratelimit-Remaining',
+                    'type' => 'integer'
+                ]
             ],
         ],
     ],
