@@ -492,7 +492,7 @@ return [
         'exportInventory' => [
             'httpMethod' => 'POST',
             'uri' => 'inventory/export',
-            'responseModel' => 'GetResponse',
+            'responseModel' => 'GetLocation',
             'parameters' => [
                 'token' => [
                     'type' => 'string',
@@ -579,7 +579,17 @@ return [
                     'location' => 'header',
                     'sentAs' => 'X-Discogs-Ratelimit-Remaining',
                     'type' => 'integer'
-                ]
+                ],
+            ],
+        ],
+        'GetLocation' => [
+            'type' => 'object',
+            'properties' => [
+                'url' => [
+                    'location' => 'header',
+                    'sentAs' => 'Location',
+                    'type' => 'string'
+                ],
             ],
         ],
     ],
