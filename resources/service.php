@@ -423,6 +423,18 @@ return [
                 ]
             ]
         ],
+        'getPriceSuggestions' => [
+            'httpMethod' => 'GET',
+            'uri' => 'marketplace/price_suggestions/{release_id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ]
+            ]
+        ],
         'getCollectionFolders' => [
             'httpMethod' => 'GET',
             'uri' => 'users/{username}/collection/folders',
