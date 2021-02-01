@@ -358,6 +358,23 @@ return [
                 ]
             ]
         ],
+        'getMessages' => [
+            'httpMethod' => 'GET',
+            'uri' => 'marketplace/orders/{order_id}/messages',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'order_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+            ]
+        ],
         'createListing' => [
             'httpMethod' => 'POST',
             'uri' => '/marketplace/listings',
