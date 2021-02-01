@@ -14,7 +14,6 @@ use GuzzleHttp\Event\SubscriberInterface;
 class ThrottleSubscriber implements SubscriberInterface
 {
     private $throttle;
-    private static $previousTimestamp;
 
     public function __construct($throttle = 1000000)
     {
@@ -30,13 +29,13 @@ class ThrottleSubscriber implements SubscriberInterface
 
     public function onComplete(CompleteEvent $event)
     {
-        $now = microtime(true);
-        $wait = self::$previousTimestamp + $this->throttle - $now;
+        // dynamic throttle
+        $remaining = $event->getTransaction()->response->getHeader('X-Discogs-Ratelimit-Remaining');
+        if (!$remaining) $remaining = 1;
+        $wait = (int)(60 / $remaining * 1000000);
 
         if ($wait > 0) {
             usleep($wait);
         }
-
-        self::$previousTimestamp = microtime(true);
     }
 }
