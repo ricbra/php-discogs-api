@@ -42,6 +42,14 @@ $client = Discogs\ClientFactory::factory([
         'headers' => ['User-Agent' => 'your-app-name/0.1 +https://www.awesomesite.com'],
     ]
 ]);
+
+// New Version
+<?php
+$client = Discogs\ClientFactory::factory([    
+    'headers' => ['User-Agent' => 'your-app-name/0.1 +https://www.awesomesite.com'],
+]);
+
+
 ```
 
 ### Throttling
@@ -77,6 +85,14 @@ $client = ClientFactory::factory([
         ],
     ]
 ]);
+
+// New Version
+$client = ClientFactory::factory([
+    'query' => [
+        'key' => 'my-key',
+        'secret' => 'my-secret',
+    ],
+]);
 ```
 
 ### OAuth
@@ -96,6 +112,20 @@ $client->getHttpClient()->getEmitter()->attach($oauth);
 
 $response = $client->search([
     'q' => 'searchstring'
+]);
+
+// New Version
+$oauth = new GuzzleHttp\Subscriber\Oauth\Oauth1([
+    'consumer_key'    => $consumerKey, // from Discogs developer page
+    'consumer_secret' => $consumerSecret, // from Discogs developer page
+    'token'           => $token['oauth_token'], // get this using a OAuth library
+    'token_secret'    => $token['oauth_token_secret'] // get this using a OAuth library
+]);
+$handler = GuzzleHttp\HandlerStack::create();
+$handler->push($oauth);
+$client = Discogs\ClientFactory::factory([
+    'handler' => $handler,
+    'auth' => 'oauth'
 ]);
 ```
 
@@ -118,6 +148,26 @@ foreach ($history as $row) {
     print (string) $row['response'];
 }
 
+// New Version
+$container = [];
+$history = GuzzleHttp\Middleware::History($container);
+$handler = GuzzleHttp\HandlerStack::create();
+$handler->push($history);
+$client = Discogs\ClientFactory::factory([ 
+    'handler' => $handler
+]);
+
+$response = $client->search([
+    'q' => 'searchstring'
+]);
+
+foreach ($container as $row) {
+    print $row['request'] -> getMethod(); // GET
+    print $row['request'] -> getRequestTarget(); // /database/search?q=searchstring
+    print strval($row['request'] -> getUri()); // https://api.discogs.com/database/search?q=searchstring
+    print $row['response'] -> getStatusCode(); // 200
+    print $row['response'] -> getReasonPhrase(); // OK
+}
 ```
 
 ### More info and plugins
@@ -194,8 +244,7 @@ echo $master['title']."\n";
 
 Discogs returns the full url to images so just use the internal client to get those:
 
-```
-php
+```php
 
 $release = $client->getRelease([
     'id' => 1
