@@ -11,14 +11,19 @@
 namespace Discogs\Test;
 
 use Discogs\ClientFactory;
-use GuzzleHttp\Subscriber\History;
-use GuzzleHttp\Subscriber\Mock;
+use GuzzleHttp\Command\Guzzle\GuzzleClient;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7\Response;
+use PHPUnit\Framework\TestCase;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends TestCase
 {
     public function testGetArtist()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_artist', $history);
         $response = $client->getArtist([
             'id' => 45
@@ -26,16 +31,18 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($response['id'], 45);
         $this->assertSame($response['name'], 'Aphex Twin');
         $this->assertSame($response['realname'], 'Richard David James');
-        $this->assertInternalType('array', $response['images']);
+        $this->assertIsArray($response['images']);
         $this->assertCount(9, $response['images']);
 
-        $this->assertSame('https://api.discogs.com/artists/45', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/artists/45', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetArtistReleases()
     {
-        $history = new History();
+
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_artist_releases', $history);
 
         $response = $client->getArtistReleases([
@@ -47,13 +54,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('per_page', $response['pagination']);
 
-        $this->assertSame('https://api.discogs.com/artists/45/releases?per_page=50&page=1', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/artists/45/releases?per_page=50&page=1', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testSearch()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('search', $history);
 
         $response = $client->search([
@@ -66,13 +74,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertCount(50, $response['results']);
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('per_page', $response['pagination']);
-        $this->assertSame('https://api.discogs.com/database/search?q=prodigy&type=release&title=the%20fat%20of%20the%20land&per_page=100&page=3', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/database/search?q=prodigy&type=release&title=the%20fat%20of%20the%20land&per_page=100&page=3', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetRelease()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_release', $history);
         $response = $client->getRelease([
             'id' => 1,
@@ -83,13 +92,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('Accepted', $response['status']);
         $this->assertArrayHasKey('videos', $response);
         $this->assertCount(6, $response['videos']);
-        $this->assertSame('https://api.discogs.com/releases/1?curr_abbr=USD', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/releases/1?curr_abbr=USD', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetMaster()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_master', $history);
 
         $response = $client->getMaster([
@@ -98,13 +108,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('O Fortuna', $response['title']);
         $this->assertArrayHasKey('tracklist', $response);
         $this->assertCount(2, $response['tracklist']);
-        $this->assertSame('https://api.discogs.com/masters/33687', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/masters/33687', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetMasterVersions()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_master_versions', $history);
 
         $response = $client->getMasterVersions([
@@ -115,13 +126,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('versions', $response);
         $this->assertCount(4, $response['versions']);
-        $this->assertSame('https://api.discogs.com/masters/33687/versions?per_page=4&page=2', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/masters/33687/versions?per_page=4&page=2', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetLabel()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_label', $history);
         $response = $client->getLabel([
             'id' => 1
@@ -130,13 +142,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('https://api.discogs.com/labels/1/releases', $response['releases_url']);
         $this->assertArrayHasKey('sublabels', $response);
         $this->assertCount(6, $response['sublabels']);
-        $this->assertSame('https://api.discogs.com/labels/1', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/labels/1', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetLabelReleases()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_label_releases', $history);
         $response = $client->getLabelReleases([
             'id' => 1,
@@ -147,31 +160,33 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('releases', $response);
         $this->assertCount(2, $response['releases']);
-        $this->assertSame('https://api.discogs.com/labels/1/releases?per_page=2&page=1', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/labels/1/releases?per_page=2&page=1', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetOAuthIdentity()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_oauth_identity', $history);
         $response = $client->getOAuthIdentity();
 
         $this->assertSame($response['username'], 'R-Search');
         $this->assertSame($response['resource_url'], 'https://api.discogs.com/users/R-Search');
         $this->assertSame($response['consumer_name'], 'RicbraDiscogsBundle');
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetProfile()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_profile', $history);
         $response = $client->getProfile([
             'username' => 'maxperei'
         ]);
 
-        $this->assertEquals(200, $history->getLastResponse()->getStatusCode());
+        $this->assertEquals(200, $container[0]['response']->getStatusCode());
         $this->assertArrayHasKey('name', $response);
         $this->assertArrayHasKey('avatar_url', $response);
         $this->assertArrayHasKey('home_page', $response);
@@ -179,12 +194,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($response['name'], '∴');
         $this->assertSame($response['avatar_url'], 'https://img.discogs.com/mDaw_OUjHspYLj77C_tcobr2eXc=/500x500/filters:strip_icc():format(jpeg):quality(40)/discogs-avatars/U-1861520-1498224434.jpeg.jpg');
         $this->assertSame($response['home_page'], 'http://maxperei.info');
-        $this->assertSame('https://api.discogs.com/users/maxperei', $history->getLastRequest()->getUrl());
+        $this->assertSame('https://api.discogs.com/users/maxperei', strval($container[0]['request']->getUri()));
     }
 
     public function testGetInventory()
     {
-        $client = $this->createClient('get_inventory', $history = new History());
+        $container = [];
+        $history = Middleware::History($container);
+        $client = $this->createClient('get_inventory', $history);
         $response = $client->getInventory([
             'username'      => '360vinyl',
             'sort'          => 'price',
@@ -194,13 +211,15 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('listings', $response);
         $this->assertCount(50, $response['listings']);
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
-        $this->assertSame('https://api.discogs.com/users/360vinyl/inventory?sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $container[0]['request']->getMethod());
+        $this->assertSame('https://api.discogs.com/users/360vinyl/inventory?sort=price&sort_order=asc', strval($container[0]['request']->getUri()));
     }
 
     public function testGetOrders()
     {
-        $client = $this->createClient('get_orders', $history = new History());
+        $container = [];
+        $history = Middleware::History($container);
+        $client = $this->createClient('get_orders', $history);
         $response = $client->getOrders([
             'status'      => 'New Order',
             'sort'        => 'price',
@@ -210,13 +229,15 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('orders', $response);
         $this->assertCount(1, $response['orders']);
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
-        $this->assertSame('https://api.discogs.com/marketplace/orders?status=New%20Order&sort=price&sort_order=asc', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $container[0]['request']->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/orders?status=New%20Order&sort=price&sort_order=asc', strval($container[0]['request']->getUri()));
     }
 
     public function testGetOrder()
     {
-        $client = $this->createClient('get_order', $history = new History());
+        $container = [];
+        $history = Middleware::History($container);
+        $client = $this->createClient('get_order', $history);
         $response = $client->getOrder([
             'order_id' => '1-1'
         ]);
@@ -237,25 +258,30 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('buyer', $response);
         $this->assertArrayHasKey('total', $response);
         $this->assertCount(1, $response['items']);
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
-        $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $container[0]['request']->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', strval($container[0]['request']->getUri()));
     }
 
     public function testChangeOrder()
     {
-        $client = $this->createClient('change_order', $history = new History());
+        $container = [];
+        $history = Middleware::History($container);
+        $client = $this->createClient('change_order', $history);
         $response = $client->changeOrder([
             'order_id'  => '1-1',
             'shipping'  => 5.0
         ]);
 
-        $this->assertSame('POST', $history->getLastRequest()->getMethod());
-        $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
+        $this->assertSame('POST', $container[0]['request']->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', strval($container[0]['request']->getUri()));
     }
 
-    public function testCreateListingValidation(){
-        $this->setExpectedException('GuzzleHttp\Command\Exception\CommandException', 'Validation errors: [status] is a required string');
-        $client = $this->createClient('create_listing', $history = new History());
+    public function testCreateListingValidation()
+    {
+        $container = [];
+        $history = Middleware::History($container);
+        $this->expectException('GuzzleHttp\Command\Exception\CommandException', 'Validation errors: [status] is a required string');
+        $client = $this->createClient('create_listing', $history);
         $client->createListing([
             'release_id' => '1',
             'condition' => 'Mint (M)',
@@ -265,7 +291,9 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 
     public function testCreateListing()
     {
-        $client = $this->createClient('create_listing', $history = new History());
+        $container = [];
+        $history = Middleware::History($container);
+        $client = $this->createClient('create_listing', $history);
         $response = $client->createListing([
             'release_id' => '1',
             'condition' => 'Mint (M)',
@@ -273,39 +301,43 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             'price' => 5.90
         ]);
 
-        $this->assertSame('POST', $history->getLastRequest()->getMethod());
-        $this->assertSame('https://api.discogs.com/marketplace/listings', $history->getLastRequest()->getUrl());
+        $this->assertSame('POST', $container[0]['request']->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/listings', strval($container[0]['request']->getUri()));
     }
 
     public function testDeleteListing()
     {
-        $client = $this->createClient('delete_listing', $history = new History());
+        $container = [];
+        $history = Middleware::History($container);
+        $client = $this->createClient('delete_listing', $history);
         $response = $client->deleteListing([
             'listing_id' => '129242581'
         ]);
 
-        $this->assertSame('DELETE', $history->getLastRequest()->getMethod());
-        $this->assertSame('https://api.discogs.com/marketplace/listings/129242581', $history->getLastRequest()->getUrl());
+        $this->assertSame('DELETE', $container[0]['request']->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/listings/129242581', strval($container[0]['request']->getUri()));
     }
 
     public function testGetCollectionFolders()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_collection_folders', $history);
         $response = $client->getCollectionFolders([
             'username' => 'example'
         ]);
 
-        $this->assertInternalType('array', $response['folders']);
+        $this->assertIsArray($response['folders']);
         $this->assertCount(2, $response['folders']);
 
-        $this->assertSame('https://api.discogs.com/users/example/collection/folders', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/users/example/collection/folders', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetCollectionFolder()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_collection_folder', $history);
         $response = $client->getCollectionFolder([
             'username' => 'example',
@@ -317,13 +349,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($response['name'], 'Uncategorized');
         $this->assertSame($response['resource_url'], "https://api.discogs.com/users/example/collection/folders/1");
 
-        $this->assertSame('https://api.discogs.com/users/example/collection/folders/1', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/users/example/collection/folders/1', strval($container[0]['request']->getUri()));
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
     public function testGetCollectionItemsByFolder()
     {
-        $history = new History();
+        $container = [];
+        $history = Middleware::History($container);
         $client = $this->createClient('get_collection_items_by_folder', $history);
         $response = $client->getCollectionItemsByFolder([
             'username' => 'rodneyfool',
@@ -338,20 +371,30 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('per_page', $response['pagination']);
 
-        $this->assertSame('https://api.discogs.com/users/rodneyfool/collection/folders/3/releases?per_page=50&page=1', $history->getLastRequest()->getUrl());
-        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+        $this->assertSame(
+            'https://api.discogs.com/users/rodneyfool/collection/folders/3/releases?per_page=50&page=1',
+            strval($container[0]['request']->getUri())
+        );
+        $this->assertSame('GET', $container[0]['request']->getMethod());
     }
 
-    protected function createClient($mock, History $history)
+    protected function createClient($mock, $history)
     {
-        $path = sprintf('%s/../../fixtures/%s', __DIR__, $mock);
-        $client = ClientFactory::factory();
-        $httpClient = $client->getHttpClient();
-        $mock = new Mock([
-            $path
+        $json = file_get_contents(__DIR__ . "/../../fixtures/$mock.json");
+        $data = json_decode($json, true);
+        $data['body'] = json_encode($data['body']);
+        $mock = new MockHandler([
+            new Response(
+                $data['status'],
+                $data['headers'],
+                $data['body'],
+                $data['version'],
+                $data['reason']
+            )
         ]);
-        $httpClient->getEmitter()->attach($mock);
-        $httpClient->getEmitter()->attach($history);
+        $handler = HandlerStack::create($mock);
+        $handler->push($history);
+        $client = ClientFactory::factory(['handler' => $handler]);
 
         return $client;
     }
