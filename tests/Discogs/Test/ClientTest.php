@@ -11,10 +11,9 @@
 namespace Discogs\Test;
 
 use Discogs\ClientFactory;
-use GuzzleHttp\Command\Guzzle\GuzzleClient;
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 
@@ -26,7 +25,7 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('get_artist', $history);
         $response = $client->getArtist([
-            'id' => 45
+            'id' => 45,
         ]);
         $this->assertSame($response['id'], 45);
         $this->assertSame($response['name'], 'Aphex Twin');
@@ -48,7 +47,7 @@ class ClientTest extends TestCase
         $response = $client->getArtistReleases([
             'id' => 45,
             'per_page' => 50,
-            'page' => 1
+            'page' => 1,
         ]);
         $this->assertCount(50, $response['releases']);
         $this->assertArrayHasKey('pagination', $response);
@@ -69,7 +68,7 @@ class ClientTest extends TestCase
             'type' => 'release',
             'title' => 'the fat of the land',
             'per_page' => 100,
-            'page' => 3
+            'page' => 3,
         ]);
         $this->assertCount(50, $response['results']);
         $this->assertArrayHasKey('pagination', $response);
@@ -85,7 +84,7 @@ class ClientTest extends TestCase
         $client = $this->createClient('get_release', $history);
         $response = $client->getRelease([
             'id' => 1,
-            'curr_abbr' => 'USD'
+            'curr_abbr' => 'USD',
         ]);
 
         $this->assertLessThanOrEqual(8.077169493076712, $response['lowest_price']);
@@ -103,7 +102,7 @@ class ClientTest extends TestCase
         $client = $this->createClient('get_master', $history);
 
         $response = $client->getMaster([
-            'id' => 33687
+            'id' => 33687,
         ]);
         $this->assertSame('O Fortuna', $response['title']);
         $this->assertArrayHasKey('tracklist', $response);
@@ -121,7 +120,7 @@ class ClientTest extends TestCase
         $response = $client->getMasterVersions([
             'id' => 33687,
             'per_page' => 4,
-            'page' => 2
+            'page' => 2,
         ]);
         $this->assertArrayHasKey('pagination', $response);
         $this->assertArrayHasKey('versions', $response);
@@ -136,7 +135,7 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('get_label', $history);
         $response = $client->getLabel([
-            'id' => 1
+            'id' => 1,
         ]);
         $this->assertArrayHasKey('releases_url', $response);
         $this->assertSame('https://api.discogs.com/labels/1/releases', $response['releases_url']);
@@ -154,7 +153,7 @@ class ClientTest extends TestCase
         $response = $client->getLabelReleases([
             'id' => 1,
             'per_page' => 2,
-            'page' => 1
+            'page' => 1,
         ]);
 
         $this->assertArrayHasKey('pagination', $response);
@@ -183,7 +182,7 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('get_profile', $history);
         $response = $client->getProfile([
-            'username' => 'maxperei'
+            'username' => 'maxperei',
         ]);
 
         $this->assertEquals(200, $container[0]['response']->getStatusCode());
@@ -203,9 +202,9 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('get_inventory', $history);
         $response = $client->getInventory([
-            'username'      => '360vinyl',
-            'sort'          => 'price',
-            'sort_order'    => 'asc'
+            'username' => '360vinyl',
+            'sort' => 'price',
+            'sort_order' => 'asc',
         ]);
 
         $this->assertArrayHasKey('pagination', $response);
@@ -221,9 +220,9 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('get_orders', $history);
         $response = $client->getOrders([
-            'status'      => 'New Order',
-            'sort'        => 'price',
-            'sort_order'  => 'asc'
+            'status' => 'New Order',
+            'sort' => 'price',
+            'sort_order' => 'asc',
         ]);
 
         $this->assertArrayHasKey('pagination', $response);
@@ -239,7 +238,7 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('get_order', $history);
         $response = $client->getOrder([
-            'order_id' => '1-1'
+            'order_id' => '1-1',
         ]);
 
         $this->assertArrayHasKey('id', $response);
@@ -268,8 +267,8 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('change_order', $history);
         $response = $client->changeOrder([
-            'order_id'  => '1-1',
-            'shipping'  => 5.0
+            'order_id' => '1-1',
+            'shipping' => 5.0,
         ]);
 
         $this->assertSame('POST', $container[0]['request']->getMethod());
@@ -285,7 +284,7 @@ class ClientTest extends TestCase
         $client->createListing([
             'release_id' => '1',
             'condition' => 'Mint (M)',
-            'price' => 5.90
+            'price' => 5.90,
         ]);
     }
 
@@ -298,7 +297,7 @@ class ClientTest extends TestCase
             'release_id' => '1',
             'condition' => 'Mint (M)',
             'status' => 'For Sale',
-            'price' => 5.90
+            'price' => 5.90,
         ]);
 
         $this->assertSame('POST', $container[0]['request']->getMethod());
@@ -311,7 +310,7 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('delete_listing', $history);
         $response = $client->deleteListing([
-            'listing_id' => '129242581'
+            'listing_id' => '129242581',
         ]);
 
         $this->assertSame('DELETE', $container[0]['request']->getMethod());
@@ -324,7 +323,7 @@ class ClientTest extends TestCase
         $history = Middleware::History($container);
         $client = $this->createClient('get_collection_folders', $history);
         $response = $client->getCollectionFolders([
-            'username' => 'example'
+            'username' => 'example',
         ]);
 
         $this->assertIsArray($response['folders']);
@@ -341,7 +340,7 @@ class ClientTest extends TestCase
         $client = $this->createClient('get_collection_folder', $history);
         $response = $client->getCollectionFolder([
             'username' => 'example',
-            'folder_id' => 1
+            'folder_id' => 1,
         ]);
 
         $this->assertSame($response['id'], 1);
@@ -364,7 +363,7 @@ class ClientTest extends TestCase
             'sort' => 'artist',
             'sort_order' => 'desc',
             'per_page' => 50,
-            'page' => 1
+            'page' => 1,
         ]);
 
         $this->assertCount(1, $response['releases']);
@@ -390,7 +389,7 @@ class ClientTest extends TestCase
                 $data['body'],
                 $data['version'],
                 $data['reason']
-            )
+            ),
         ]);
         $handler = HandlerStack::create($mock);
         $handler->push($history);

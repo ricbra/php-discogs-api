@@ -20,7 +20,9 @@
 		}
 	],
 	"autoload": {
-		"psr-0": { "Discogs\\": "lib/" }
+		"psr-0": {
+			"Discogs\\": "lib/"
+		}
 	},
 	"extra": {
 		"branch-alias": {

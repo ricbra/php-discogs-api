@@ -21,14 +21,10 @@ class ClientFactoryTest extends \PHPUnit\Framework\TestCase
 
     public function testFactoryWithCustomUserAgent()
     {
-        $client = ClientFactory::factory([
-            'headers' => ['User-Agent' => 'test']
-
-        ]);
+        $client = ClientFactory::factory(['headers' => ['User-Agent' => 'test']]);
         $default = ['User-Agent' => 'test'];
         $this->assertSame($default, $client->getHttpClient()->getConfig('headers'));
     }
-
 
     public function testFactoryWithCustomDefaultNotInClassDefaults()
     {
@@ -38,12 +34,11 @@ class ClientFactoryTest extends \PHPUnit\Framework\TestCase
                 'key' => 'my-key',
                 'secret' => 'my-secret',
             ],
-
         ]);
         $default_headers = ['User-Agent' => 'test'];
         $default_query = [
             'key' => 'my-key',
-            'secret' => 'my-secret'
+            'secret' => 'my-secret',
         ];
         $this->assertSame($default_headers, $client->getHttpClient()->getConfig('headers'));
         $this->assertSame($default_query, $client->getHttpClient()->getConfig('query'));
