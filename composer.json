@@ -1,33 +1,30 @@
 {
-    "name": "ricbra/php-discogs-api",
-    "description": "The Discogs API makes it easy for developers to communicate with the Discogs platform",
-    "type": "library",
-    "keywords": ["discogs", "api"],
-    "license": "MIT",
-    "require": {
-        "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "~5.0",
-        "guzzlehttp/guzzle-services": "~0.5.0",
-        "guzzlehttp/oauth-subscriber": "~0.2"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "~4"
-    },
-    "authors": [
-        {
-            "name": "Richard van den Brand",
-            "email": "richard@vandenbrand.org"
-        }
-    ],
-    "autoload": {
-        "psr-0": { "Discogs": "lib/" }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0.x-dev"
-        }
-    },
-    "suggest": {
-        "ricbra/discogs-bundle": "For integrating Discogs into Symfony2"
-    }
+	"name": "ricbra/php-discogs-api",
+	"description": "The Discogs API makes it easy for developers to communicate with the Discogs platform",
+	"type": "library",
+	"keywords": [ "discogs", "api" ],
+	"license": "MIT",
+	"require": {
+		"php": ">=7.3.0",
+		"guzzlehttp/guzzle": "~7.0",
+		"guzzlehttp/guzzle-services": "~1.2.0",
+		"guzzlehttp/oauth-subscriber": "~0.4"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~9.5"
+	},
+	"authors": [
+		{
+			"name": "Richard van den Brand",
+			"email": "richard@vandenbrand.org"
+		}
+	],
+	"autoload": {
+		"psr-0": { "Discogs\\": "lib/" }
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "1.0.x-dev"
+		}
+	}
 }

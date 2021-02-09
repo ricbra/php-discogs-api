@@ -19,10 +19,8 @@ class ClientFactory
     public static function factory(array $config = [])
     {
         $defaultConfig = [
-            'defaults' => [
-                'headers' => ['User-Agent' => 'php-discogs-api/1.0.0 +https://github.com/ricbra/php-discogs-api'],
-                'auth' => 'oauth'
-            ],
+            'headers' => ['User-Agent' => 'php-discogs-api/1.0.0 +https://github.com/ricbra/php-discogs-api'],
+            'auth' => 'oauth',
         ];
 
         $client = new Client(self::mergeRecursive($defaultConfig, $config));
