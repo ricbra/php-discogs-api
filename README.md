@@ -95,6 +95,17 @@ $client = ClientFactory::factory([
 ]);
 ```
 
+Authenticate with Personal access token, you can get it from https://www.discogs.com/settings/developers
+```php
+$client = ClientFactory::factory([
+    'headers' => [
+        'User-Agent' => $user_agent,
+        'Authorization' => "Discogs token={$access_token}",
+    ]
+]);
+```
+
+
 ### OAuth
 There are a lot of endpoints which require OAuth. Lucky for you using Guzzle this is peanuts. If you're having trouble obtaining the token and token_secret, please check out my [example implementation](https://github.com/ricbra/php-discogs-api-example).
 
@@ -115,6 +126,8 @@ $response = $client->search([
 ]);
 
 // New Version
+<?php
+
 $oauth = new GuzzleHttp\Subscriber\Oauth\Oauth1([
     'consumer_key'    => $consumerKey, // from Discogs developer page
     'consumer_secret' => $consumerSecret, // from Discogs developer page
