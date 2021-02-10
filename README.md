@@ -212,7 +212,7 @@ var_dump($response->toArray());
 ```php
 <?php
 
-$label = $client->getLabel([
+$label = $service->getLabel([
     'id' => 1
 ]);
 
@@ -223,7 +223,7 @@ $label = $client->getLabel([
 ```php
 <?php
 
-$artist = $client->getArtist([
+$artist = $service->getArtist([
     'id' => 1
 ]);
 
@@ -234,7 +234,7 @@ $artist = $client->getArtist([
 ```php
 <?php
 
-$release = $client->getRelease([
+$release = $service->getRelease([
     'id' => 1
 ]);
 
@@ -246,7 +246,7 @@ echo $release['title']."\n";
 ```php
 <?php
 
-$master  = $client->getMaster([
+$master  = $service->getMaster([
     'id' => 1
 ]);
 
@@ -281,7 +281,7 @@ Authorization is required when `folder_id` is not `0`.
 ```php
 <?php
 
-$folders = $client->getCollectionFolders([
+$folders = $service->getCollectionFolders([
     'username' => 'example'
 ]);
 ```
@@ -292,7 +292,7 @@ $folders = $client->getCollectionFolders([
 ```php
 <?php
 
-$folder = $client->getCollectionFolder([
+$folder = $service->getCollectionFolder([
     'username' => 'example',
     'folder_id' => 1
 ]);
@@ -303,46 +303,11 @@ $folder = $client->getCollectionFolder([
 ```php
 <?php
 
-$items = $client->getCollectionItemsByFolder([
+$items = $service->getCollectionItemsByFolder([
     'username' => 'example',
     'folder_id' => 3
 ]);
 ```
-
-#### Create Listing, adds listing to authenticated users inventory
-```php
-<?php
-
-$client->createListing([
-    'release_id' => '1',
-    'condition' => 'Mint (M)',
-    'status' => 'For Sale', // Or 'Draft'
-    'price' => 5.90,
-]);
-```
-
-#### Change Listing, authenticated as the seller
-
-```php
-<?php
-
-$response = $client->changeListing([
-    'listing_id' => $listing_id,
-    'condition' => 'Good (G)',
-    'price' => 3.49,
-]);
-```
-
-#### Delete Listing, authenticated as the seller
-
-```php
-<?php
-
-$response = $client->deleteListing([
-    'listing_id' => $listing_id,
-]);
-```
-
 
 ## Documentation
 Further documentation can be found at the [Discogs API v2.0 Documentation](http://www.discogs.com/developers/index.html).
