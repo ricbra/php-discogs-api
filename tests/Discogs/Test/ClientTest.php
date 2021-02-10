@@ -303,6 +303,20 @@ class ClientTest extends TestCase
         $this->assertSame('POST', $container[0]['request']->getMethod());
         $this->assertSame('https://api.discogs.com/marketplace/listings', strval($container[0]['request']->getUri()));
     }
+    public function testChangeListing()
+    {
+        $container = [];
+        $history = Middleware::History($container);
+        $client = $this->createClient('change_listing', $history);
+        $response = $client->changeListing([
+            'listing_id' => '123',
+            'condition' => 'Mint (M)',
+            'price' => 4.90,
+        ]);
+
+        $this->assertSame('POST', $container[0]['request']->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/listings/123', strval($container[0]['request']->getUri()));
+    }
 
     public function testDeleteListing()
     {

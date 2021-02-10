@@ -212,7 +212,7 @@ var_dump($response->toArray());
 ```php
 <?php
 
-$label = $service->getLabel([
+$label = $client->getLabel([
     'id' => 1
 ]);
 
@@ -223,7 +223,7 @@ $label = $service->getLabel([
 ```php
 <?php
 
-$artist = $service->getArtist([
+$artist = $client->getArtist([
     'id' => 1
 ]);
 
@@ -234,7 +234,7 @@ $artist = $service->getArtist([
 ```php
 <?php
 
-$release = $service->getRelease([
+$release = $client->getRelease([
     'id' => 1
 ]);
 
@@ -246,7 +246,7 @@ echo $release['title']."\n";
 ```php
 <?php
 
-$master  = $service->getMaster([
+$master  = $client->getMaster([
     'id' => 1
 ]);
 
@@ -281,7 +281,7 @@ Authorization is required when `folder_id` is not `0`.
 ```php
 <?php
 
-$folders = $service->getCollectionFolders([
+$folders = $client->getCollectionFolders([
     'username' => 'example'
 ]);
 ```
@@ -292,7 +292,7 @@ $folders = $service->getCollectionFolders([
 ```php
 <?php
 
-$folder = $service->getCollectionFolder([
+$folder = $client->getCollectionFolder([
     'username' => 'example',
     'folder_id' => 1
 ]);
@@ -303,11 +303,46 @@ $folder = $service->getCollectionFolder([
 ```php
 <?php
 
-$items = $service->getCollectionItemsByFolder([
+$items = $client->getCollectionItemsByFolder([
     'username' => 'example',
     'folder_id' => 3
 ]);
 ```
+
+#### Create Listing, adds listing to authenticated users inventory
+```php
+<?php
+
+$client->createListing([
+    'release_id' => '1',
+    'condition' => 'Mint (M)',
+    'status' => 'For Sale', // Or 'Draft'
+    'price' => 5.90,
+]);
+```
+
+#### Change Listing, authenticated as the seller
+
+```php
+<?php
+
+$response = $client->changeListing([
+    'listing_id' => $listing_id,
+    'condition' => 'Good (G)',
+    'price' => 3.49,
+]);
+```
+
+#### Delete Listing, authenticated as the seller
+
+```php
+<?php
+
+$response = $client->deleteListing([
+    'listing_id' => $listing_id,
+]);
+```
+
 
 ## Documentation
 Further documentation can be found at the [Discogs API v2.0 Documentation](http://www.discogs.com/developers/index.html).
