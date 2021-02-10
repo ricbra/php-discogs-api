@@ -19,9 +19,9 @@ return [
                 'id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
-                ],
-            ],
+                    'required' => true
+                ]
+            ]
         ],
         'getArtistReleases' => [
             'httpMethod' => 'GET',
@@ -31,19 +31,19 @@ return [
                 'id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'per_page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
-                ],
-            ],
+                    'required' => false
+                ]
+            ]
         ],
         'search' => [
             'httpMethod' => 'GET',
@@ -53,104 +53,104 @@ return [
                 'q' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'type' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'title' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'release_title' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'credit' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'artist' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'anv' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'label' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'genre' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'style' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'country' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'year' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'format' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'catno' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'barcode' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'track' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'submitter' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'contributor' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'per_page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
-                ],
-            ],
+                    'required' => false
+                ]
+            ]
         ],
         'getRelease' => [
             'httpMethod' => 'GET',
@@ -160,14 +160,14 @@ return [
                 'id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'curr_abbr' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
-                ],
-            ],
+                    'required' => false
+                ]
+            ]
         ],
         'getMaster' => [
             'httpMethod' => 'GET',
@@ -177,9 +177,9 @@ return [
                 'id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
-                ],
-            ],
+                    'required' => true
+                ]
+            ]
         ],
         'getMasterVersions' => [
             'httpMethod' => 'GET',
@@ -189,19 +189,19 @@ return [
                 'id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'per_page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
-                ],
-            ],
+                    'required' => false
+                ]
+            ]
         ],
         'getLabel' => [
             'httpMethod' => 'GET',
@@ -211,9 +211,9 @@ return [
                 'id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
-                ],
-            ],
+                    'required' => true
+                ]
+            ]
         ],
         'getLabelReleases' => [
             'httpMethod' => 'GET',
@@ -223,19 +223,19 @@ return [
                 'id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'per_page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
-                ],
-            ],
+                    'required' => false
+                ]
+            ]
         ],
         'getOAuthIdentity' => [
             'httpMethod' => 'GET',
@@ -250,7 +250,7 @@ return [
                 'username' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
             ],
         ],
@@ -262,7 +262,7 @@ return [
                 'username' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'status' => [
                     'type' => 'string',
@@ -282,14 +282,14 @@ return [
                 'per_page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
-                ],
-            ],
+                    'required' => false
+                ]
+            ]
         ],
         'getOrder' => [
             'httpMethod' => 'GET',
@@ -299,9 +299,9 @@ return [
                 'order_id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
-                ],
-            ],
+                    'required' => true
+                ]
+            ]
         ],
         'getOrders' => [
             'httpMethod' => 'GET',
@@ -311,7 +311,7 @@ return [
                 'status' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'sort' => [
                     'type' => 'string',
@@ -322,8 +322,8 @@ return [
                     'type' => 'string',
                     'location' => 'query',
                     'required' => false,
-                ],
-            ],
+                ]
+            ]
         ],
         'changeOrder' => [
             'httpMethod' => 'POST',
@@ -334,7 +334,7 @@ return [
                 'order_id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'status' => [
                     'type' => 'string',
@@ -345,8 +345,8 @@ return [
                     'type' => 'number',
                     'location' => 'json',
                     'required' => false,
-                ],
-            ],
+                ]
+            ]
         ],
         'createListing' => [
             'httpMethod' => 'POST',
@@ -357,7 +357,7 @@ return [
                 'release_id' => [
                     'type' => 'string',
                     'location' => 'json',
-                    'required' => true,
+                    'required' => true
                 ],
                 'condition' => [
                     'type' => 'string',
@@ -408,8 +408,8 @@ return [
                     'type' => 'number',
                     'location' => 'json',
                     'required' => false,
-                ],
-            ],
+                ]
+            ]
         ],
         'deleteListing' => [
             'httpMethod' => 'DELETE',
@@ -419,9 +419,9 @@ return [
                 'listing_id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
-                ],
-            ],
+                    'required' => true
+                ]
+            ]
         ],
         'getCollectionFolders' => [
             'httpMethod' => 'GET',
@@ -431,9 +431,9 @@ return [
                 'username' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
-                ],
-            ],
+                    'required' => true
+                ]
+            ]
         ],
         'getCollectionFolder' => [
             'httpMethod' => 'GET',
@@ -443,14 +443,14 @@ return [
                 'username' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'folder_id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
-            ],
+            ]
         ],
         'getCollectionItemsByFolder' => [
             'httpMethod' => 'GET',
@@ -460,32 +460,32 @@ return [
                 'username' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'folder_id' => [
                     'type' => 'string',
                     'location' => 'uri',
-                    'required' => true,
+                    'required' => true
                 ],
                 'per_page' => [
                     'type' => 'integer',
                     'location' => 'query',
-                    'required' => false,
+                    'required' => false
                 ],
                 'page' => [
                     'type' => 'string',
                     'location' => 'query',
-                    'required' => false,
-                ],
-            ],
-        ],
+                    'required' => false
+                ]
+            ]
+        ]
     ],
     'models' => [
         'GetResponse' => [
             'type' => 'object',
             'additionalProperties' => [
-                'location' => 'json',
+                'location' => 'json'
             ],
         ],
-    ],
+    ]
 ];
