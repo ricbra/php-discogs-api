@@ -62,6 +62,14 @@ prevent getting errors or banned:
 $client = Discogs\ClientFactory::factory();
 $client->getHttpClient()->getEmitter()->attach(new Discogs\Subscriber\ThrottleSubscriber());
 
+// New Version
+<?php
+
+$handler = \GuzzleHttp\HandlerStack::create();
+$throttle = new Discogs\Subscriber\ThrottleSubscriber();
+$handler->push(\GuzzleHttp\Middleware::retry($throttle->decider(), $throttle->delay()));
+
+$client = Discogs\ClientFactory::factory(['handler'=>$handler]);
 ```
 
 #### Authentication

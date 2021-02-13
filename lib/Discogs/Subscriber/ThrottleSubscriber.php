@@ -1,42 +1,53 @@
 <?php
-/*
- * (c) Waarneembemiddeling.nl
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace Discogs\Subscriber;
 
-use GuzzleHttp\Event\CompleteEvent;
-use GuzzleHttp\Event\SubscriberInterface;
+use GuzzleHttp\Exception\ConnectException;
+use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\Psr7\Response;
 
-class ThrottleSubscriber implements SubscriberInterface
+class ThrottleSubscriber
 {
     private $throttle;
-    private static $previousTimestamp;
+    private $max_retries;
 
-    public function __construct($throttle = 1000000)
+    /**
+     * @param int $throttle wait time between retries, in milliseconds
+     */
+    public function __construct($throttle = 1000, $max_retries = 5)
     {
         $this->throttle = (int) $throttle;
+        $this->max_retries = (int) $max_retries;
     }
 
-    public function getEvents()
+    public function decider()
     {
-        return [
-            'complete' => ['onComplete']
-        ];
+        return function (
+            $retries,
+            Request $request,
+            Response $response = null,
+            RequestException $exception = null
+        ) {
+            if ($retries >= $this->max_retries) return false;
+
+            // Retry on connection exceptions
+            if ($exception instanceof ConnectException) return true;
+
+            if ($response) {
+                if ($response->getStatusCode() == 429) return true;
+                // Retry on server errors
+                if ($response->getStatusCode() >= 500) return true;
+            }
+
+            return false;
+        };
     }
 
-    public function onComplete(CompleteEvent $event)
+    public function delay()
     {
-        $now = microtime(true);
-        $wait = self::$previousTimestamp + $this->throttle - $now;
-
-        if ($wait > 0) {
-            usleep($wait);
-        }
-
-        self::$previousTimestamp = microtime(true);
+        return function ($retries) {
+            return $this->throttle * $retries;
+        };
     }
 }
