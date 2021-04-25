@@ -1,5 +1,5 @@
 {
-    "name": "ricbra/php-discogs-api",
+    "name": "majorasjack/php-discogs-api",
     "description": "The Discogs API makes it easy for developers to communicate with the Discogs platform",
     "type": "library",
     "keywords": ["discogs", "api"],
@@ -17,6 +17,10 @@
         {
             "name": "Richard van den Brand",
             "email": "richard@vandenbrand.org"
+        },
+        {
+            "name": "Jack Evans",
+            "email": "jack@gengar.me"
         }
     ],
     "autoload": {
