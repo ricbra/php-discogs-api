@@ -10,15 +10,16 @@ namespace Discogs\Test\Subscriber;
 
 use Discogs\Subscriber\ThrottleSubscriber;
 use GuzzleHttp\Event\CompleteEvent;
+use PHPUnit\Framework\TestCase;
 
-class ThrottleSubscriberTest extends \PHPUnit_Framework_TestCase
+class ThrottleSubscriberTest extends TestCase
 {
     public function testWithThrottle()
     {
         $throttle = 2000000; // 2 sec
         $subscriber = new ThrottleSubscriber($throttle);
 
-        $mock = $this->getMock('GuzzleHttp\Event\CompleteEvent', [], [], '', false);
+        $mock = $this->createMock(CompleteEvent::class);
 
         $before = microtime(true);
         $subscriber->onComplete($mock);
@@ -35,7 +36,7 @@ class ThrottleSubscriberTest extends \PHPUnit_Framework_TestCase
         $throttle = 0;
         $subscriber = new ThrottleSubscriber($throttle);
 
-        $mock = $this->getMock('GuzzleHttp\Event\CompleteEvent', [], [], '', false);
+        $mock = $this->createMock(CompleteEvent::class);
 
         $before = microtime(true);
         $subscriber->onComplete($mock);

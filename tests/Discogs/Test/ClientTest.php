@@ -13,8 +13,9 @@ namespace Discogs\Test;
 use Discogs\ClientFactory;
 use GuzzleHttp\Subscriber\History;
 use GuzzleHttp\Subscriber\Mock;
+use PHPUnit\Framework\TestCase;
 
-class ClientTest extends \PHPUnit_Framework_TestCase
+class ClientTest extends TestCase
 {
     public function testGetArtist()
     {
@@ -26,7 +27,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame($response['id'], 45);
         $this->assertSame($response['name'], 'Aphex Twin');
         $this->assertSame($response['realname'], 'Richard David James');
-        $this->assertInternalType('array', $response['images']);
+        $this->assertIsArray($response['images']);
         $this->assertCount(9, $response['images']);
 
         $this->assertSame('https://api.discogs.com/artists/45', $history->getLastRequest()->getUrl());
@@ -254,7 +255,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     }
 
     public function testCreateListingValidation(){
-        $this->setExpectedException('GuzzleHttp\Command\Exception\CommandException', 'Validation errors: [status] is a required string');
+        $this->expectException('GuzzleHttp\Command\Exception\CommandException');
+        $this->expectExceptionMessage('Validation errors: [status] is a required string');
         $client = $this->createClient('create_listing', $history = new History());
         $client->createListing([
             'release_id' => '1',
@@ -296,7 +298,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
             'username' => 'example'
         ]);
 
-        $this->assertInternalType('array', $response['folders']);
+        $this->assertIsArray($response['folders']);
         $this->assertCount(2, $response['folders']);
 
         $this->assertSame('https://api.discogs.com/users/example/collection/folders', $history->getLastRequest()->getUrl());

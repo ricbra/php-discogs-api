@@ -13,7 +13,8 @@ use GuzzleHttp\Event\SubscriberInterface;
 
 class ThrottleSubscriber implements SubscriberInterface
 {
-    private $throttle;
+    private int $throttle;
+
     private static $previousTimestamp;
 
     public function __construct($throttle = 1000000)
@@ -24,7 +25,7 @@ class ThrottleSubscriber implements SubscriberInterface
     public function getEvents()
     {
         return [
-            'complete' => ['onComplete']
+            'complete' => ['onComplete'],
         ];
     }
 

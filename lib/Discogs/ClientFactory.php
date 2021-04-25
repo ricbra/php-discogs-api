@@ -16,12 +16,14 @@ use GuzzleHttp\Command\Guzzle\GuzzleClient;
 
 class ClientFactory
 {
-    public static function factory(array $config = [])
+    public static function factory(array $config = []): GuzzleClient
     {
         $defaultConfig = [
             'defaults' => [
-                'headers' => ['User-Agent' => 'php-discogs-api/1.0.0 +https://github.com/ricbra/php-discogs-api'],
-                'auth' => 'oauth'
+                'headers' => [
+                    'User-Agent' => 'php-discogs-api/1.0.0 +https://github.com/ricbra/php-discogs-api',
+                ],
+                'auth' => 'oauth',
             ],
         ];
 
@@ -32,16 +34,19 @@ class ClientFactory
         return new GuzzleClient($client, $description);
     }
 
-    public static function &mergeRecursive(array &$array1, &$array2 = null)
+    public static function &mergeRecursive(array &$array1, &$array2 = null): array
     {
         $merged = $array1;
 
         if (is_array($array2)) {
-            foreach ($array2 as $key => $val) {
-                if (is_array($array2[$key])) {
-                    $merged[$key] = isset($merged[$key]) && is_array($merged[$key]) ? self::mergeRecursive($merged[$key], $array2[$key]) : $array2[$key];
+            foreach ($array2 as $key => $value) {
+                if (is_array($value)) {
+                    $merged[$key] =
+                        isset($merged[$key]) && is_array($merged[$key])
+                            ? self::mergeRecursive($merged[$key], $array2[$key])
+                            : $value;
                 } else {
-                    $merged[$key] = $val;
+                    $merged[$key] = $value;
                 }
             }
         }
