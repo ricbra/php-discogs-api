@@ -139,7 +139,12 @@ return [
                     'type' => 'string',
                     'location' => 'query',
                     'required' => false
-                ]
+                ],
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
             ]
         ],
         'getRelease' => [
