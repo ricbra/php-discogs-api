@@ -164,6 +164,18 @@ return [
                 ]
             ]
         ],
+        'getReleaseStats' => [
+            'httpMethod' => 'GET',
+            'uri' => 'releases/{id}/stats',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+            ],
+        ],
         'getMaster' => [
             'httpMethod' => 'GET',
             'uri' => 'masters/{id}',
