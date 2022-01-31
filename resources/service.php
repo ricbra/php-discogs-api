@@ -164,9 +164,20 @@ return [
                 ]
             ]
         ],
-        'getReleaseStats' => [
+        'getReleaseRating' => [
             'httpMethod' => 'GET',
             'uri' => 'releases/{id}/stats',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+            ],
+        ],'getReleaseStats' => [
+            'httpMethod' => 'GET',
+            'uri' => 'releases/{id}/rating',
             'responseModel' => 'GetResponse',
             'parameters' => [
                 'id' => [
