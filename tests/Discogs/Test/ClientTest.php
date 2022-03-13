@@ -253,6 +253,22 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
     }
 
+    public function testGetListing()
+    {
+        $history = new History();
+        $client = $this->createClient('get_listing', $history);
+        $response = $client->getListing([
+            'listing_id' => 1,
+            'curr_abbr' => 'USD'
+        ]);
+
+        $this->assertFalse($response['allow_offers']);
+        $this->assertSame('For Sale', $response['status']);
+        $this->assertArrayHasKey('original_price', $response);
+        $this->assertSame('https://api.discogs.com/marketplace/listings/1?curr_abbr=USD', $history->getLastRequest()->getUrl());
+        $this->assertSame('GET', $history->getLastRequest()->getMethod());
+    }
+
     public function testCreateListingValidation(){
         $this->setExpectedException('GuzzleHttp\Command\Exception\CommandException', 'Validation errors: [status] is a required string');
         $client = $this->createClient('create_listing', $history = new History());
