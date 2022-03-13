@@ -277,6 +277,21 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('https://api.discogs.com/marketplace/listings', $history->getLastRequest()->getUrl());
     }
 
+    public function testChangeListing()
+    {
+        $client = $this->createClient('change_listing', $history = new History());
+        $response = $client->changeListing([
+            'listing_id' => '1',
+            'release_id' => '1',
+            'condition' => 'Mint (M)',
+            'status' => 'For Sale',
+            'price' => 5.90
+        ]);
+
+        $this->assertSame('POST', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/listings/1', $history->getLastRequest()->getUrl());
+    }
+
     public function testDeleteListing()
     {
         $client = $this->createClient('delete_listing', $history = new History());
