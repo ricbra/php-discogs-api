@@ -313,6 +313,21 @@ return [
                     'location' => 'query',
                     'required' => false
                 ],
+                'created_after' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'created_before' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'archived' => [
+                    'type' => 'boolean',
+                    'location' => 'query',
+                    'required' => false
+                ],
                 'sort' => [
                     'type' => 'string',
                     'location' => 'query',
