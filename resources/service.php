@@ -411,6 +411,74 @@ return [
                 ]
             ]
         ],
+        'changeListing' => [
+            'httpMethod' => 'POST',
+            'uri' => 'marketplace/listings/{listing_id}',
+            'summary' => 'Edit the data associated with a listing.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+	            'listing_id' => [
+		            'type' => 'string',
+		            'location' => 'uri',
+		            'required' => true,
+	            ],
+                'release_id' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'condition' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'sleeve_condition' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'price' => [
+                    'type' => 'number',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'comments' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'allow_offers' => [
+                    'type' => 'boolean',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'status' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'external_id' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'location' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'weight' => [
+                    'type' => 'number',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'format_quantity' => [
+                    'type' => 'number',
+                    'location' => 'json',
+                    'required' => false,
+                ]
+            ]
+        ],
         'deleteListing' => [
             'httpMethod' => 'DELETE',
             'uri' => 'marketplace/listings/{listing_id}',
