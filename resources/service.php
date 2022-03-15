@@ -363,6 +363,29 @@ return [
                 ]
             ]
         ],
+        'addOrderMessage' => [
+            'httpMethod' => 'POST',
+            'uri' => 'marketplace/orders/{order_id}/messages',
+            'summary' => 'Adds a new message to the order’s message log.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'order_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'message' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ],
+                'status' => [
+                    'type' => 'string',
+                    'location' => 'json',
+                    'required' => false,
+                ]
+            ]
+        ],
         'getListing' => [
             'httpMethod' => 'GET',
             'uri' => 'marketplace/listings/{listing_id}',
@@ -450,11 +473,11 @@ return [
             'summary' => 'Edit the data associated with a listing.',
             'responseModel' => 'GetResponse',
             'parameters' => [
-	            'listing_id' => [
-		            'type' => 'string',
-		            'location' => 'uri',
-		            'required' => true,
-	            ],
+                'listing_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true,
+                ],
                 'release_id' => [
                     'type' => 'string',
                     'location' => 'json',

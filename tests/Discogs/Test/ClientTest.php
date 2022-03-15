@@ -253,6 +253,19 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame('https://api.discogs.com/marketplace/orders/1-1', $history->getLastRequest()->getUrl());
     }
 
+    public function testAddOrderMessage()
+    {
+        $client = $this->createClient('add_order_message', $history = new History());
+        $client->addOrderMessage([
+            'order_id'  => '1-1',
+            'message'  => 'hello world',
+            'status'  => 'New Order'
+        ]);
+
+        $this->assertSame('POST', $history->getLastRequest()->getMethod());
+        $this->assertSame('https://api.discogs.com/marketplace/orders/1-1/messages', $history->getLastRequest()->getUrl());
+    }
+
     public function testGetListing()
     {
         $history = new History();
