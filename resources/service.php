@@ -363,6 +363,24 @@ return [
                 ]
             ]
         ],
+        'getListing' => [
+            'httpMethod' => 'GET',
+            'uri' => 'marketplace/listings/{listing_id}',
+            'summary' => 'The Listing resource allows you to view Marketplace listings.',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'listing_id' => [
+                    'type' => 'string',
+                    'location' => 'uri',
+                    'required' => true
+                ],
+                'curr_abbr' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ]
+            ]
+        ],
         'createListing' => [
             'httpMethod' => 'POST',
             'uri' => '/marketplace/listings',
