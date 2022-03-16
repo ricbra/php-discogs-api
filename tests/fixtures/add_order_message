@@ -1,0 +1,26 @@
+HTTP/1.1 201 OK
+Reproxy-Status: yes
+Access-Control-Allow-Origin: *
+Cache-Control: public, must-revalidate
+Content-Type: application/json
+Server: lighttpd
+Content-Length: 4875
+Date: Tue, 29 Jul 2014 19:35:39 GMT
+X-Varnish: 1931104915
+Age: 0
+Via: 1.1 varnish
+Connection: close
+
+{
+  "from": {
+    "username": "example_seller",
+    "resource_url": "https://api.discogs.com/users/example_seller"
+  },
+  "message": "Seller changed status from Payment Received to Shipped\n\nYour order is on its way, tracking number #foobarbaz!",
+  "order": {
+    "resource_url": "https://api.discogs.com/marketplace/orders/1-1",
+    "id": "1-1"
+  },
+  "timestamp": "2011-11-18T15:32:42-07:00",
+  "subject": "Discogs Order #1-1, Stockholm"
+}
