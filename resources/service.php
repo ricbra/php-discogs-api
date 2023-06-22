@@ -602,6 +602,23 @@ return [
                 ],
             ],
         ],
+        'priceSuggestions' => [
+            'httpMethod' => 'GET',
+            'url' => 'marketplace/price_suggestions/{release_id}',
+            'responseModel' => 'GetResponse',
+            'parameters' => [
+                'release_id' => [
+                    'type' => 'integer',
+                    'location' => 'url',
+                    'required' => true,
+                ],
+                'token' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+            ],
+        ],
     ],
     'models' => [
         'GetResponse' => [
