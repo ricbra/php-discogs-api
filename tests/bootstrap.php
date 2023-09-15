@@ -8,4 +8,6 @@
  * file that was distributed with this source code.
  */
 
-require_once __DIR__.'/../vendor/autoload.php';
+$loader = require __DIR__.'/../vendor/autoload.php';
+$loader->addPsr4('Chrobane\\Discogs\\Test\\', __DIR__);
+$loader->register();

@@ -6,21 +6,26 @@
     "license": "MIT",
     "require": {
         "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "~6.5.8",
-        "guzzlehttp/guzzle-services": "~1.1.3",
-        "guzzlehttp/oauth-subscriber": "~0.2"
+        "guzzlehttp/guzzle": "^6.0",
+        "guzzlehttp/guzzle-services": "^1.0",
+        "guzzlehttp/oauth-subscriber": "^0.6",
+        "bentools/guzzle-throttle-middleware": "^0.4.1"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4"
+        "phpunit/phpunit": "^9.6"
     },
     "authors": [
         {
             "name": "Richard van den Brand",
             "email": "richard@vandenbrand.org"
+        },
+        {
+            "name": "Yasushi Kurobane",
+            "email": "kurobane@dubstore.co.jp"
         }
     ],
     "autoload": {
-        "psr-0": { "Discogs": "lib/" }
+        "psr-0": { "Chrobane\\Discogs": "lib/" }
     },
     "extra": {
         "branch-alias": {
