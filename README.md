@@ -12,6 +12,10 @@ API: all the hard work has already be done.
 
 This API is build upon the shoulders of a giant: [Guzzle 4.0](http://guzzle.readthedocs.org/en/latest/). This is an absolutely awesome library.
 
+# Deprecated
+
+This repository is outdated and not maintained anymore. Please see https://github.com/calliostro/php-discogs-api for a more up to date version.
+
 ## License
 This library is released under the MIT license. See the complete license in the LICENSE file.
 
