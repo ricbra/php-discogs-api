@@ -600,6 +600,16 @@ return [
                     'type' => 'string',
                     'location' => 'query',
                     'required' => false
+                ],
+				'sort' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
+                ],
+                'sort_order' => [
+                    'type' => 'string',
+                    'location' => 'query',
+                    'required' => false
                 ]
             ]
         ]
